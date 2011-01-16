@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<project name="MantisConnect" default="all">
+	<property name="nant.settings.currentframework" value="net-2.0" />
+
+	<echo message="Using '${nant.settings.currentframework}' framework on '${nant.platform.name}' platform."/>
+	
+	<target name="build-flavour">
+		<if test="${not file::exists('mantisconnect.snk')}">
+			<copy file="mantisconnect.snk.sample" tofile="mantisconnect.snk" overwrite="false" />
+		</if>
+
+		<if test="${not file::exists('mantisfilters\mantisfilters.exe.config')}">
+			<copy file="mantisfilters\mantisfilters.exe.config.sample" tofile="mantisfilters\mantisfilters.exe.config" overwrite="false" />
+		</if>
+
+		<if test="${not file::exists('mantisnotify\mantisnotify.exe.config')}">
+			<copy file="mantisnotify\mantisnotify.exe.config.sample" tofile="mantisnotify\mantisnotify.exe.config" overwrite="false" />
+		</if>
+
+		<if test="${not file::exists('mantissubmit\mantissubmit.exe.config')}">
+			<copy file="mantissubmit\mantissubmit.exe.config.sample" tofile="mantissubmit\mantissubmit.exe.config" overwrite="false" />
+		</if>
+
+		<solution configuration="${flavour}" solutionfile="everything.sln" />
+	</target>
+
+	<target name="debug">
+		<property name="flavour" value="debug" />
+		<call target="build-flavour" />
+	</target>
+
+	<target name="release">
+		<property name="flavour" value="release" />
+		<call target="build-flavour" />
+	</target>
+
+	<target name="all">
+		<call target="debug" />
+		<call target="release" />
+	</target>
+	
+	<target name="unittest" depends="debug">
+		<nunit2>
+    			<formatter type="Plain" />
+			<test assemblyname="UnitTests\bin\debug\Futureware.MantisConnect.UnitTests.dll" />
+		</nunit2>
+	</target>
+	
+	<target name="all_using_dotnetframework">
+    		<echo message="Using '${nant.settings.currentframework}' framework on '${nant.platform.name}' platform."/>
+		<call target="all" />
+	</target>
+
+	<target name="portability">
+		<property name="nant.settings.currentframework" value="net-2.0" />
+		<call target="all_using_dotnetframework" />
+	</target>
+</project>

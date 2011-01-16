@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<project name="MantisConnect" default="all">
+    <echo message="Using '${nant.settings.currentframework}' framework on '${nant.platform.name}' platform."/>
+
+	<target name="debug">
+		<solution configuration="debug" solutionfile="MantisConnect.sln" />
+	</target>
+
+	<target name="release">
+		<solution configuration="release" solutionfile="MantisConnect.sln" />
+	</target>
+
+
+	<target name="all">
+		<call target="debug" />
+		<call target="release" />
+	</target>
+</project>

@@ -1,0 +1,3162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Futureware.MantisConnect</name>
+    </assembly>
+    <members>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_version">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_version(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_version(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_versionAsync">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_versionAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_status(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_status(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_status(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_statusAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_statusAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_priorities(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_priorities(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_priorities(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_prioritiesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_prioritiesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_severities(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_severities(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_severities(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_severitiesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_severitiesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_reproducibilities(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_reproducibilities(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_reproducibilities(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_reproducibilitiesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_reproducibilitiesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_projections(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_projections(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_projections(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_projectionsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_projectionsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_etas(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_etas(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_etas(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_etasAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_etasAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_resolutions(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_resolutions(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_resolutions(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_resolutionsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_resolutionsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_access_levels(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_access_levels(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_access_levels(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_access_levelsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_access_levelsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_status(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_project_status(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_project_status(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_statusAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_statusAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_view_states(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_project_view_states(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_project_view_states(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_view_statesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_view_statesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_view_states(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_view_states(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_view_states(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_view_statesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_view_statesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_custom_field_types(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_custom_field_types(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_custom_field_types(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_custom_field_typesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_custom_field_typesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_get(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_enum_get(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_enum_get(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_getAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_getAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_exists(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_exists(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_exists(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_existsAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_existsAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_get(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_get(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_getAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_getAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_biggest_id(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_get_biggest_id(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_get_biggest_id(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_biggest_idAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_biggest_idAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_id_from_summary(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_get_id_from_summary(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_get_id_from_summary(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_id_from_summaryAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_id_from_summaryAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_addAsync(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_addAsync(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_update(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_update(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_update(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_updateAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_updateAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_delete(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_deleteAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_deleteAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_add(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_note_add(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_note_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_addAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_addAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_delete(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_note_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_note_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_deleteAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_deleteAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_add(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.RelationshipData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_relationship_add(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.RelationshipData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_relationship_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_addAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.RelationshipData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_addAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.RelationshipData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_delete(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_relationship_delete(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_relationship_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_deleteAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_deleteAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_add(System.String,System.String,System.String,System.String,System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_attachment_add(System.String,System.String,System.String,System.String,System.String,System.Byte[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_attachment_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_addAsync(System.String,System.String,System.String,System.String,System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_addAsync(System.String,System.String,System.String,System.String,System.String,System.Byte[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_delete(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_attachment_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_attachment_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_deleteAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_deleteAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_get(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_attachment_get(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_attachment_get(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_getAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_getAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_addAsync(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_addAsync(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_delete(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_deleteAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_deleteAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issues(System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_issues(System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_issues(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issuesAsync(System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issuesAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issue_headers(System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_issue_headers(System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_issue_headers(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issue_headersAsync(System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issue_headersAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_users(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_users(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_users(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_usersAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_usersAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_projects_get_user_accessible(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_projects_get_user_accessible(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_projects_get_user_accessible(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_projects_get_user_accessibleAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_projects_get_user_accessibleAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_categories(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_categories(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_categories(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_categoriesAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_categoriesAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_versions(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_versions(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_versions(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_versionsAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_versionsAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_version_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_version_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_addAsync(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_addAsync(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_update(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_version_update(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_version_update(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_updateAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_updateAsync(System.String,System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_delete(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_version_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_version_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_deleteAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_deleteAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_released_versions(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_released_versions(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_released_versions(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_released_versionsAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_released_versionsAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_unreleased_versions(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_unreleased_versions(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_unreleased_versions(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_unreleased_versionsAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_unreleased_versionsAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_attachments(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_attachments(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_attachments(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_attachmentsAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_attachmentsAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_custom_fields(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_get_custom_fields(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_get_custom_fields(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_custom_fieldsAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_custom_fieldsAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_get(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_attachment_get(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_attachment_get(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_getAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_getAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_add(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_attachment_add(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Byte[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_attachment_add(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_addAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_addAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Byte[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_delete(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_project_attachment_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_project_attachment_delete(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_deleteAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_deleteAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_filter_get(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_filter_get(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_getAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_getAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issues(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_filter_get_issues(System.String,System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_filter_get_issues(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issuesAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issuesAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issue_headers(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_filter_get_issue_headers(System.String,System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_filter_get_issue_headers(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issue_headersAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issue_headersAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_config_get_string(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_config_get_string(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_config_get_string(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_config_get_stringAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_config_get_stringAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_checkin(System.String,System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Beginmc_issue_checkin(System.String,System.String,System.String,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.Endmc_issue_checkin(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_checkinAsync(System.String,System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_checkinAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_versionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_statusCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_prioritiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_severitiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_reproducibilitiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_projectionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_etasCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_resolutionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_access_levelsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_statusCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_project_view_statesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_view_statesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_custom_field_typesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_enum_getCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_existsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_getCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_biggest_idCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_get_id_from_summaryCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_updateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_note_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_relationship_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_attachment_getCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issuesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_issue_headersCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_usersCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_projects_get_user_accessibleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_categoriesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_versionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_updateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_version_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_released_versionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_unreleased_versionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_attachmentsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_get_custom_fieldsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_getCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_addCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_project_attachment_deleteCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_getCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issuesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_filter_get_issue_headersCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_config_get_stringCompleted">
+            <remarks/>
+        </member>
+        <member name="E:Futureware.MantisConnect.MantisConnectWebservice.MantisConnect.mc_issue_checkinCompleted">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.ObjectRef">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ObjectRef.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ObjectRef.name">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.FilterData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.owner">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.project_id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.is_public">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.is_publicSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.name">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.FilterData.filter_string">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.AccountData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AccountData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AccountData.name">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AccountData.real_name">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AccountData.email">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.field">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.type">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.possible_values">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.default_value">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.valid_regexp">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.access_level_r">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.access_level_rw">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.length_min">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.length_max">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.advanced">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.advancedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_report">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_reportSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_update">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_updateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_resolved">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_resolvedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_closed">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.display_closedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_report">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_reportSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_update">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_updateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_resolved">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_resolvedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_closed">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.require_closedSpecified">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.filename">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.title">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.description">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.size">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.content_type">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.date_submitted">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.date_submittedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.download_url">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.name">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.project_id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.date_order">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.date_orderSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.description">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.released">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.releasedSpecified">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.view_state">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.last_updated">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.project">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.category">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.priority">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.severity">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.status">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.reporter">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.summary">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.handler">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.resolution">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.attachments_count">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.notes_count">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.ProjectData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.name">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.status">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.enabled">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.enabledSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.view_state">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.access_min">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.file_path">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.description">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.ProjectData.subprojects">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldValueForIssueData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldValueForIssueData.field">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.CustomFieldValueForIssueData.value">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.reporter">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.text">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.view_state">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.date_submitted">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.date_submittedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.last_modified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData.last_modifiedSpecified">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.RelationshipData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.RelationshipData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.RelationshipData.type">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.RelationshipData.target_id">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.filename">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.size">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.content_type">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.date_submitted">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.date_submittedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.AttachmentData.download_url">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.IssueData">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.id">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.view_state">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.last_updated">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.last_updatedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.project">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.category">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.priority">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.severity">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.status">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.reporter">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.summary">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.version">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.build">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.platform">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.os">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.os_build">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.reproducibility">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.date_submitted">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.date_submittedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.sponsorship_total">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.handler">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.projection">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.eta">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.resolution">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.fixed_in_version">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.description">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.steps_to_reproduce">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.additional_information">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.attachments">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.relationships">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.notes">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.IssueData.custom_fields">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_versionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_versionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_versionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_statusCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_statusCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_statusCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_prioritiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_prioritiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_prioritiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_severitiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_severitiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_severitiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_reproducibilitiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_reproducibilitiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_reproducibilitiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_projectionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_projectionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_projectionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_etasCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_etasCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_etasCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_resolutionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_resolutionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_resolutionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_access_levelsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_access_levelsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_access_levelsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_project_statusCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_project_statusCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_project_statusCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_project_view_statesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_project_view_statesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_project_view_statesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_view_statesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_view_statesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_view_statesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_custom_field_typesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_custom_field_typesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_custom_field_typesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_getCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_getCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_enum_getCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_existsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_existsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_existsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_getCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_getCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_getCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_get_biggest_idCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_get_biggest_idCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_get_biggest_idCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_get_id_from_summaryCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_get_id_from_summaryCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_get_id_from_summaryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_updateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_updateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_updateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_note_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_note_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_note_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_note_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_note_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_note_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_relationship_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_relationship_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_relationship_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_relationship_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_relationship_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_relationship_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_getCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_getCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_attachment_getCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_issuesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_issuesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_issuesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_issue_headersCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_issue_headersCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_issue_headersCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_usersCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_usersCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_usersCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_projects_get_user_accessibleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_projects_get_user_accessibleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_projects_get_user_accessibleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_categoriesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_categoriesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_categoriesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_versionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_versionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_versionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_updateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_updateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_updateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_version_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_released_versionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_released_versionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_released_versionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_unreleased_versionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_unreleased_versionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_unreleased_versionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_attachmentsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_attachmentsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_attachmentsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_custom_fieldsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_custom_fieldsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_get_custom_fieldsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_getCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_getCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_getCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_addCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_addCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_addCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_deleteCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_deleteCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_project_attachment_deleteCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_getCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_getCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_getCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_get_issuesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_get_issuesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_get_issuesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_get_issue_headersCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_get_issue_headersCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_filter_get_issue_headersCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_config_get_stringCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_config_get_stringCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_config_get_stringCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_checkinCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_checkinCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisConnectWebservice.mc_issue_checkinCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:Futureware.MantisConnect.StringUtils">
+            <summary>
+            A class that includes a set of string utility methods.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.StringUtils.WebserviceMultilineToNative(System.String)">
+            <summary>
+            Converts a multiline string from webservice format to native format that
+            is used by the local OS and its controls.
+            </summary>
+            <remarks>
+            This is to be called on fields that support multiline string after
+            reading them from the webservice and before setting them in controls
+            like textboxes.
+            
+            <seealso cref="M:Futureware.MantisConnect.StringUtils.NativeMultilineToWebservice(System.String)"/>
+            </remarks>
+            <param name="webserviceMultiline">The string in webservice format.</param>
+            <returns>The string in native format</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.StringUtils.NativeMultilineToWebservice(System.String)">
+            <summary>
+            Converts a multiline string from native format to webservice format.
+            </summary>
+            <remarks>
+            This is to be called on fields that support multiline strings before 
+            sending them to the webservice.
+            
+            <seealso cref="M:Futureware.MantisConnect.StringUtils.WebserviceMultilineToNative(System.String)"/>
+            </remarks>
+            <param name="nativeMultiline"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Futureware.MantisConnect.MimeTypes">
+            <summary>
+            A utility class that maps file extensions to mime types.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.MimeTypes.GetMimeType(System.String)">
+            <summary>
+            Gets a file extension and returns the corresponding mime type.
+            </summary>
+            <param name="fileExtension">File extension including the dot.</param>
+        </member>
+        <member name="T:Futureware.MantisConnect.Config">
+            <summary>
+            Provides access to Mantis configuration.
+            </summary>
+            <remarks>
+            This is useful to provide access to Mantis configuration like enumerations and
+            any other configs that are not considered private.  Using this class the client
+            will not be able to retrieve sensitive information from the webservice, like
+            passwords, database names, host names, ...etc.
+            
+            This class also provides the necessary caching to avoid unnecessary round trips
+            to the server.  Caching is feasible in this class due to the static nature of
+            these configs.
+            </remarks>
+        </member>
+        <member name="M:Futureware.MantisConnect.Config.#ctor(Futureware.MantisConnect.Session)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="session">Session to be used to retrieve the configs.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Config.Get(System.String,System.String@)">
+            <summary>
+            Gets the value associated with a configuration variable of type string.
+            </summary>
+            <param name="config">The name of the configuration variable to get.</param>
+            <param name="str">The output parameter to store the config variable in.  This
+            is a parameter rather than a return value to allow overloading of this
+            method for different types.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Config.Get(System.String,Futureware.MantisConnect.MantisEnum@)">
+            <summary>
+            Get the enumeration with the specified name.
+            </summary>
+            <remarks>
+            See also the properties for the enumerations.
+            </remarks>
+            <param name="enumerationName">Enumeration name (eg: status, access_levels, ...etc)</param>
+            <param name="enumeration">An output parameter to contain the created <see cref="T:Futureware.MantisConnect.MantisEnum"/> instance.</param>
+        </member>
+        <member name="F:Futureware.MantisConnect.Config.configs">
+            <summary>
+            Hashtable of cached configuration options.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.Session">
+            <summary>
+            Returns a reference to the <see cref="P:Futureware.MantisConnect.Config.Session"/> instance used to access
+            MantisConnect webservice.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.AccessLevelEnum">
+            <summary>
+            Access Level Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.PriorityEnum">
+            <summary>
+            Priority Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.SeverityEnum">
+            <summary>
+            Severity Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.ReproducibilityEnum">
+            <summary>
+            Reproducibility Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.ViewStateEnum">
+            <summary>
+            View State (eg: private/public) Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.EtaEnum">
+            <summary>
+            Estimated Time of Arrival Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.ProjectionEnum">
+            <summary>
+            Projection Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.ResolutionEnum">
+            <summary>
+            Resolution Enumeration
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Config.StatusEnum">
+            <summary>
+            Status Enumeration
+            </summary>
+        </member>
+        <member name="T:Futureware.MantisConnect.ProjectVersion">
+            <summary>
+            A class that includes information relating to project versions.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.ProjectVersion.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.ProjectVersion"/> class.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.ProjectVersion.#ctor(Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.ProjectVersion"/> class.
+            </summary>
+            <param name="projectVersionData">Project version data.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.ProjectVersion.ToWebservice">
+            <summary>
+            Convert this instance to the type supported by the webservice proxy.
+            </summary>
+            <returns>A copy of this instance in the webservice proxy type.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.ProjectVersion.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[])">
+            <summary>
+            Converts an array of project versions from webservice proxy type to this type.
+            </summary>
+            <param name="projectVersionDataArray">Project version data array.</param>
+            <returns>An array of project versions in this type.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.ProjectVersion.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.ProjectVersion.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.ProjectVersion.ProjectId">
+            <summary>
+            Gets or sets the project id.
+            </summary>
+            <value>Greater than or equal to 1.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.ProjectVersion.DateOrder">
+            <summary>
+            Gets or sets the date order.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.ProjectVersion.Description">
+            <summary>
+            Gets or sets the project version description.  This version appears in the changelog.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.ProjectVersion.IsReleased">
+            <summary>
+            Gets or sets a value indicating whether this project version is released.
+            </summary>
+            <value>
+            	<see langword="true"/> if this instance is released; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="T:Futureware.MantisConnect.IssueNote">
+            <summary>
+            A class that manages information relating to an issue note.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueNote.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueNote.#ctor(Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData)">
+            <summary>
+            A constructs that creates an <see cref="T:Futureware.MantisConnect.IssueNote"/> from the corresponding 
+            type in the webservice proxy.
+            </summary>
+            <param name="issueNoteData">The type defined by the webservice proxy for issue notes.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueNote.ToWebservice">
+            <summary>
+            Converts the this instance into the webservice issue note type.
+            </summary>
+            <returns>An instance of webservice issue note.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueNote.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData[])">
+            <summary>
+            A static method that converts an array of issue notes from webservice proxy format
+            to an array of <see cref="T:Futureware.MantisConnect.IssueNote"/>
+            </summary>
+            <param name="issueNotesData">An array of issue notes in webservice proxy format.</param>
+            <returns>An array of <see cref="T:Futureware.MantisConnect.IssueNote"/>.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueNote.ConvertArrayToWebservice(Futureware.MantisConnect.IssueNote[])">
+            <summary>
+            A static method that converts and array of <see cref="T:Futureware.MantisConnect.IssueNote"/> to an array of 
+            issue notes in webservice proxy data type.
+            </summary>
+            <param name="notes">An array of issue notes.</param>
+            <returns>An array of issue notes in webservice proxy data type.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueNote.Id">
+            <summary>
+            An issue note id, must be greater than or equal to 1.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueNote.Author">
+            <summary>
+            The user who submitted the issue note.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueNote.Text">
+            <summary>
+            The text of the issue note.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueNote.ViewState">
+            <summary>
+            The view state of the issue note.  This can be private or public.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueNote.DateSubmitted">
+            <summary>
+            The timestamp on which the issue note was submitted.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueNote.LastModified">
+            <summary>
+            The timestamp on which the issue note was last modified.
+            </summary>
+        </member>
+        <member name="T:Futureware.MantisConnect.Attachment">
+            <summary>
+            A class that manages the information about an attachment.  The class does not manage
+            the attachment itself.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.Attachment.#ctor(Futureware.MantisConnect.MantisConnectWebservice.AttachmentData)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="attachmentData">The webservice type that captures attachment information.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Attachment.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.AttachmentData[])">
+            <summary>
+            A static method that converts an array of attachments from the webservice type
+            to this instances of this class.
+            </summary>
+            <param name="attachmentData">An array of attachments in webservice data type</param>
+            <returns>Array of Attachment instances.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.Attachment.Id">
+            <summary>
+            Attachment id, must be greater than or equal to 1.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Attachment.FileName">
+            <summary>
+            The filename of the attachment.
+            </summary>
+            <remarks>
+            This is the original name of the file that was uploaded by the user.  It is not 
+            the name of the attachment file on the server.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Attachment.Size">
+            <summary>
+            The file size in bytes.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Attachment.ContentType">
+            <summary>
+            The MIME content type.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Attachment.DateSubmitted">
+            <summary>
+            The date where the attachment was uploaded to Mantis.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Attachment.DownloadUrl">
+            <summary>
+            The URL from which the attachment can be downloaded.
+            </summary>
+            <remarks>
+            At the moment downloading of attachments via MantisConnect is 
+            not supported.  This URL can be used to download attachments 
+            if the user is logged into Mantis, and has the appropriate
+            access rights.  The user will have to do the download via
+            the web browser.
+            </remarks>
+        </member>
+        <member name="T:Futureware.MantisConnect.MantisEnum">
+            <summary>
+            A class to handle enumerations that are defined in Mantis.
+            </summary>
+            <remarks>
+            The format of Mantis enumerations is as follows:
+            "10:viewer,25:reporter,40:updater,55:developer,70:manager,90:administrator"
+            </remarks>
+        </member>
+        <member name="F:Futureware.MantisConnect.MantisEnum.enumeration">
+            <summary>
+            The enumeration string supplied at construction time.
+            </summary>
+        </member>
+        <member name="F:Futureware.MantisConnect.MantisEnum.labelToCodeMap">
+            <summary>
+            A dictionary that maps labels to their corresponding code.
+            </summary>
+        </member>
+        <member name="F:Futureware.MantisConnect.MantisEnum.codeToLabelMap">
+            <summary>
+            A dictionary that maps codes to their corresponding labels.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisEnum.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="enumeration">Enumeration string to work with.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisEnum.GetLabels">
+            <summary>
+            Returns a collection containing the labels in the enumeration.
+            </summary>
+            <returns>A collection of the labels.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.MantisEnum.GetCodes">
+            <summary>
+            Returns a collection containing the codes in the enumeration.
+            </summary>
+            <returns>A collection of the codes.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisEnum.Item(System.Int32)">
+            <summary>
+            Given an id, this indexer returns the corresponding enumeration name.
+            </summary>
+            <param name="id">The enumeration value id.</param>
+            <returns>The enumeration label.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisEnum.Item(System.String)">
+            <summary>
+            Given a name, this indexer returns the corresponding enumeration id.
+            </summary>
+            <param name="name">The enumeration value name.</param>
+            <returns>The enumeration code.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.MantisEnum.Count">
+            <summary>
+            The number of values in the enumeration.
+            </summary>
+        </member>
+        <member name="T:Futureware.MantisConnect.User">
+            <summary>
+            A class that includes information relating to a Mantis user account.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.User.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.User"/> class.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.User.#ctor(Futureware.MantisConnect.MantisConnectWebservice.AccountData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.User"/> class.
+            </summary>
+            <param name="accountData">Account data.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.User.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.User.ToWebservice">
+            <summary>
+            Converts this instance to the webservice proxy type.
+            </summary>
+            <returns>An equivalent object in the webservice proxy type.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.User.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>Greater than or equal to 1.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.User.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>Must not be empty or null.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.User.RealName">
+            <summary>
+            Gets or sets the name of the real.
+            </summary>
+            <value>Can be empty or null.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.User.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>Can be empty or null.</value>
+        </member>
+        <member name="T:Futureware.MantisConnect.Project">
+            <summary>
+            A class that captures information relating to a project.
+            </summary>
+        </member>
+        <member name="F:Futureware.MantisConnect.Project.DefaultProject">
+            <summary>
+            The Id to be used when calling APIs to indicate the default project for the logged
+            in user.
+            </summary>
+        </member>
+        <member name="F:Futureware.MantisConnect.Project.AllProjects">
+            <summary>
+            The id to be used when calling APIs to indicate all projects.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.Project.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.Project.#ctor(Futureware.MantisConnect.MantisConnectWebservice.ProjectData)">
+            <summary>
+            Constructor to create a project from the web service project data.
+            </summary>
+            <param name="projectData">An instance returned by the webservice.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Project.ToWebservice">
+            <summary>
+            Convert this instance to the type supported by the webservice proxy.
+            </summary>
+            <returns>A copy of this instance in the webservice proxy type.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Project.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.ProjectData[])">
+            <summary>
+            Converts an array of projects from webservice type to this type.
+            </summary>
+            <param name="projectData">Project data.</param>
+            <returns>An array of projects in this class type.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.Id">
+            <summary>
+            Gets or sets the project id.
+            </summary>
+            <value>Greater than or equal to 1.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.Name">
+            <summary>
+            Gets or sets the project name.
+            </summary>
+            <value>Must not be empty or null.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.Status">
+            <summary>
+            Gets or sets the project status.
+            </summary>
+            <value>For example, in development, released, etc.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Futureware.MantisConnect.Project"/> is enabled.
+            </summary>
+            <value>
+            	<see langword="true"/> if enabled; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.ViewState">
+            <summary>
+            Gets or sets the whether the project is private or public.
+            </summary>
+            <value>Private / Public.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.AccessMin">
+            <summary>
+            Gets or sets the access min.
+            </summary>
+            <value>TODO: include more details.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.FilePath">
+            <summary>
+            Gets or sets the file path for uploaded files.
+            </summary>
+            <value>
+            The path of the folder (on the server) in which the attachments are stored.
+            The path may be relative to Mantis folder on the server.
+            </value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Project.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>Can be empty or null.</value>
+        </member>
+        <member name="T:Futureware.MantisConnect.ObjectRef">
+            <summary>
+            A class that is used on entites to reference other entities.
+            </summary>
+            <remarks>
+            An example is where an issue refers to the project is belongs to.  In some cases it can know 
+            the id, in others, the name, or sometimes both.
+            </remarks>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor specifying id and name
+            </summary>
+            <param name="id">Id of the entity referenced</param>
+            <param name="name">Name of the entity referenced.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.#ctor(Futureware.MantisConnect.MantisConnectWebservice.ObjectRef)">
+            <summary>
+            Constructor from webservice object ref object.
+            </summary>
+            <param name="objRefFromWs">Object reference from webservice</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.#ctor(System.Int32)">
+            <summary>
+            Constructor specifying id.
+            </summary>
+            <param name="id">Id of the entity referenced</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.#ctor(System.String)">
+            <summary>
+            Constructor specifying name.
+            </summary>
+            <param name="name">Name of the entity referenced.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.ToWebservice">
+            <summary>
+            Converts the current object into the Webservice object.
+            </summary>
+            <returns>Webservice object reference</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.ObjectRef.ToString">
+            <summary>
+            String representation of ObjectRef object.
+            </summary>
+            <returns>String displaying internal state.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.ObjectRef.Empty">
+            <summary>
+            Checks if the current object reference instance doesn't reference anything.
+            </summary>
+            <value>true: references something, false: doesn't reference anything.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.ObjectRef.Id">
+            <summary>
+            Id of the referenced entity or 0 if unknown
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.ObjectRef.Name">
+            <summary>
+            Name of the referenced entity or 0 if unknown
+            </summary>
+        </member>
+        <member name="T:Futureware.MantisConnect.IssueRelationship">
+            <summary>
+            A type that stores information relating to a relationship between two issues.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueRelationship.#ctor(Futureware.MantisConnect.MantisConnectWebservice.RelationshipData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.IssueRelationship"/> class.
+            </summary>
+            <param name="relationshipData">Relationship data in webservice proxy type.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.IssueRelationship.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.RelationshipData[])">
+            <summary>
+            Converts an array of relationships from webservice proxy type to this type.
+            </summary>
+            <param name="relationshipsData">Relationships data.</param>
+            <returns>An array of relationships in this type.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueRelationship.Type">
+            <summary>
+            Gets or sets the relationship type.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.IssueRelationship.IssueId">
+            <summary>
+            Gets or sets the issue id of the other issues involved in the relationship.  Note
+            that relationships are stored as part of an issue, hence, one of the issues involved
+            in a relationship is known implicitly.
+            </summary>
+            <value>Greater than or equal to 1.</value>
+        </member>
+        <member name="T:Futureware.MantisConnect.Session">
+            <summary>
+            Represents a connection session between the webservice client and server.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.Session.#ctor(System.String,System.String,System.String,System.Net.NetworkCredential)">
+            <summary>
+            Constructs a session given a url, username and password.
+            </summary>
+            <param name="url">URL of MantisConnect webservice (eg: http://www.example.com/mantis/mantisconnect/mantisconnect.php)</param>
+            <param name="username">User name to connect as.</param>
+            <param name="password">Password for the specified user.</param>
+            <param name="networkCredential"></param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Session.Connect">
+            <summary>
+            Connects to the webservice.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Session.Username">
+            <summary>
+            User name specified on construction of the session.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Session.Password">
+            <summary>
+            User password specified on construction of the session.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Session.Url">
+            <summary>
+            MantisConnect webservice URL
+            </summary>
+            <remarks>
+            eg: http://www.example.com/mantis/mantisconnect/mantisconnect.php
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Session.NetworkCredential">
+            <summary>
+            Gets the network credential specified during construction time.
+            </summary>
+            <remarks>
+            This is use to support connecting to Mantis installation that are
+            protected with basic http authentication.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Session.Config">
+            <summary>
+            Config object to be used to retrieve information about the configuration 
+            of the Mantis installation.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Session.Request">
+            <summary>
+            Request is a wrapper around the MantisConnect webservice which makes calling
+            the methods more natural for the rest of the C# code.
+            </summary>
+        </member>
+        <member name="T:Futureware.MantisConnect.Filter">
+            <summary>
+            A class that manages information relating to a Mantis filter.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.Filter.#ctor(Futureware.MantisConnect.MantisConnectWebservice.FilterData)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="filterData">The filter data stored in the webservice proxy data type.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Filter.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.FilterData[])">
+            <summary>
+            Converts an array of filters from webservice data type to instances of <see cref="T:Futureware.MantisConnect.Filter"/> class.
+            </summary>
+            <param name="filtersData">An array of filters stored in webservice proxy data type.</param>
+            <returns>An array of <see cref="T:Futureware.MantisConnect.Filter"/> instances.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.Filter.Id">
+            <summary>
+            Filter Id, must be greater than or equal to 1.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Filter.Owner">
+            <summary>
+            The user who defined the filter.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Filter.ProjectId">
+            <summary>
+            The project to which the filter belongs, or 0 for All Projects.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Filter.IsPublic">
+            <summary>
+            A boolean that indicates whether the filter is public (available to all users) or
+            private (available only to the user who created it).
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Filter.Name">
+            <summary>
+            The name of the filter
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Filter.FilterString">
+            <summary>
+            The string that defines the filter.  At the moment this format is treated as 
+            a blackbox and is not interpretted by MantisConnect.
+            </summary>
+        </member>
+        <member name="T:Futureware.MantisConnect.Issue">
+            <summary>
+            A class to manage information relating to an issue.
+            </summary>
+            <remarks>
+            This class does not contain information like issue notes, attachments, ...etc
+            which is stored in different tables in Mantis database.
+            </remarks>
+        </member>
+        <member name="M:Futureware.MantisConnect.Issue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.Issue"/> class.
+            </summary>
+        </member>
+        <member name="M:Futureware.MantisConnect.Issue.#ctor(Futureware.MantisConnect.MantisConnectWebservice.IssueData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Futureware.MantisConnect.Issue"/> class.
+            </summary>
+            <param name="issueData">Issue data from Webservice proxy.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Issue.ToWebservice">
+            <summary>
+            Convert this instance to the type supported by the webservice proxy.
+            </summary>
+            <returns>A copy of this instance in the webservice proxy type.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Issue.ConvertArray(Futureware.MantisConnect.MantisConnectWebservice.IssueData[])">
+            <summary>
+            Converts an array of instances from webservice proxy type to this type.
+            </summary>
+            <param name="issuesData">Issues data in webservice proxy type.</param>
+            <returns>The array converted to this type.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Issue.ToString">
+            <summary>
+            Dumps the issue information to a string.
+            </summary>
+            <returns>String include all issue information.</returns>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Id">
+            <summary>
+            Gets or sets the issue id.
+            </summary>
+            <value>A value greater than or equal to 0.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Project">
+            <summary>
+            Gets or sets the project to which this issue belongs.  Null means un-assigned yet.
+            </summary>
+            <value>A value greater than 0.</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Category">
+            <summary>
+            Gets or sets the name of category to which the issue belongs.  This field is mandatory.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Summary">
+            <summary>
+            Gets or sets the summary of the issue.  This field is mandatory.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Description">
+            <summary>
+            Gets or sets the description of the issue.  This field is mandatory.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.StepsToReproduce">
+            <summary>
+            Gets or sets the steps to reproduce the issue.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.AdditionalInformation">
+            <summary>
+            Gets or sets the additional information about the issue.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.AssignedTo">
+            <summary>
+            Gets or sets the id of user handling the issue.
+            </summary>
+            <value>User id >= 0</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.ReportedBy">
+            <summary>
+            Gets or sets the id of user who reported the issue.
+            </summary>
+            <value>User id > 0</value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.ProductVersion">
+            <summary>
+            Gets or sets the product version
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.ProductBuild">
+            <summary>
+            Gets or sets the product build
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Os">
+            <summary>
+            Gets or sets the Operating System
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.OsBuild">
+            <summary>
+            Gets or sets the Operating System Build
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Platform">
+            <summary>
+            Gets or sets the Platform (eg: i386)
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.FixedInVersion">
+            <summary>
+            Gets or sets the fixed in version field.
+            </summary>
+            <value>
+            Has to be the name of a version that is defined for the project to
+            which this issue is being added.
+            </value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.SponsorshipTotal">
+            <summary>
+            Gets or sets the Total sponsorships for this issue.
+            </summary>
+            <remarks>
+            This field is usually populated when information is retrieved about an issue.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Reproducibility">
+            <summary>
+            Gets or sets the Issue Reproducibility (eg: always, random, not tried, N/A, ...etc)
+            </summary>
+            <remarks>
+            This matches the ids defined in the reproducibility enumeration in Mantis configuration
+            file.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Resolution">
+            <summary>
+            Gets or sets the Issue Resolution (eg: fixed, duplicate, not an issue)
+            </summary>
+            <remarks>
+            This matches the ids defined in the resolution enumeration in Mantis configuration
+            file.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Eta">
+            <summary>
+            Gets or sets the Estimated Time of Arrival
+            </summary>
+            <remarks>
+            This matches the ids defined in the eta enumeration in Mantis configuration
+            file.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Status">
+            <summary>
+            Gets or sets the issue status
+            </summary>
+            <remarks>
+            This matches the ids defined in the status enumeration in Mantis configuration
+            file.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Priority">
+            <summary>
+            Gets or sets the Issue Priority
+            </summary>
+            <remarks>
+            This matches the ids defined in the priority enumeration in Mantis configuration
+            file.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Severity">
+            <summary>
+            Gets or sets the Issue Severity
+            </summary>
+            <remarks>
+            This matches the ids defined in the severity enumeration in Mantis configuration
+            file.
+            </remarks>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Projection">
+            <summary>
+            Gets or sets the Projection for the scope of the work associated with resolving the issue.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.ViewState">
+            <summary>
+            Gets or sets the view state of the issue (eg: private vs. public)
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.DateSubmitted">
+            <summary>
+            Gets or sets the timestamp when issue was submitted.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.LastUpdated">
+            <summary>
+            Gets or sets the timestamp when issue was last updated.
+            </summary>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Notes">
+            <summary>
+            Gets or sets the notes.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Relationships">
+            <summary>
+            Gets or sets the relationships.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Futureware.MantisConnect.Issue.Attachments">
+            <summary>
+            Gets or sets the attachments.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Futureware.MantisConnect.Request">
+            <summary>
+            A wrapper around <see cref="N:Futureware.MantisConnect.MantisConnectWebservice"/> to provide a more friendly
+            interface for the rest of the C# code.
+            </summary>
+            <remarks>
+            Some methods will do do pre or post processing of data to convert them from the
+            webservice format to one that is easier to access.  For example, the webservice
+            may return information about project ids/names as a serialised string, which then
+            gets deserialised by this wrapper into a <see cref="T:System.Data.DataTable"/> for easier
+            access and binding to standard controls.
+            </remarks>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.#ctor(Futureware.MantisConnect.Session)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="session">The session to use for all communication with the webservice.
+            The user name and password are used from their to provide such details to the
+            webservice with each call without exposing such detail to the user of the 
+            library.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueAdd(Futureware.MantisConnect.Issue)">
+            <summary>
+            Add the specified issue to Mantis database.
+            </summary>
+            <param name="issue">The issue details.  Issue id is ignored.</param>
+            <remarks>
+            TODO: Consider a generic and easy way to time operations.
+            </remarks>
+            <returns>The id of the added issue</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueUpdate(Futureware.MantisConnect.Issue)">
+            <summary>
+            Update an issue
+            </summary>
+            <param name="issue">The issue to be updated.</param>
+            <returns>true: updated successfully; otherwise false</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueCheckin(System.Int32,System.String,System.Boolean)">
+            <summary>
+            Adds a check-in comment and possibly resolves an issue.
+            </summary>
+            <param name="issueId">The id of the issue to add the comment to.</param>
+            <param name="comment">The check-in comment.</param>
+            <param name="issueFixed">true: check-in fixed the issue, false: check-in is a partial fix.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueDelete(System.Int32)">
+            <summary>
+            Delete the issue with the specified id
+            </summary>
+            <param name="issueId">Id of issue to delete</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueGet(System.Int32)">
+            <summary>
+            Get information related to the specified issue id.
+            </summary>
+            <param name="issueId">The id of the issue to retrieve information for.</param>
+            <returns>The issue details, this does not include related information in other
+            tables, like issue notes, ...etc.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue id is 0 or negative.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueGetAll(System.Int32,System.Int32)">
+            <summary>
+            Gets all issues that are visible to the current user independent of the current
+            project.
+            </summary>
+            <param name="pageNumber">The page number (1-based)</param>
+            <param name="issuesPerPage">The number of issues per page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueExists(System.Int32)">
+            <summary>
+            Check if there exists an issue with the specified id.
+            </summary>
+            <param name="issueId">Id of issue to check for.</param>
+            <returns>true: exists, false: does not exist</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue id is 0 or negative.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueGetIdFromSummary(System.String)">
+            <summary>
+            Search for an issue with the specified summary and return its issue id.
+            </summary>
+            <remarks>
+            This is useful to allow a software which is automatically reporting issues due
+            to exceptions or whatever reason to check first that the issue was not reported
+            before.  And if it was, then it knows the issue id and hence is able to add
+            a note or do whatever with this id.  Other applications may decide to delete 
+            the issue and create a new one, basically it is up to the client application
+            to decide how to use the returned issue id.
+            </remarks>
+            <param name="summary">The summary to search for.</param>
+            <returns>0: not found, otherwise issue id</returns>
+            <exception cref="T:System.ArgumentNullException">Summary field is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Summary field is empty or too long.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueGetLastId(System.Int32)">
+            <summary>
+            Get the id of the last "reported" issue that is accessible to the logged in user.
+            </summary>
+            <remarks>
+            This is useful for applications that need to know when new issues are being submitted
+            to refresh a certain view or do something with such knowledge.
+            </remarks>
+            <param name="projectId">-1: default, 0: all projects, otherwise: project id</param>
+            <returns>0: no issues accessible to logged in user, otherwise Id of the last reported issue.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.UserGetAccessibleProjects">
+            <summary>
+            Get projects accessible to the currently logged in user.
+            </summary>
+            <remarks>
+            This returns a table ("Projects") which includes two columns ("project_id", "name").
+            </remarks>
+            <returns>An array of projects.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.UserGetFilters(System.Int32)">
+            <summary>
+            Gets the filters that are available to the current user and the specified project.
+            </summary>
+            <param name="projectId">0: all projects, otherwise project id</param>
+            <returns>An array of filters.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.GetIssues(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the issues based on the specified filter, page, and number per page.
+            </summary>
+            <param name="projectId">The project id to apply the filter ON, or 0 for ALL projects.</param>
+            <param name="filterId">Stored filter id to use.</param>
+            <param name="pageNumber">Page number to get the issues for.</param>
+            <param name="issuesPerPage">Number of issues per page.</param>
+            <returns>An array of issues.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectAdd(Futureware.MantisConnect.Project)">
+            <summary>
+            Adds a project to the Mantis database.
+            </summary>
+            <param name="project">The project data, the project id is not required.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectDelete(System.Int32)">
+            <summary>
+            Deletes a project given it's id.
+            </summary>
+            <param name="projectId">The project id.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectVersionAdd(Futureware.MantisConnect.ProjectVersion)">
+            <summary>
+            Adds a project version and sets the id on the supplied project version instance.
+            </summary>
+            <param name="version">The new project version details.</param>
+            <returns>The version id of the added project version.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectVersionUpdate(Futureware.MantisConnect.ProjectVersion)">
+            <summary>
+            Updates the project version data.
+            </summary>
+            <param name="version">The project version with the approriate id.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Version id or project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectVersionDelete(System.Int32)">
+            <summary>
+            Deletes a project version given it's id.
+            </summary>
+            <param name="projectVersionId">The project version id.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project version id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectGetCategories(System.Int32)">
+            <summary>
+            Get categories defined for the project with the specified id.
+            </summary>
+            <remarks>
+            TODO: Support CategoryData and Category.
+            </remarks>
+            <param name="projectId">project id (greater than 0)</param>
+            <returns>An array of categories.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectGetVersions(System.Int32)">
+            <summary>
+            Get versions defined for the project with the specified id.
+            </summary>
+            <param name="projectId">project id (greater than 0)</param>
+            <returns>An array of project versions.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectGetVersionsReleased(System.Int32)">
+            <summary>
+            Get released versions defined for the project with the specified id.
+            </summary>
+            <param name="projectId">project id (greater than 0)</param>
+            <returns>An array of released project versions.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectGetVersionsUnreleased(System.Int32)">
+            <summary>
+            Get unreleased versions defined for the project with the specified id.
+            </summary>
+            <param name="projectId">project id (greater than 0)</param>
+            <returns>An array of released project versions.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ProjectGetIssues(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the issues that are visible to the logged in user and belong to the project
+            with the specified id.
+            </summary>
+            <param name="projectId">The project id or <see cref="F:Futureware.MantisConnect.Project.AllProjects"/> or <see cref="F:Futureware.MantisConnect.Project.DefaultProject"/>.</param>
+            <param name="pageNumber">The page number (1-based)</param>
+            <param name="issuesPerPage">The number of issues per page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ConfigGet(System.String,System.String@)">
+            <summary>
+            Get string value of the specified configuration option.
+            </summary>
+            <remarks>
+            If the caller attempts to retrieve sensitive configuration options like 
+            passwords, database name, ...etc, an exception will be raised.
+            
+            TODO: Overload this method to get more types of configurations.
+            </remarks>
+            <param name="config">Name of configuration option (without the $g_ part)</param>
+            <param name="str">An output parameter to hold the value of the configuration option</param>
+            <exception cref="T:System.ArgumentNullException">config parameter is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">config parameter is empty or blank.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueNoteAdd(System.Int32,Futureware.MantisConnect.IssueNote)">
+            <summary>
+            Adds a note to the specified issue.
+            </summary>
+            <param name="issueId">Issue id to add note to.</param>
+            <param name="note">The note to add</param>
+            <remarks>
+            The user must have write access to the issue and the issue must not be readonly.
+            </remarks>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Note is null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue id is 0 or negative.  Or note is empty or blank.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueNoteDelete(System.Int32)">
+            <summary>
+            Delete the issue note with the specified id
+            </summary>
+            <param name="issueNoteId">Id of issue note to delete</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue note id is 0 or negative.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueAttachmentAdd(System.Int32,System.String,System.String,System.Byte[])">
+            <summary>
+            Adds an attachment to an issue.
+            </summary>
+            <param name="issueId">The id of the issue to associate the attachment with.</param>
+            <param name="fileName">The file name of the attachment.  Only the file name dot extension.</param>
+            <param name="fileType">The mime file type.</param>
+            <param name="base64Content">A byte array that contains a base 64 encoding of the attachment.</param>
+            <returns>The attachment id.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueAttachmentAdd(System.Int32,System.String,System.String)">
+            <summary>
+            Uploads the specified file to the specified issue.
+            </summary>
+            <param name="issueId">The issue id</param>
+            <param name="filePath">The file path of the file to attach.</param>
+            <param name="fileName">
+            The name of the file (without any path) to be associated with the uploaded file 
+            (if null, will extract name from full path).
+            </param>
+            <returns>The attachment id.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueAttachmentDelete(System.Int32)">
+            <summary>
+            Deletes an attachment given it's id.
+            </summary>
+            <param name="issueAttachmentId">The attachment id.</param>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.IssueAttachmentGet(System.Int32)">
+            <summary>
+            Gets an attachment given it's id.
+            </summary>
+            <param name="issueAttachmentId">The attachment id.  This is returned when attachment is added or when attachments list is returned with the issue details.</param>
+            <returns>The attachment contents base 64 encoded.</returns>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateProjectId(System.Int32)">
+            <summary>
+            Validates a project id and raises an exception if it is not valid.
+            </summary>
+            <param name="projectId">Project Id</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project id is smaller than -1.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateIssueId(System.Int32)">
+            <summary>
+            Validates an issue id and raises an exception if it is not valid.
+            </summary>
+            <param name="issueId">Issue Id</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue id is 0 or negative.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateProjectVersionId(System.Int32)">
+            <summary>
+            Validates a project version id and raises an exception if it is not valid.
+            </summary>
+            <param name="projectVersionId">Project Version Id</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The project version id is 0 or negative.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateIssue(Futureware.MantisConnect.Issue)">
+            <summary>
+            
+            </summary>
+            <param name="issue"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateIssueNoteId(System.Int32)">
+            <summary>
+            Validates an issue note id and raises an exception if it is not valid.
+            </summary>
+            <param name="issueNoteId">Issue Note Id</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The issue note id is 0 or negative.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateIssueNote(Futureware.MantisConnect.IssueNote)">
+            <summary>
+            Validates an issue note and raises an exception if it is not valid.
+            </summary>
+            <param name="note">The note to be validated</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ValidateConfigName(System.String)">
+            <summary>
+            Validates the name of a configuration option and raises an exception if it is not valid.
+            </summary>
+            <param name="config">configuration option</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The configuration option is invalid.</exception>
+        </member>
+        <member name="M:Futureware.MantisConnect.Request.ArrayToDataTable(System.Type,System.Object[],System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="rows"></param>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Futureware.MantisConnect.Request.session">
+            <summary>
+            Session to retrieve the user name / password of the current session
+            from.
+            </summary>
+        </member>
+        <member name="F:Futureware.MantisConnect.Request.mc">
+            <summary>
+            Webservice auto-generated proxy.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<project name="MantisConnectNAnt" default="test">
+
+<target name="test">
+	<mantis-submit
+		url="http://www.example.com/mantis/mc/mantisconnect.php"
+		username="myuser"
+		password="mypassword"
+
+		project="myproject"
+		summary="Nighty Build Failed"
+		description="Nightly build failed during unit testing."
+		category="Build"
+		stepsToReproduce="Checkout using tag 20040919, and run the build script."
+		priority="normal"
+		severity="major"
+		platform="i386"
+		os="Win XP Pro"
+		osVersion="SP2"
+	/>
+</target>
+
+</project>

@@ -1,0 +1,3198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.312" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.312\Xml\FxCopReport.Xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <PermitAnalysis>True</PermitAnalysis>
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>100</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>10</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/mantisconnect/bin/Debug/Futureware.MantisConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/MantisFilters/bin/Debug/MantisFilters.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/mantisnotify/bin/Debug/MantisNotify.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/MantisSubmit/bin/Debug/MantisSubmit.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/NantTasks/bin/Debug/Nant.Futureware.MantisConnect.Tasks.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.312">
+  <Namespaces>
+   <Namespace Name="Futureware.MantisConnect.MantisConnectWebservice">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2005-02-16 12:51:35Z">
+      <Issue>
+       <Item>Futureware.MantisConnect.MantisConnectWebservice</Item>
+      </Issue>
+      <Notes>
+       <User Name="victor boctor">
+        <Note Id="4" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="NAnt.Contrib.Tasks.MantisConnect">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2005-02-16 12:53:15Z">
+      <Issue>
+       <Item>NAnt.Contrib.Tasks.MantisConnect</Item>
+      </Issue>
+      <Notes>
+       <User Name="victor boctor">
+        <Note Id="4" />
+       </User>
+      </Notes>
+     </Message>
+     <Message Id="Contrib" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+      <Issue Name="Namespace">
+       <Item>Contrib</Item>
+       <Item>NAnt.Contrib.Tasks.MantisConnect</Item>
+      </Issue>
+      <Notes>
+       <User Name="victor boctor">
+        <Note Id="17" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/mantisconnect/bin/Debug/Futureware.MantisConnect.dll">
+    <Modules>
+     <Module Name="futureware.mantisconnect.dll">
+      <Namespaces>
+       <Namespace Name="Futureware.MantisConnect">
+        <Types>
+         <Type Name="Config">
+          <Members>
+           <Member Name="Get(System.String,Futureware.MantisConnect.MantisEnum&amp;):System.Void">
+            <Messages>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>enumeration</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Get(System.String,System.String&amp;):System.Void">
+            <Messages>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>str</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>Config.Get(String, String&amp;):Void</Item>
+               <Item>str</Item>
+               <Item>str</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Issue">
+          <Members>
+           <Member Name="FixedInVersion">
+            <Messages>
+             <Message Id="InVersion" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2005-02-16 12:51:35Z">
+              <Issue Name="ShouldBeDiscreteTerm">
+               <Item>InVersion</Item>
+               <Item>property</Item>
+               <Item>FixedInVersion</Item>
+               <Item>Inversion</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Os">
+            <Messages>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Os</Item>
+               <Item>Issue.Os:String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="19" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OsBuild">
+            <Messages>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Os</Item>
+               <Item>Issue.OsBuild:String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="19" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MantisEnum">
+          <Messages>
+           <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Created="2005-02-16 12:51:35Z">
+            <Issue>
+             <Item>Futureware.MantisConnect.MantisEnum</Item>
+             <Item>Enum</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="Labels">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>MantisEnum.Labels:String[]</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Request">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2005-02-16 12:51:35Z" FixCategory="Breaking">
+            <Issue>
+             <Item>Futureware.MantisConnect.Request</Item>
+             <Item>Futureware.MantisConnect.MantisConnectWebservice.MantisConnect</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="ConfigGet(System.String,System.String&amp;):System.Void">
+            <Messages>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>str</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>Request.ConfigGet(String, String&amp;):Void</Item>
+               <Item>str</Item>
+               <Item>str</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="UserGetAccesibleProjects():System.Data.DataTable">
+            <Messages>
+             <Message Id="Accesible" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Accesible</Item>
+               <Item>UserGetAccesibleProjects</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Session">
+          <Members>
+           <Member Name=".ctor(System.String,System.String,System.String,System.Net.NetworkCredential)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>url</Item>
+               <Item>Session..ctor(String, String, String, NetworkCredential)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Connect():System.Void">
+            <Messages>
+             <Message Id="temp" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>Session.Connect():Void</Item>
+               <Item>temp</Item>
+               <Item>Futureware.MantisConnect.MantisEnum</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Url">
+            <Messages>
+             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>Url</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Futureware.MantisConnect.MantisConnectWebservice">
+        <Types>
+         <Type Name="IssueData">
+          <Members>
+           <Member Name="additional_information">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>additional_information</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>additional_information</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="build">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>build</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="category">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>category</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="description">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>description</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="duplicate_id">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>duplicate_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>duplicate_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="eta">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>eta</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="fixed_in_version">
+            <Messages>
+             <Message Id="inversion" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="ShouldBeDiscreteTerm">
+               <Item>inversion</Item>
+               <Item>field</Item>
+               <Item>fixed_in_version</Item>
+               <Item>inversion</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="15" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>fixed_in_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>fixed_in_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="handler">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>handler</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="id">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="os">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>os</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>os</Item>
+               <Item>IssueData.os</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="os_build">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>os_build</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>os_build</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>os</Item>
+               <Item>IssueData.os_build</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="platform">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>platform</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="priority">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>priority</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="project">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>project</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="projection">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>projection</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="reporter">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>reporter</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="reproducibility">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>reproducibility</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="resolution">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>resolution</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="severity">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>severity</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="sponsorship_total">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>sponsorship_total</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>sponsorship_total</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="status">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>status</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="steps_to_reproduce">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>steps_to_reproduce</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>steps_to_reproduce</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="summary">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="version">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="view_state">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>view_state</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>view_state</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MantisConnect">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Excluded" Created="2005-02-16 12:51:35Z">
+            <Issue>
+             <Item>MantisConnect</Item>
+             <Item>Futureware.MantisConnect</Item>
+            </Issue>
+            <Notes>
+             <User Name="victor boctor">
+              <Note Id="15" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="Beginmc_config_get_string(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_config_get_string</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_config_get_string</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>config_var</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_enum_get(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_enum_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_enum_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_get_last_issue_id(System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_get_last_issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_get_last_issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_issue_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_issue_add</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_issue_add</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_issue_delete(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_issue_delete</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_issue_delete</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_issue_exists(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_issue_exists</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_issue_exists</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_issue_get(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_issue_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_issue_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_issue_get_id_from_summary(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_issue_get_id_from_summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_issue_get_id_from_summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_project_get_categories(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_project_get_categories</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_project_get_categories</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_project_get_released_versions(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_project_get_released_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_project_get_released_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_project_get_versions(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_project_get_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_project_get_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_user_get_accessible_projects(System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_user_get_accessible_projects</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_user_get_accessible_projects</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_user_get_filters(System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_user_get_filters</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_user_get_filters</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_user_get_issues(System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_user_get_issues</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_user_get_issues</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>filter_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="3#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>page_number</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="4#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>per_page</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Beginmc_version(System.AsyncCallback,System.Object):System.IAsyncResult">
+            <Messages>
+             <Message Id="Beginmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc</Item>
+               <Item>Beginmc_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Beginmc_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_config_get_string(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_config_get_string</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_config_get_string</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_enum_get(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_enum_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_enum_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_get_last_issue_id(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_get_last_issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_get_last_issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_issue_add(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_issue_add</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_issue_add</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_issue_delete(System.IAsyncResult):System.Boolean">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_issue_delete</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_issue_delete</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_issue_exists(System.IAsyncResult):System.Boolean">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_issue_exists</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_issue_exists</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_issue_get(System.IAsyncResult):Futureware.MantisConnect.MantisConnectWebservice.IssueData">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_issue_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_issue_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_issue_get_id_from_summary(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_issue_get_id_from_summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_issue_get_id_from_summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_project_get_categories(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_project_get_categories</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_project_get_categories</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_project_get_released_versions(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_project_get_released_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_project_get_released_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_project_get_versions(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_project_get_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_project_get_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_user_get_accessible_projects(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_user_get_accessible_projects</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_user_get_accessible_projects</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_user_get_filters(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_user_get_filters</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_user_get_filters</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_user_get_issues(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_user_get_issues</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_user_get_issues</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Endmc_version(System.IAsyncResult):System.String">
+            <Messages>
+             <Message Id="Endmc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc</Item>
+               <Item>Endmc_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>Endmc_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_config_get_string(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_config_get_string</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_config_get_string</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>config_var</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_config_get_string(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_enum_get(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_enum_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_enum_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_enum_get(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_get_last_issue_id(System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_get_last_issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_get_last_issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_get_last_issue_id(String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_issue_add(System.String,System.String,Futureware.MantisConnect.MantisConnectWebservice.IssueData):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_add</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_add</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_issue_add(String, String, IssueData):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_issue_delete(System.String,System.String,System.String):System.Boolean">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_delete</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_delete</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_issue_delete(String, String, String):Boolean</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_issue_exists(System.String,System.String,System.String):System.Boolean">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_exists</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_exists</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_issue_exists(String, String, String):Boolean</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_issue_get(System.String,System.String,System.String):Futureware.MantisConnect.MantisConnectWebservice.IssueData">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_get</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>issue_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_issue_get(String, String, String):IssueData</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_issue_get_id_from_summary(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_get_id_from_summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_issue_get_id_from_summary</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_issue_get_id_from_summary(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_project_get_categories(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_project_get_categories</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_project_get_categories</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_project_get_categories(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_project_get_released_versions(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_project_get_released_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_project_get_released_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_project_get_released_versions(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_project_get_versions(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_project_get_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_project_get_versions</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_project_get_versions(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_user_get_accessible_projects(System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_user_get_accessible_projects</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_user_get_accessible_projects</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_user_get_accessible_projects(String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_user_get_filters(System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_user_get_filters</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_user_get_filters</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>project_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_user_get_filters(String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_user_get_issues(System.String,System.String,System.String,System.String,System.String):System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_user_get_issues</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_user_get_issues</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>filter_id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="3#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>page_number</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="4#" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Parameter">
+               <Item>per_page</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_user_get_issues(String, String, String, String, String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mc_version():System.String">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc_version</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue Name="Member">
+               <Item>mc</Item>
+               <Item>MantisConnect.mc_version():String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ObjectRef">
+          <Members>
+           <Member Name="id">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>id</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="name">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:51:35Z">
+              <Issue>
+               <Item>name</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/mantisnotify/bin/Debug/MantisNotify.exe">
+    <Modules>
+     <Module Name="mantisnotify.exe">
+      <Namespaces>
+       <Namespace Name="CustomUIControls">
+        <Types>
+         <Type Name="TaskbarNotifier">
+          <Messages>
+           <Message Id="Notifier" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+            <Issue Name="Type">
+             <Item>Notifier</Item>
+             <Item>TaskbarNotifier</Item>
+            </Issue>
+            <Notes>
+             <User Name="victor boctor">
+              <Note Id="11" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>BackgroundBitmap</Item>
+               <Item>reference type</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>bIsMouseDown</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>bIsMouseOverClose</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>bIsMouseOverContent</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>bIsMouseOverPopup</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>bIsMouseOverTitle</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>bReShowOnMouseOver</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>CloseBitmap</Item>
+               <Item>reference type</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>CloseClick</Item>
+               <Item>reference type</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>ContentClick</Item>
+               <Item>reference type</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>TitleClick</Item>
+               <Item>reference type</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>TaskbarNotifier..ctor()</Item>
+               <Item>TitleClickable</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CloseClickable">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>CloseClickable</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ContentClickable">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>ContentClickable</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ContentRectangle">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>ContentRectangle</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="DrawCloseButton(System.Drawing.Graphics):System.Void">
+            <Messages>
+             <Message Id="0#grfx" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.DrawCloseButton(Graphics):Void</Item>
+               <Item>grfx</Item>
+               <Item>grfx</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="DrawText(System.Drawing.Graphics):System.Void">
+            <Messages>
+             <Message Id="0#grfx" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.DrawText(Graphics):Void</Item>
+               <Item>grfx</Item>
+               <Item>grfx</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="EnableSelectionRectangle">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>EnableSelectionRectangle</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="KeepVisibleOnMousOver">
+            <Messages>
+             <Message Id="Mous" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>Mous</Item>
+               <Item>KeepVisibleOnMousOver</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OnTimer(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="ReviewVisibleEventHandlers" Category="Microsoft.Security" CheckId="CA2109" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>TaskbarNotifier.OnTimer(Object, EventArgs):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="12" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ReShowOnMouseOver">
+            <Messages>
+             <Message Id="ReShow" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="ShouldBeDiscreteTerm">
+               <Item>ReShow</Item>
+               <Item>property</Item>
+               <Item>ReShowOnMouseOver</Item>
+               <Item>Reshow</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="10" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>Re</Item>
+               <Item>TaskbarNotifier.ReShowOnMouseOver:Boolean</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="13" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SetBackgroundBitmap(System.String,System.Drawing.Color):System.Void">
+            <Messages>
+             <Message Id="0#str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.SetBackgroundBitmap(String, Color):Void</Item>
+               <Item>str</Item>
+               <Item>strFilename</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SetCloseBitmap(System.String,System.Drawing.Color,System.Drawing.Point):System.Void">
+            <Messages>
+             <Message Id="0#str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.SetCloseBitmap(String, Color, Point):Void</Item>
+               <Item>str</Item>
+               <Item>strFilename</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Show(System.String,System.String,System.Int32,System.Int32,System.Int32):System.Void">
+            <Messages>
+             <Message Id="0#str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.Show(String, String, Int32, Int32, Int32):Void</Item>
+               <Item>str</Item>
+               <Item>strTitle</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="1#str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.Show(String, String, Int32, Int32, Int32):Void</Item>
+               <Item>str</Item>
+               <Item>strContent</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="2#n" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.Show(String, String, Int32, Int32, Int32):Void</Item>
+               <Item>n</Item>
+               <Item>nTimeToShow</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="3#n" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.Show(String, String, Int32, Int32, Int32):Void</Item>
+               <Item>n</Item>
+               <Item>nTimeToStay</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="4#n" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Parameter">
+               <Item>TaskbarNotifier.Show(String, String, Int32, Int32, Int32):Void</Item>
+               <Item>n</Item>
+               <Item>nTimeToHide</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ShowWindow(System.IntPtr,System.Int32):System.Boolean">
+            <Messages>
+             <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA902" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>TaskbarNotifier.ShowWindow(IntPtr, Int32):Boolean</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="12" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="TitleClickable">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>TitleClickable</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="TitleRectangle">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>TitleRectangle</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TaskbarNotifier+TaskbarStates">
+          <Messages>
+           <Message TypeName="OnlyFlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1717" Status="Excluded" Created="2005-02-16 12:53:15Z">
+            <Issue>
+             <Item>TaskbarStates</Item>
+            </Issue>
+            <Notes>
+             <User Name="victor boctor">
+              <Note Id="12" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="appearing">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>appearing</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="disappearing">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>disappearing</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="hidden">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>hidden</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="visible">
+            <Messages>
+             <Message TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>visible</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Futureware.MantisNotify">
+        <Types>
+         <Type Name="MantisNotifyForm">
+          <Members>
+           <Member Name="ContentClick(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>MantisNotifyForm.ContentClick(Object, EventArgs):Void</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Disconnect():System.Void">
+            <Messages>
+             <Message Id="Notifier" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>Notifier</Item>
+               <Item>Mantis Notifier (offline)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="Notifier" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>Notifier</Item>
+               <Item>Mantis Notifier</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/MantisSubmit/bin/Debug/MantisSubmit.exe">
+    <Modules>
+     <Module Name="mantissubmit.exe">
+      <Namespaces>
+       <Namespace Name="Futureware.MantisSubmit">
+        <Types>
+         <Type Name="SubmitIssueForm">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>SubmitIssueForm..ctor()</Item>
+               <Item>populating</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="PopulateProjectDependentFields():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>SubmitIssueForm.PopulateProjectDependentFields():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+              <Issue>
+               <Item>SubmitIssueForm.PopulateProjectDependentFields():Void</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="submitButton_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>SubmitIssueForm.submitButton_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+              <Issue>
+               <Item>SubmitIssueForm.submitButton_Click(Object, EventArgs):Void</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SubmitIssue_Load(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>SubmitIssueForm.SubmitIssue_Load(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+              <Issue>
+               <Item>SubmitIssueForm.SubmitIssue_Load(Object, EventArgs):Void</Item>
+               <Item>System.Object</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/NantTasks/bin/Debug/Nant.Futureware.MantisConnect.Tasks.dll">
+    <Modules>
+     <Module Name="nant.futureware.mantisconnect.tasks.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209" Created="2005-02-16 12:53:15Z">
+        <Issue>
+         <Item>Nant.Futureware.MantisConnect.Tasks</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2005-02-16 12:53:15Z">
+        <Issue Name="NoStrongName">
+         <Item>Nant.Futureware.MantisConnect.Tasks</Item>
+        </Issue>
+        <Notes>
+         <User Name="victor boctor">
+          <Note Id="16" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="NAnt.Contrib.Tasks.MantisConnect">
+        <Types>
+         <Type Name="BaseTask">
+          <Members>
+           <Member Name="Url">
+            <Messages>
+             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2005-02-16 12:53:15Z">
+              <Issue>
+               <Item>Url</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MantisSubmitTask">
+          <Members>
+           <Member Name="Os">
+            <Messages>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>Os</Item>
+               <Item>MantisSubmitTask.Os:String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="18" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OsVersion">
+            <Messages>
+             <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2005-02-16 12:53:15Z">
+              <Issue Name="Member">
+               <Item>Os</Item>
+               <Item>MantisSubmitTask.OsVersion:String</Item>
+              </Issue>
+              <Notes>
+               <User Name="victor boctor">
+                <Note Id="18" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="victor boctor">
+    <Note Id="0" Modified="2005-02-16 12:56:51Z">A dummy call is executed to trigger a connection.  That is why the value is not used.</Note>
+    <Note Id="1" Modified="2005-02-16 12:59:27Z">This is auto-generated code.</Note>
+    <Note Id="2" Modified="2005-02-16 13:10:24Z">This is auto-generated code.</Note>
+    <Note Id="3" Modified="2005-02-16 13:15:31Z">Third party code.</Note>
+    <Note Id="4" Modified="2005-02-16 13:16:15Z">It makes sense to use these namespaces.</Note>
+    <Note Id="5" Modified="2005-02-16 13:16:45Z">This is 3rd party code.</Note>
+    <Note Id="6" Modified="2005-02-16 13:17:36Z">This is auto-generated code based on the webservice that follows Mantis standards.</Note>
+    <Note Id="7" Modified="2005-02-16 13:17:48Z">This is 3rd party code.</Note>
+    <Note Id="8" Modified="2005-02-16 13:18:24Z">This is auto-generated code.</Note>
+    <Note Id="9" Modified="2005-02-16 13:18:42Z">This is auto-generated code.</Note>
+    <Note Id="10" Modified="2005-02-16 13:20:06Z">This is 3rd party code.</Note>
+    <Note Id="11" Modified="2005-02-16 13:20:15Z">This is 3rd party code.</Note>
+    <Note Id="12" Modified="2005-02-16 13:20:24Z">This is 3rd party code.</Note>
+    <Note Id="13" Modified="2005-02-16 13:20:35Z">This is 3rd party code.</Note>
+    <Note Id="14" Modified="2005-02-16 13:21:04Z">This is auto-generated code.</Note>
+    <Note Id="15" Modified="2005-02-16 13:21:39Z">This is auto-generated code.</Note>
+    <Note Id="16" Modified="2005-02-16 13:22:47Z">This can't be signed since Nant.core is not signed.</Note>
+    <Note Id="17" Modified="2005-02-16 13:24:25Z">This is following Nant.Contrib namespace.</Note>
+    <Note Id="18" Modified="2005-02-16 13:25:06Z">I don't make exception for two letter variables.</Note>
+    <Note Id="19" Modified="2005-02-16 13:25:31Z">I don't make exception for two letter acronyms.</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209">
+    <Name>Assemblies should declare minimum security</Name>
+    <Description>Permission requests prevent security exceptions from being thrown after code in an assembly has already begun executing. With permission requests, the assembly does not load if it has insufficient permissions. This rule will fire if you have specified a permission request incorrectly, or incompletely. If you have specified requests but FxCop reports a violation for this rule, use the PermView.exe tool to view the security permissions in the assembly. An unenforceable permission appears as an empty permission set. Whidbey customers can use PermCalc.exe which gives even more detailed information. You should add attributes specifying what permissions your assembly will demand, might demand, and what permissions it does not want granted.  For example, the following attribute indicates that an assembly will, at minimum, require read access to the USERNAME environment variable: [assembly:EnvironmentPermissionAttribute(SecurityAction.RequestMinimum,
+Read="USERNAME")]. To specify permissions that the assembly might demand, use SecurityAction.RequestOptional. To specify permissions that the assembly must not be granted, use SecurityAction.RequestRefuse.</Description>
+    <Resolution Name="Default">No valid permission requests were found for assembly '{0}'. You should always specify the minimum security permissions using SecurityAction.RequestMinimum. If assembly permission requests have been specified, they are not enforceable; use the PermView.exe tool to view the assembly's permissions. Whidbey customers can use PermCalc.exe which gives even more detailed information.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Usage/AssembliesShouldDeclareMinimumSecurity.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="99">CriticalError</MessageLevel>
+    <File Name="UsageRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Name>Assemblies should have valid strong names</Name>
+    <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+    <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AssembliesShouldHaveValidStrongNames.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Name>Avoid namespaces with few types</Name>
+    <Description>A namespace should generally have more than five types.</Description>
+    <Resolution Name="Default">Consider merging the types defined in  '{0}' with another namespace.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AvoidNamespacesWithFewTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021">
+    <Name>Avoid out parameters</Name>
+    <Description>Using out parameters might indicate a design flaw. Although there are legitimate times to use out parameters, their use frequently indicates a design that does not conform to the design guidelines for managed code.</Description>
+    <Resolution Name="Default">Consider a design that does not require that '{0}' be an out parameter.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AvoidOutParameters.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+    <Name>Compound words should be cased correctly</Name>
+    <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+    <Resolution Name="ShouldBeDiscreteTerm">The compound word '{0}' in {1} '{2}' exists as a discrete term. If your usage is intended to be single word, case it as '{3}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/CompoundWordsShouldBeCasedCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="80">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Name>Do not catch Exceptions or SystemExceptions</Name>
+    <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+    <Resolution Name="Default">Modify '{0}' to catch a more specific exception than '{1}' or rethrow the exception.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/DoNotCatchGeneralExceptionTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+    <Name>Do not declare visible instance fields</Name>
+    <Description>Public or protected instance fields limit your ability to change the implementation details for those data items. Use properties instead. They do not compromise usability or performance and they do provide flexibility in that they conceal the  implementation details of the underlying data.</Description>
+    <Resolution Name="Default">Make '{0}' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/DoNotDeclareVisibleInstanceFields.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="90">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Name>Do not initialize unnecessarily</Name>
+    <Description>Do not make initializations that have already been done by the runtime.</Description>
+    <Resolution Name="Default">{0} initializes field '{1}', a {2}, to {3}. Remove this initialization, as it will be done automatically by the runtime.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/DoNotInitializeUnnecessarily.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="90">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+    <Name>Identifiers should be cased correctly</Name>
+    <Description>Type, namespace, and member identifiers are pascal-cased. Parameter identifiers are camel-cased. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor.</Description>
+    <Resolution Name="Member">Correct the casing of member name '{0}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/IdentifiersShouldBeCasedCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Name>Identifiers should be spelled correctly</Name>
+    <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+    <Resolution Name="Member">Correct the spelling of the unrecognized token '{0}' in member '{1}'.</Resolution>
+    <Resolution Name="Namespace">Correct the spelling of the unrecognized token '{0}' in namespace '{1}'.</Resolution>
+    <Resolution Name="Parameter">In {0}, correct the spelling of the unrecognized token '{1}' in parameter name '{2}' or strip it entirely if it represents any sort of hungarian notation.</Resolution>
+    <Resolution Name="Type">Correct the spelling of the unrecognized token '{0}' in type '{1}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/IdentifiersShouldBeSpelledCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+    <Name>Identifiers should not contain underscores</Name>
+    <Description>Do not use underscores when specifying identifiers. Some generated Visual Studio identifiers for applications contain underscore characters. Underscore characters should generally be avoided in public identifiers.</Description>
+    <Resolution Name="Member">Remove all underscores from member '{0}'.</Resolution>
+    <Resolution Name="Parameter">Remove all underscores from parameter '{0}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/IdentifiersShouldNotContainUnderscores.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711">
+    <Name>Identifiers should not have incorrect suffix</Name>
+    <Description>Types that do not extend certain base types should not use reserved name suffixes.</Description>
+    <Resolution Name="Default">Rename '{0}' so that it does not end in '{1}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/IdentifiersShouldNotHaveIncorrectSuffix.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204">
+    <Name>Literals should be spelled correctly</Name>
+    <Description>Literals should consist of correctly spelled words.</Description>
+    <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Usage/LiteralsShouldBeSpelledCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="85">Error</MessageLevel>
+    <File Name="UsageRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA902">
+    <Name>Move pinvokes to native methods class</Name>
+    <Description>This type contains members with the DllImport attribute. Members with the DllImport attribute should be contained in classes named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Description>
+    <Resolution Name="Default">Because it is a DllImport method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/MovePInvokesToNativeMethodsClass.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="OnlyFlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1717">
+    <Name>Only FlagsAttribute enums should have plural names</Name>
+    <Description>Plural names indicate that the values of the enumeration can be combined. For example, an enumeration named 'Day' indicates a single day, and an enumeration named 'Days' indicates multiple days. Enumeration values should be combined using the bit-wise OR operator only if the Flags attribute is present on the enumeration.</Description>
+    <Resolution Name="Default">If the name '{0}' is plural, change it to its singular form.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/OnlyFlagsEnumsShouldHavePluralNames.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Name>Properties should not return arrays</Name>
+    <Description>Properties that return arrays are prone to code inefficiencies. Consider using a collection or making this a method. See the design guidelines for more information.</Description>
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/PropertiesShouldNotReturnArrays.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+    <Name>Remove unused locals</Name>
+    <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+    <Resolution Name="Default">{0} declares a local, '{1}', of type {2}, which is never used or is only assigned to. Use this local or remove it.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/RemoveUnusedLocals.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="ReviewVisibleEventHandlers" Category="Microsoft.Security" CheckId="CA2109">
+    <Name>Review visible event handlers</Name>
+    <Description>It appears that an event handler is externally visible or that an EventArgs parameter is being exposed in a visible method decorated with a security demand. There can be problems exposing sensitive functionality in an event handler function; the security demand might not do what you expect.</Description>
+    <Resolution Name="Default">Consider making {0} not externally visible.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Security/ReviewVisibleEventHandlers.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="40">CriticalError</MessageLevel>
+    <File Name="SecurityRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706">
+    <Name>Short acronyms should be uppercase</Name>
+    <Description>Two letter acronyms should be upper-cased. For example, use System.IO instead of System.Io. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+    <Resolution Name="Member">Correct the capitalization of '{0}' in member name '{1}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/ShortAcronymsShouldBeUppercase.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="85">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724">
+    <Name>Type names should not match namespaces</Name>
+    <Description>Identifiers which conflict in whole or in part with namespace names should be avoided. Names that describe the purpose or contents of a type are preferred.</Description>
+    <Resolution Name="Default">The type name '{0}' conflicts in whole or in part with the namespace name '{1}'. Change either name to eliminate the conflict.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/TypeNamesShouldNotMatchNamespaces.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+    <Name>Types that own disposable fields should be disposable</Name>
+    <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+    <Resolution Name="Default">Implement IDisposable on '{0}' as it instantiates members of the following IDisposable types: {1}</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/TypesThatOwnDisposableFieldsShouldBeDisposable.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054">
+    <Name>Uri parameters should not be strings</Name>
+    <Description>If a parameter name contains "uri" or "url" or "urn", and it's typed as string, the parameter type should be changed to System.Uri, unless there is an overload method where the same parameter is typed as Uri.</Description>
+    <Resolution Name="Default">Change the type of parameter '{0}' of method {1} from string to System.Uri, or provide an overload of {1}, that allows '{0}' to be passed as a System.Uri object.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/UriParametersShouldNotBeStrings.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="60">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056">
+    <Name>Uri properties should not be strings</Name>
+    <Description>If a property name contains "uri" or "url" or "urn" and it's typed as string, it should be changed to System.Uri.</Description>
+    <Resolution Name="Default">Change the type of property '{0}' from string to System.Uri.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/UriPropertiesShouldNotBeStrings.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

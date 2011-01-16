@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantisConnect", "mantisconnect\MantisConnect.csproj", "{F4391F6F-0239-48E2-B415-C39A6D920303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantisNotify", "mantisnotify\MantisNotify.csproj", "{2A8447AC-E15C-4A8F-BDED-8E4373D574D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.MantisConnect.Tasks", "NantTasks\Nant.MantisConnect.Tasks.csproj", "{0544FA07-F895-4F0E-B61F-CBA7A794F89C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantisSubmit", "MantisSubmit\MantisSubmit.csproj", "{580C279D-3855-45F7-8EE2-BB036A1CA4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantisFilters", "MantisFilters\MantisFilters.csproj", "{F8C0F2F2-77E1-431B-95BB-6683A92266FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantisConnect.UnitTests", "UnitTests\MantisConnect.UnitTests.csproj", "{007994C8-29E4-4C9C-AF10-9DA4FBBB83E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cropper.Mantis", "Cropper.Mantis\Cropper.Mantis.csproj", "{DC45223F-F5BC-4ED6-903C-343E4D70D155}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4391F6F-0239-48E2-B415-C39A6D920303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4391F6F-0239-48E2-B415-C39A6D920303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4391F6F-0239-48E2-B415-C39A6D920303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4391F6F-0239-48E2-B415-C39A6D920303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8447AC-E15C-4A8F-BDED-8E4373D574D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8447AC-E15C-4A8F-BDED-8E4373D574D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8447AC-E15C-4A8F-BDED-8E4373D574D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8447AC-E15C-4A8F-BDED-8E4373D574D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0544FA07-F895-4F0E-B61F-CBA7A794F89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0544FA07-F895-4F0E-B61F-CBA7A794F89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0544FA07-F895-4F0E-B61F-CBA7A794F89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0544FA07-F895-4F0E-B61F-CBA7A794F89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580C279D-3855-45F7-8EE2-BB036A1CA4A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580C279D-3855-45F7-8EE2-BB036A1CA4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580C279D-3855-45F7-8EE2-BB036A1CA4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580C279D-3855-45F7-8EE2-BB036A1CA4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C0F2F2-77E1-431B-95BB-6683A92266FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C0F2F2-77E1-431B-95BB-6683A92266FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C0F2F2-77E1-431B-95BB-6683A92266FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C0F2F2-77E1-431B-95BB-6683A92266FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007994C8-29E4-4C9C-AF10-9DA4FBBB83E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007994C8-29E4-4C9C-AF10-9DA4FBBB83E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007994C8-29E4-4C9C-AF10-9DA4FBBB83E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007994C8-29E4-4C9C-AF10-9DA4FBBB83E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC45223F-F5BC-4ED6-903C-343E4D70D155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC45223F-F5BC-4ED6-903C-343E4D70D155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC45223F-F5BC-4ED6-903C-343E4D70D155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC45223F-F5BC-4ED6-903C-343E4D70D155}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

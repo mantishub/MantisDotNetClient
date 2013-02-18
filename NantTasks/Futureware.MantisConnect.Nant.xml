@@ -4,33 +4,6 @@
         <name>Nant.Futureware.MantisConnect.Tasks</name>
     </assembly>
     <members>
-        <member name="T:NAnt.Contrib.Tasks.MantisConnect.MantisSubmitTask">
-            <summary>
-            Used to submit issues to a Mantis Bugtracker installation.
-            </summary>
-            <remarks>
-            This is useful to allow the build automatically report problems into Mantis which can then be 
-            handled like defects.  Mantis installation may even have a special category "Build" which can
-            automatically be assigned to a team member.
-            
-            The implementation of this task is following the coding standards for NAnt rather than 
-            MantisConnect.
-            </remarks>
-            <example>
-              <code><![CDATA[
-              <mantis-submit
-                    url="http://www.example.com/mantis/mc/mantisconnect.php"
-                    username=""         ---- this can be empty if installation supports anonymous logins
-                    password=""         ---- same here.
-                    summary="Build 2004-09-18: Unit test error"
-                    description="Error details should go here."
-                    additionalInformation="stack trace, ...etc."
-                    category="Build"
-                    stepsToReproduce="Checkout tag '20040918' and run the build."
-                />
-              ]]></code>
-            </example>
-        </member>
         <member name="T:NAnt.Contrib.Tasks.MantisConnect.BaseTask">
             <summary>
             Summary description for BaseTask.
@@ -74,6 +47,33 @@
             <remarks>
             This is valid after <see cref="M:NAnt.Contrib.Tasks.MantisConnect.BaseTask.Connect"/> is called.
             </remarks>
+        </member>
+        <member name="T:NAnt.Contrib.Tasks.MantisConnect.MantisSubmitTask">
+            <summary>
+            Used to submit issues to a Mantis Bugtracker installation.
+            </summary>
+            <remarks>
+            This is useful to allow the build automatically report problems into Mantis which can then be 
+            handled like defects.  Mantis installation may even have a special category "Build" which can
+            automatically be assigned to a team member.
+            
+            The implementation of this task is following the coding standards for NAnt rather than 
+            MantisConnect.
+            </remarks>
+            <example>
+              <code><![CDATA[
+              <mantis-submit
+                    url="http://www.example.com/mantis/mc/mantisconnect.php"
+                    username=""         ---- this can be empty if installation supports anonymous logins
+                    password=""         ---- same here.
+                    summary="Build 2004-09-18: Unit test error"
+                    description="Error details should go here."
+                    additionalInformation="stack trace, ...etc."
+                    category="Build"
+                    stepsToReproduce="Checkout tag '20040918' and run the build."
+                />
+              ]]></code>
+            </example>
         </member>
         <member name="M:NAnt.Contrib.Tasks.MantisConnect.MantisSubmitTask.ExecuteTask">
             <summary>

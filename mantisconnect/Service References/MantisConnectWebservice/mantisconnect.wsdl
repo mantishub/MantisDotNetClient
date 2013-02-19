@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://futureware.biz/mantisconnect" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://futureware.biz/mantisconnect" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://futureware.biz/mantisconnect" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://futureware.biz/mantisconnect" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://futureware.biz/mantisconnect">
       <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
@@ -32,6 +32,13 @@
           <xsd:element minOccurs="0" name="email" type="xsd:string" />
         </xsd:all>
       </xsd:complexType>
+      <xsd:complexType name="UserData">
+        <xsd:all>
+          <xsd:element minOccurs="0" name="account_data" type="tns:AccountData" />
+          <xsd:element minOccurs="0" name="access_level" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="timezone" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
       <xsd:complexType name="AccountDataArray">
         <xsd:complexContent mixed="false">
           <xsd:restriction base="SOAP-ENC:Array">
@@ -47,6 +54,7 @@
           <xsd:element minOccurs="0" name="content_type" type="xsd:string" />
           <xsd:element minOccurs="0" name="date_submitted" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="download_url" type="xsd:anyURI" />
+          <xsd:element minOccurs="0" name="user_id" type="xsd:integer" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="AttachmentDataArray">
@@ -66,6 +74,7 @@
           <xsd:element minOccurs="0" name="content_type" type="xsd:string" />
           <xsd:element minOccurs="0" name="date_submitted" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="download_url" type="xsd:anyURI" />
+          <xsd:element minOccurs="0" name="user_id" type="xsd:integer" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="ProjectAttachmentDataArray">
@@ -97,6 +106,9 @@
           <xsd:element minOccurs="0" name="view_state" type="tns:ObjectRef" />
           <xsd:element minOccurs="0" name="date_submitted" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="last_modified" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="time_tracking" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="note_type" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="note_attr" type="xsd:string" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="IssueNoteDataArray">
@@ -131,6 +143,7 @@
           <xsd:element minOccurs="0" name="eta" type="tns:ObjectRef" />
           <xsd:element minOccurs="0" name="resolution" type="tns:ObjectRef" />
           <xsd:element minOccurs="0" name="fixed_in_version" type="xsd:string" />
+          <xsd:element minOccurs="0" name="target_version" type="xsd:string" />
           <xsd:element minOccurs="0" name="description" type="xsd:string" />
           <xsd:element minOccurs="0" name="steps_to_reproduce" type="xsd:string" />
           <xsd:element minOccurs="0" name="additional_information" type="xsd:string" />
@@ -138,6 +151,10 @@
           <xsd:element minOccurs="0" name="relationships" type="tns:RelationshipDataArray" />
           <xsd:element minOccurs="0" name="notes" type="tns:IssueNoteDataArray" />
           <xsd:element minOccurs="0" name="custom_fields" type="tns:CustomFieldValueForIssueDataArray" />
+          <xsd:element minOccurs="0" name="due_date" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="monitors" type="tns:AccountDataArray" />
+          <xsd:element minOccurs="0" name="sticky" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="tags" type="tns:ObjectRefArray" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="IssueDataArray">
@@ -183,6 +200,7 @@
           <xsd:element minOccurs="0" name="file_path" type="xsd:string" />
           <xsd:element minOccurs="0" name="description" type="xsd:string" />
           <xsd:element minOccurs="0" name="subprojects" type="tns:ProjectDataArray" />
+          <xsd:element minOccurs="0" name="inherit_global" type="xsd:boolean" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="ProjectDataArray">
@@ -200,6 +218,7 @@
           <xsd:element minOccurs="0" name="date_order" type="xsd:dateTime" />
           <xsd:element minOccurs="0" name="description" type="xsd:string" />
           <xsd:element minOccurs="0" name="released" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="obsolete" type="xsd:boolean" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="ProjectVersionDataArray">
@@ -217,6 +236,7 @@
           <xsd:element minOccurs="0" name="is_public" type="xsd:boolean" />
           <xsd:element minOccurs="0" name="name" type="xsd:string" />
           <xsd:element minOccurs="0" name="filter_string" type="xsd:string" />
+          <xsd:element minOccurs="0" name="url" type="xsd:string" />
         </xsd:all>
       </xsd:complexType>
       <xsd:complexType name="FilterDataArray">
@@ -281,11 +301,64 @@
           </xsd:restriction>
         </xsd:complexContent>
       </xsd:complexType>
+      <xsd:complexType name="TagData">
+        <xsd:all>
+          <xsd:element minOccurs="0" name="id" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="user_id" type="tns:AccountData" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="date_created" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="date_updated" type="xsd:dateTime" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="TagDataArray">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:TagData[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TagDataSearchResult">
+        <xsd:all>
+          <xsd:element minOccurs="0" name="results" type="tns:TagDataArray" />
+          <xsd:element minOccurs="0" name="total_results" type="xsd:integer" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ProfileData">
+        <xsd:all>
+          <xsd:element minOccurs="0" name="id" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="user_id" type="tns:AccountData" />
+          <xsd:element minOccurs="0" name="platform" type="xsd:string" />
+          <xsd:element minOccurs="0" name="os" type="xsd:string" />
+          <xsd:element minOccurs="0" name="os_build" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ProfileDataArray">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:ProfileData[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ProfileDataSearchResult">
+        <xsd:all>
+          <xsd:element minOccurs="0" name="results" type="tns:ProfileDataArray" />
+          <xsd:element minOccurs="0" name="total_results" type="xsd:integer" />
+        </xsd:all>
+      </xsd:complexType>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="mc_versionRequest" />
   <wsdl:message name="mc_versionResponse">
     <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_loginRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_loginResponse">
+    <wsdl:part name="return" type="tns:UserData" />
   </wsdl:message>
   <wsdl:message name="mc_enum_statusRequest">
     <wsdl:part name="username" type="xsd:string" />
@@ -428,6 +501,15 @@
   <wsdl:message name="mc_issue_updateResponse">
     <wsdl:part name="return" type="xsd:boolean" />
   </wsdl:message>
+  <wsdl:message name="mc_issue_set_tagsRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="issue_id" type="xsd:integer" />
+    <wsdl:part name="tags" type="tns:TagDataArray" />
+  </wsdl:message>
+  <wsdl:message name="mc_issue_set_tagsResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
   <wsdl:message name="mc_issue_deleteRequest">
     <wsdl:part name="username" type="xsd:string" />
     <wsdl:part name="password" type="xsd:string" />
@@ -451,6 +533,14 @@
     <wsdl:part name="issue_note_id" type="xsd:integer" />
   </wsdl:message>
   <wsdl:message name="mc_issue_note_deleteResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="mc_issue_note_updateRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="note" type="tns:IssueNoteData" />
+  </wsdl:message>
+  <wsdl:message name="mc_issue_note_updateResponse">
     <wsdl:part name="return" type="xsd:boolean" />
   </wsdl:message>
   <wsdl:message name="mc_issue_relationship_addRequest">
@@ -514,6 +604,23 @@
   <wsdl:message name="mc_project_deleteResponse">
     <wsdl:part name="return" type="xsd:boolean" />
   </wsdl:message>
+  <wsdl:message name="mc_project_updateRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_id" type="xsd:integer" />
+    <wsdl:part name="project" type="tns:ProjectData" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_updateResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_get_id_from_nameRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_name" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_get_id_from_nameResponse">
+    <wsdl:part name="return" type="xsd:integer" />
+  </wsdl:message>
   <wsdl:message name="mc_project_get_issuesRequest">
     <wsdl:part name="username" type="xsd:string" />
     <wsdl:part name="password" type="xsd:string" />
@@ -557,6 +664,35 @@
   </wsdl:message>
   <wsdl:message name="mc_project_get_categoriesResponse">
     <wsdl:part name="return" type="tns:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_add_categoryRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_id" type="xsd:integer" />
+    <wsdl:part name="p_category_name" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_add_categoryResponse">
+    <wsdl:part name="return" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_delete_categoryRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_id" type="xsd:integer" />
+    <wsdl:part name="p_category_name" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_delete_categoryResponse">
+    <wsdl:part name="return" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_rename_category_by_nameRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_id" type="xsd:integer" />
+    <wsdl:part name="p_category_name" type="xsd:string" />
+    <wsdl:part name="p_category_name_new" type="xsd:string" />
+    <wsdl:part name="p_assigned_to" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_rename_category_by_nameResponse">
+    <wsdl:part name="return" type="xsd:integer" />
   </wsdl:message>
   <wsdl:message name="mc_project_get_versionsRequest">
     <wsdl:part name="username" type="xsd:string" />
@@ -652,6 +788,14 @@
   <wsdl:message name="mc_project_attachment_deleteResponse">
     <wsdl:part name="return" type="xsd:boolean" />
   </wsdl:message>
+  <wsdl:message name="mc_project_get_all_subprojectsRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_id" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_project_get_all_subprojectsResponse">
+    <wsdl:part name="return" type="tns:StringArray" />
+  </wsdl:message>
   <wsdl:message name="mc_filter_getRequest">
     <wsdl:part name="username" type="xsd:string" />
     <wsdl:part name="password" type="xsd:string" />
@@ -700,10 +844,58 @@
   <wsdl:message name="mc_issue_checkinResponse">
     <wsdl:part name="return" type="xsd:boolean" />
   </wsdl:message>
+  <wsdl:message name="mc_user_pref_get_prefRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="project_id" type="xsd:integer" />
+    <wsdl:part name="pref_name" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_user_pref_get_prefResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mc_user_profiles_get_allRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="page_number" type="xsd:integer" />
+    <wsdl:part name="per_page" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_user_profiles_get_allResponse">
+    <wsdl:part name="return" type="tns:ProfileDataSearchResult" />
+  </wsdl:message>
+  <wsdl:message name="mc_tag_get_allRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="page_number" type="xsd:integer" />
+    <wsdl:part name="per_page" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_tag_get_allResponse">
+    <wsdl:part name="return" type="tns:TagDataSearchResult" />
+  </wsdl:message>
+  <wsdl:message name="mc_tag_addRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="tag" type="tns:TagData" />
+  </wsdl:message>
+  <wsdl:message name="mc_tag_addResponse">
+    <wsdl:part name="return" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_tag_deleteRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="tag_id" type="xsd:integer" />
+  </wsdl:message>
+  <wsdl:message name="mc_tag_deleteResponse">
+    <wsdl:part name="return" type="xsd:boolean" />
+  </wsdl:message>
   <wsdl:portType name="MantisConnectPortType">
     <wsdl:operation name="mc_version">
       <wsdl:input message="tns:mc_versionRequest" />
       <wsdl:output message="tns:mc_versionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_login">
+      <documentation>Log the user in and get their information.</documentation>
+      <wsdl:input message="tns:mc_loginRequest" />
+      <wsdl:output message="tns:mc_loginResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_enum_status">
       <documentation>Get the enumeration for statuses.</documentation>
@@ -800,6 +992,11 @@
       <wsdl:input message="tns:mc_issue_updateRequest" />
       <wsdl:output message="tns:mc_issue_updateResponse" />
     </wsdl:operation>
+    <wsdl:operation name="mc_issue_set_tags">
+      <documentation>Sets the tags for a specified issue.</documentation>
+      <wsdl:input message="tns:mc_issue_set_tagsRequest" />
+      <wsdl:output message="tns:mc_issue_set_tagsResponse" />
+    </wsdl:operation>
     <wsdl:operation name="mc_issue_delete">
       <documentation>Delete the issue with the specified id.</documentation>
       <wsdl:input message="tns:mc_issue_deleteRequest" />
@@ -814,6 +1011,11 @@
       <documentation>Delete the note with the specified id.</documentation>
       <wsdl:input message="tns:mc_issue_note_deleteRequest" />
       <wsdl:output message="tns:mc_issue_note_deleteResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_issue_note_update">
+      <documentation>Update a specific note of a specific issue.</documentation>
+      <wsdl:input message="tns:mc_issue_note_updateRequest" />
+      <wsdl:output message="tns:mc_issue_note_updateResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_issue_relationship_add">
       <documentation>Submit a new relationship.</documentation>
@@ -850,13 +1052,23 @@
       <wsdl:input message="tns:mc_project_deleteRequest" />
       <wsdl:output message="tns:mc_project_deleteResponse" />
     </wsdl:operation>
+    <wsdl:operation name="mc_project_update">
+      <documentation>Update a specific project to the tracker (must have admin privileges)</documentation>
+      <wsdl:input message="tns:mc_project_updateRequest" />
+      <wsdl:output message="tns:mc_project_updateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_get_id_from_name">
+      <documentation>Get the id of the project with the specified name.</documentation>
+      <wsdl:input message="tns:mc_project_get_id_from_nameRequest" />
+      <wsdl:output message="tns:mc_project_get_id_from_nameResponse" />
+    </wsdl:operation>
     <wsdl:operation name="mc_project_get_issues">
-      <documentation>Get the issues that match the specified project id and paging details.</documentation>
+      <documentation>Get the issues that match the specified project id and paging details. Pass "-1" for the per_page parameter to get all issues.</documentation>
       <wsdl:input message="tns:mc_project_get_issuesRequest" />
       <wsdl:output message="tns:mc_project_get_issuesResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_issue_headers">
-      <documentation>Get the issue headers that match the specified project id and paging details.</documentation>
+      <documentation>Get the issue headers that match the specified project id and paging details. Pass "-1" for the per_page parameter to get all issues.</documentation>
       <wsdl:input message="tns:mc_project_get_issue_headersRequest" />
       <wsdl:output message="tns:mc_project_get_issue_headersResponse" />
     </wsdl:operation>
@@ -874,6 +1086,21 @@
       <documentation>Get the categories belonging to the specified project.</documentation>
       <wsdl:input message="tns:mc_project_get_categoriesRequest" />
       <wsdl:output message="tns:mc_project_get_categoriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_add_category">
+      <documentation>Add a category of specific project.</documentation>
+      <wsdl:input message="tns:mc_project_add_categoryRequest" />
+      <wsdl:output message="tns:mc_project_add_categoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_delete_category">
+      <documentation>Delete a category of specific project.</documentation>
+      <wsdl:input message="tns:mc_project_delete_categoryRequest" />
+      <wsdl:output message="tns:mc_project_delete_categoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_rename_category_by_name">
+      <documentation>Rename a category of specific project.</documentation>
+      <wsdl:input message="tns:mc_project_rename_category_by_nameRequest" />
+      <wsdl:output message="tns:mc_project_rename_category_by_nameResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_versions">
       <documentation>Get the versions belonging to the specified project.</documentation>
@@ -930,18 +1157,23 @@
       <wsdl:input message="tns:mc_project_attachment_deleteRequest" />
       <wsdl:output message="tns:mc_project_attachment_deleteResponse" />
     </wsdl:operation>
+    <wsdl:operation name="mc_project_get_all_subprojects">
+      <documentation>Get the subprojects ID of a specific project.</documentation>
+      <wsdl:input message="tns:mc_project_get_all_subprojectsRequest" />
+      <wsdl:output message="tns:mc_project_get_all_subprojectsResponse" />
+    </wsdl:operation>
     <wsdl:operation name="mc_filter_get">
       <documentation>Get the filters defined for the specified project.</documentation>
       <wsdl:input message="tns:mc_filter_getRequest" />
       <wsdl:output message="tns:mc_filter_getResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_filter_get_issues">
-      <documentation>Get the issues that match the specified filter and paging details.</documentation>
+      <documentation>Get the issues that match the specified filter and paging details. Pass "-1" for the per_page parameter to get all issues.</documentation>
       <wsdl:input message="tns:mc_filter_get_issuesRequest" />
       <wsdl:output message="tns:mc_filter_get_issuesResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_filter_get_issue_headers">
-      <documentation>Get the issue headers that match the specified filter and paging details.</documentation>
+      <documentation>Get the issue headers that match the specified filter and paging details.  Pass "-1" for the per_page parameter to get all issues.</documentation>
       <wsdl:input message="tns:mc_filter_get_issue_headersRequest" />
       <wsdl:output message="tns:mc_filter_get_issue_headersResponse" />
     </wsdl:operation>
@@ -951,15 +1183,49 @@
       <wsdl:output message="tns:mc_config_get_stringResponse" />
     </wsdl:operation>
     <wsdl:operation name="mc_issue_checkin">
-      <documentation>Notifies Mantis of a check-in for the issue with the specified id.</documentation>
+      <documentation>Notifies MantisBT of a check-in for the issue with the specified id.</documentation>
       <wsdl:input message="tns:mc_issue_checkinRequest" />
       <wsdl:output message="tns:mc_issue_checkinResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_user_pref_get_pref">
+      <documentation>Get the value for the specified user preference.</documentation>
+      <wsdl:input message="tns:mc_user_pref_get_prefRequest" />
+      <wsdl:output message="tns:mc_user_pref_get_prefResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_user_profiles_get_all">
+      <documentation>Get profiles available to the current user.</documentation>
+      <wsdl:input message="tns:mc_user_profiles_get_allRequest" />
+      <wsdl:output message="tns:mc_user_profiles_get_allResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_tag_get_all">
+      <documentation>Gets all the tags.</documentation>
+      <wsdl:input message="tns:mc_tag_get_allRequest" />
+      <wsdl:output message="tns:mc_tag_get_allResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_tag_add">
+      <documentation>Creates a tag.</documentation>
+      <wsdl:input message="tns:mc_tag_addRequest" />
+      <wsdl:output message="tns:mc_tag_addResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="mc_tag_delete">
+      <documentation>Deletes a tag.</documentation>
+      <wsdl:input message="tns:mc_tag_deleteRequest" />
+      <wsdl:output message="tns:mc_tag_deleteResponse" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MantisConnectBinding" type="tns:MantisConnectPortType">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
     <wsdl:operation name="mc_version">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_version" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_version" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_login">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_login" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -968,7 +1234,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_status">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_status" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_status" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -977,7 +1243,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_priorities">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_priorities" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_priorities" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -986,7 +1252,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_severities">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_severities" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_severities" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -995,7 +1261,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_reproducibilities">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_reproducibilities" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_reproducibilities" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1004,7 +1270,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_projections">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_projections" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_projections" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1013,7 +1279,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_etas">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_etas" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_etas" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1022,7 +1288,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_resolutions">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_resolutions" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_resolutions" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1031,7 +1297,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_access_levels">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_access_levels" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_access_levels" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1040,7 +1306,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_project_status">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_project_status" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_project_status" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1049,7 +1315,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_project_view_states">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_project_view_states" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_project_view_states" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1058,7 +1324,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_view_states">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_view_states" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_view_states" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1067,7 +1333,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_custom_field_types">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_custom_field_types" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_custom_field_types" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1076,7 +1342,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_enum_get">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_enum_get" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_enum_get" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1085,7 +1351,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_exists">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_exists" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_exists" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1094,7 +1360,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_get">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_get" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_get" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1103,7 +1369,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_get_biggest_id">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_get_biggest_id" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_get_biggest_id" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1112,7 +1378,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_get_id_from_summary">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_get_id_from_summary" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_get_id_from_summary" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1121,7 +1387,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1130,7 +1396,16 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_update">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_update" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_update" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_issue_set_tags">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_set_tags" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1139,7 +1414,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_delete" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1148,7 +1423,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_note_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_note_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_note_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1157,7 +1432,16 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_note_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_note_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_note_delete" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_issue_note_update">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_note_update" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1166,7 +1450,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_relationship_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_relationship_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_relationship_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1175,7 +1459,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_relationship_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_relationship_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_relationship_delete" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1184,7 +1468,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_attachment_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_attachment_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_attachment_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1193,7 +1477,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_attachment_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_attachment_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_attachment_delete" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1202,7 +1486,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_attachment_get">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_attachment_get" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_attachment_get" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1211,7 +1495,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1220,7 +1504,25 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_delete" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_update">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_update" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_get_id_from_name">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_id_from_name" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1229,7 +1531,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_issues">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_issues" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_issues" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1238,7 +1540,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_issue_headers">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_issue_headers" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_issue_headers" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1247,7 +1549,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_users">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_users" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_users" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1256,7 +1558,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_projects_get_user_accessible">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_projects_get_user_accessible" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_projects_get_user_accessible" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1265,7 +1567,34 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_categories">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_categories" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_categories" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_add_category">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_add_category" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_delete_category">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_delete_category" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_rename_category_by_name">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_rename_category_by_name" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1274,7 +1603,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_versions">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_versions" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_versions" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1283,7 +1612,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_version_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_version_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_version_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1292,7 +1621,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_version_update">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_version_update" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_version_update" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1301,7 +1630,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_version_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_version_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_version_delete" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1310,7 +1639,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_released_versions">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_released_versions" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_released_versions" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1319,7 +1648,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_unreleased_versions">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_unreleased_versions" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_unreleased_versions" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1328,7 +1657,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_attachments">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_attachments" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_attachments" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1337,7 +1666,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_get_custom_fields">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_get_custom_fields" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_custom_fields" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1346,7 +1675,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_attachment_get">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_attachment_get" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_attachment_get" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1355,7 +1684,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_attachment_add">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_attachment_add" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_attachment_add" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1364,7 +1693,16 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_project_attachment_delete">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_project_attachment_delete" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_attachment_delete" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_project_get_all_subprojects">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_project_get_all_subprojects" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1373,7 +1711,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_filter_get">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_filter_get" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_filter_get" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1382,7 +1720,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_filter_get_issues">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_filter_get_issues" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_filter_get_issues" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1391,7 +1729,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_filter_get_issue_headers">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_filter_get_issue_headers" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_filter_get_issue_headers" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1400,7 +1738,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_config_get_string">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_config_get_string" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_config_get_string" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1409,7 +1747,52 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mc_issue_checkin">
-      <soap:operation soapAction="http://localhost/mantisbt/mc/mantisconnect.php/mc_issue_checkin" style="rpc" />
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_issue_checkin" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_user_pref_get_pref">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_user_pref_get_pref" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_user_profiles_get_all">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_user_profiles_get_all" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_tag_get_all">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_tag_get_all" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_tag_add">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_tag_add" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mc_tag_delete">
+      <soap:operation soapAction="http://www.mantisbt.org/demo/api/soap/mantisconnect.php/mc_tag_delete" style="rpc" />
       <wsdl:input>
         <soap:body use="encoded" namespace="http://futureware.biz/mantisconnect" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
@@ -1420,7 +1803,7 @@
   </wsdl:binding>
   <wsdl:service name="MantisConnect">
     <wsdl:port name="MantisConnectPort" binding="tns:MantisConnectBinding">
-      <soap:address location="http://localhost:8008/mantisbt/mc/mantisconnect.php" />
+      <soap:address location="http://www.mantisbt.org/demo/api/soap/mantisconnect.php" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

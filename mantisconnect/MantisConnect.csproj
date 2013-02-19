@@ -57,7 +57,8 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>Futureware.MantisConnect.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -107,6 +108,8 @@
       <Name>System.Drawing</Name>
     </Reference>
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services">
       <Name>System.Web.Services</Name>
     </Reference>
@@ -160,6 +163,11 @@
     <Compile Include="Request.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Service References\MantisConnectWebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -169,62 +177,49 @@
     <Compile Include="User.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Web References\MantisConnectWebservice\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-      <SubType>code</SubType>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <None Include="app.config" />
     <None Include="mantisconnect.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\MantisConnectWebservice\AccountData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.AccountData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\CustomFieldDefinitionData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\FilterData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.FilterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\IssueData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.IssueData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\IssueHeaderData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\mantisconnect.wsdl" />
-    <None Include="Web References\MantisConnectWebservice\ObjectRef.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.ObjectRef.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\ProjectAttachmentData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.ProfileDataSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\ProjectData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\ProjectVersionData.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.ProjectData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Web References\MantisConnectWebservice\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <WebReferenceUrl Include="http://localhost:8008/mantisbt/mc/mantisconnect.php%3fwsdl">
-      <RelPath>Web References\MantisConnectWebservice\</RelPath>
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <UpdateFromURL>http://localhost:8008/mantisbt/mc/mantisconnect.php%3fwsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Futureware_MantisConnect_MantisConnectWebservice_MantisConnect</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferences Include="Web References\" />
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.TagDataSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.UserData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MantisConnectWebservice\mantisconnect.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -242,6 +237,24 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MantisConnectWebservice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MantisConnectWebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MantisConnectWebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MantisConnectWebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

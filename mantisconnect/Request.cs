@@ -18,6 +18,8 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -43,15 +45,30 @@ namespace Futureware.MantisConnect
         /// The user name and password are used from their to provide such details to the
         /// webservice with each call without exposing such detail to the user of the 
         /// library.</param>
-        public Request( Session session )
+        public Request(Session session)
         {
             this.session = session;
 
-            mc = new MantisConnectWebservice.MantisConnect();
-            mc.Url = session.Url;
+            BasicHttpBinding binding;
 
-            if ( session.NetworkCredential != null )
-                mc.Credentials = session.NetworkCredential;
+            if (session.NetworkCredential != null)
+            {
+                binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportCredentialOnly);
+                binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
+            }
+            else
+            {
+                binding = new BasicHttpBinding();
+            }
+
+            var endpoint = new EndpointAddress(session.Url);
+            mc = new MantisConnectWebservice.MantisConnectPortTypeClient(binding, endpoint);
+
+            if (session.NetworkCredential != null)
+            {
+                mc.ClientCredentials.UserName.UserName = session.NetworkCredential.UserName;
+                mc.ClientCredentials.UserName.Password = session.NetworkCredential.Password;
+            }
         }
 
         /// <summary>
@@ -666,7 +683,7 @@ namespace Futureware.MantisConnect
         /// <summary>
         /// Webservice auto-generated proxy.
         /// </summary>
-        private MantisConnectWebservice.MantisConnect mc;
+        private MantisConnectWebservice.MantisConnectPortTypeClient mc;
         #endregion
     }
 }

@@ -1,9 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Futureware.MantisConnect.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="Futureware_MantisConnect_MantisConnectWebservice_MantisConnect" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:8008/mantisbt/mc/mantisconnect.php</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>

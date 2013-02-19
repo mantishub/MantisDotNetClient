@@ -499,7 +499,12 @@ namespace Futureware.MantisConnect
         /// <returns>The attachment id.</returns>
         public int IssueAttachmentAdd(int issueId, string filePath, string fileName)
         {
-            return this.IssueAttachmentAdd(issueId, fileName ?? Path.GetFileName(filePath), MimeTypes.GetMimeType(Path.GetExtension(fileName)), File.ReadAllBytes(filePath));
+            if (string.IsNullOrEmpty(filePath))
+            {
+                throw new ArgumentNullException("filePath");
+            }
+
+            return this.IssueAttachmentAdd(issueId, fileName ?? Path.GetFileName(filePath), MimeTypes.GetMimeType(Path.GetExtension(filePath)), File.ReadAllBytes(filePath));
         }
 
 		/// <summary>

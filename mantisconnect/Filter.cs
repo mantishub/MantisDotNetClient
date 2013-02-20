@@ -13,25 +13,55 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+
+    /// <summary>
 	/// A class that manages information relating to a Mantis filter.
 	/// </summary>
     [Serializable]
-    public class Filter
+    public sealed class Filter
 	{
-		/// <summary>
+        /// <summary>
+        /// The filter id.
+        /// </summary>
+        private readonly int id;
+
+        /// <summary>
+        /// The project id the filter is associated with.
+        /// </summary>
+        private readonly int projectId;
+
+        /// <summary>
+        /// A flag indicating whether the filter is public or not.
+        /// </summary>
+        private readonly bool isPublic;
+
+        /// <summary>
+        /// The name of the filter.
+        /// </summary>
+        private readonly string name;
+
+        /// <summary>
+        /// The filter string.
+        /// </summary>
+        private readonly string filterString;
+
+        /// <summary>
+        /// The owner of the filter.
+        /// </summary>
+        private User owner;
+
+        /// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="filterData">The filter data stored in the webservice proxy data type.</param>
-		internal Filter( MantisConnectWebservice.FilterData filterData )
+		internal Filter(MantisConnectWebservice.FilterData filterData)
 		{
-			this.id = Convert.ToInt32( filterData.id );
-			this.owner = new User( filterData.owner );
-			this.projectId = Convert.ToInt32( filterData.project_id );
+			this.id = Convert.ToInt32(filterData.id);
+			this.owner = new User(filterData.owner);
+			this.projectId = Convert.ToInt32(filterData.project_id);
 			this.isPublic = filterData.is_public;
 			this.name = filterData.name;
 			this.filterString = filterData.filter_string;
@@ -42,76 +72,71 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		/// <param name="filtersData">An array of filters stored in webservice proxy data type.</param>
 		/// <returns>An array of <see cref="Filter"/> instances.</returns>
-		internal static Filter[] ConvertArray( MantisConnectWebservice.FilterData[] filtersData )
+		internal static Filter[] ConvertArray(MantisConnectWebservice.FilterData[] filtersData)
 		{
-			if ( filtersData == null )
-				return null;
+            if (filtersData == null)
+            {
+                return null;
+            }
 
 			Filter[] filters = new Filter[filtersData.Length];
 
-			for ( int i = 0; i < filtersData.Length; ++i )
-				filters[i] = new Filter( filtersData[i] );
+            for (int i = 0; i < filtersData.Length; ++i)
+            {
+                filters[i] = new Filter(filtersData[i]);
+            }
 
 			return filters;
 		}
 
 		/// <summary>
-		/// Filter Id, must be greater than or equal to 1.
+		/// Gets the filter Id, must be greater than or equal to 1.
 		/// </summary>
 		public int Id
 		{
-			get { return id; }
+			get { return this.id; }
 		}
 
 		/// <summary>
-		/// The user who defined the filter.
+		/// Gets the user who defined the filter.
 		/// </summary>
 		public User Owner
 		{
-			get { return owner; }
+			get { return this.owner; }
 		}
 
 		/// <summary>
-		/// The project to which the filter belongs, or 0 for All Projects.
+		/// Gets the project to which the filter belongs, or 0 for All Projects.
 		/// </summary>
 		public int ProjectId
 		{
-			get { return projectId; }
+			get { return this.projectId; }
 		}
 
 		/// <summary>
-		/// A boolean that indicates whether the filter is public (available to all users) or
+		/// Gets a value indicating whether the filter is public (available to all users) or
 		/// private (available only to the user who created it).
 		/// </summary>
 		public bool IsPublic
 		{
-			get { return isPublic; }
+			get { return this.isPublic; }
 		}
 
 		/// <summary>
-		/// The name of the filter
+		/// Gets the name of the filter
 		/// </summary>
 		public string Name
 		{
-			get { return name; }
+			get { return this.name; }
 		}
 
 		/// <summary>
-		/// The string that defines the filter.  At the moment this format is treated as 
+		/// Gets the string that defines the filter.  At the moment this format is treated as 
 		/// a blackbox and is not interpretted by MantisConnect.
 		/// </summary>
 		public string FilterString
 		{
-			get { return filterString; }
+			get { return this.filterString; }
 		}
-
-		#region Private Members
-		private readonly int id;
-		private User owner;
-		private readonly int projectId;
-		private readonly bool isPublic;
-		private readonly string name;
-		private readonly string filterString;
-		#endregion
 	}
 }

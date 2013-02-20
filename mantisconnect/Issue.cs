@@ -13,11 +13,11 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-using System.Text;
-
 namespace Futureware.MantisConnect
 {
+    using System;
+    using System.Text;
+
     /// <summary>
     /// A class to manage information relating to an issue.
     /// </summary>
@@ -28,6 +28,151 @@ namespace Futureware.MantisConnect
     [Serializable]
     public sealed class Issue
     {
+        /// <summary>
+        /// The issue id.
+        /// </summary>
+        private int id;
+
+        /// <summary>
+        /// The project reference.
+        /// </summary>
+        private ObjectRef project = new ObjectRef();
+
+        /// <summary>
+        /// The total of all sponsorships on this issue.
+        /// </summary>
+        private int sponsorshipTotal;
+
+        /// <summary>
+        /// The reproducibility of the issue.
+        /// </summary>
+        private ObjectRef reproducibility = new ObjectRef();
+
+        /// <summary>
+        /// The status of the issue.
+        /// </summary>
+        private ObjectRef status = new ObjectRef();
+
+        /// <summary>
+        /// The priority of the issue.
+        /// </summary>
+        private ObjectRef priority = new ObjectRef();
+
+        /// <summary>
+        /// The severity of the issue.
+        /// </summary>
+        private ObjectRef severity = new ObjectRef();
+
+        /// <summary>
+        /// The resolution of the issue.
+        /// </summary>
+        private ObjectRef resolution = new ObjectRef();
+
+        /// <summary>
+        /// The projection of the issue.
+        /// </summary>
+        private ObjectRef projection = new ObjectRef();
+
+        /// <summary>
+        /// The eta of the issue.
+        /// </summary>
+        private ObjectRef eta = new ObjectRef();
+
+        /// <summary>
+        /// The view state of the issue.
+        /// </summary>
+        private ObjectRef viewState = new ObjectRef();
+
+        /// <summary>
+        /// The category of the issue.
+        /// </summary>
+        private ObjectRef category = new ObjectRef();
+
+        /// <summary>
+        /// The summary of the issue.
+        /// </summary>
+        private string summary = string.Empty;
+
+        /// <summary>
+        /// The description of the issue.
+        /// </summary>
+        private string description = string.Empty;
+
+        /// <summary>
+        /// The steps to reproduce for the issue.
+        /// </summary>
+        private string stepsToReproduce = string.Empty;
+
+        /// <summary>
+        /// The additional information for the issue.
+        /// </summary>
+        private string additionalInformation = string.Empty;
+
+        /// <summary>
+        /// The person to which the issue is assigned.
+        /// </summary>
+        private User assignedTo = new User();
+
+        /// <summary>
+        /// The person who reported the issue.
+        /// </summary>
+        private User reportedBy = new User();
+
+        /// <summary>
+        /// The product version on which the issue was found.
+        /// </summary>
+        private string productVersion = string.Empty;
+
+        /// <summary>
+        /// The product build on which the issue was found.
+        /// </summary>
+        private string productBuild = string.Empty;
+
+        /// <summary>
+        /// The product version in which the issue was resolved.
+        /// </summary>
+        private string fixedInVersion = string.Empty;
+
+        /// <summary>
+        /// The OS on which the issue is found.
+        /// </summary>
+        private string os = string.Empty;
+
+        /// <summary>
+        /// The OS version on which the issue was found.
+        /// </summary>
+        private string osBuild = string.Empty;
+
+        /// <summary>
+        /// The platform on which the issue was found.
+        /// </summary>
+        private string platform = string.Empty;
+
+        /// <summary>
+        /// The submission timestamp of the issue.
+        /// </summary>
+        private DateTime dateSubmitted = DateTime.Now;
+
+        /// <summary>
+        /// The last updated timestamp of the issue.
+        /// </summary>
+        private DateTime lastUpdated = DateTime.Now;
+
+        /// <summary>
+        /// The notes associated with the issue.
+        /// </summary>
+        private IssueNote[] notes = new IssueNote[0];
+
+        /// <summary>
+        /// The relationships associated with the issue.
+        /// </summary>
+        private IssueRelationship[] relationships = new IssueRelationship[0];
+
+        /// <summary>
+        /// The attachments associated with the issue.
+        /// </summary>
+        private Attachment[] attachments = new Attachment[0];
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Issue"/> class.
         /// </summary>
@@ -121,8 +266,10 @@ namespace Futureware.MantisConnect
         /// <returns>The array converted to this type.</returns>
 		internal static Issue[] ConvertArray(MantisConnectWebservice.IssueData[] issuesData)
 		{
-			if (issuesData == null)
-				return null;
+            if (issuesData == null)
+            {
+                return null;
+            }
 
 			Issue[] issues = new Issue[issuesData.Length];
 
@@ -140,8 +287,8 @@ namespace Futureware.MantisConnect
         /// <value>A value greater than or equal to 0.</value>
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         /// <summary>
@@ -150,8 +297,8 @@ namespace Futureware.MantisConnect
         /// <value>A value greater than 0.</value>
         public ObjectRef Project
         {
-            get { return project; }
-            set { project = value; }
+            get { return this.project; }
+            set { this.project = value; }
         }
 
         /// <summary>
@@ -159,8 +306,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public ObjectRef Category
         {
-            get { return category; }
-            set { category = value; }
+            get { return this.category; }
+            set { this.category = value; }
         }
 
         /// <summary>
@@ -168,8 +315,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string Summary
         {
-            get { return summary; }
-            set { summary = value; }
+            get { return this.summary; }
+            set { this.summary = value; }
         }
 
         /// <summary>
@@ -177,8 +324,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string Description
         {
-            get { return description; }
-            set { description = value; }
+            get { return this.description; }
+            set { this.description = value; }
         }
 
         /// <summary>
@@ -186,8 +333,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string StepsToReproduce
         {
-            get { return stepsToReproduce; }
-            set { stepsToReproduce = value; }
+            get { return this.stepsToReproduce; }
+            set { this.stepsToReproduce = value; }
         }
 
         /// <summary>
@@ -195,8 +342,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string AdditionalInformation
         {
-            get { return additionalInformation; }
-            set { additionalInformation = value; }
+            get { return this.additionalInformation; }
+            set { this.additionalInformation = value; }
         }
 
         /// <summary>
@@ -205,8 +352,8 @@ namespace Futureware.MantisConnect
         /// <value>User id >= 0</value>
         public User AssignedTo
         {
-            get { return assignedTo; }
-            set { assignedTo = value; }
+            get { return this.assignedTo; }
+            set { this.assignedTo = value; }
         }
 
         /// <summary>
@@ -215,8 +362,8 @@ namespace Futureware.MantisConnect
         /// <value>User id > 0</value>
         public User ReportedBy
         {
-            get { return reportedBy; }
-            set { reportedBy = value; }
+            get { return this.reportedBy; }
+            set { this.reportedBy = value; }
         }
 
         /// <summary>
@@ -224,8 +371,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string ProductVersion
         {
-            get { return productVersion; }
-            set { productVersion = value; }
+            get { return this.productVersion; }
+            set { this.productVersion = value; }
         }
 
         /// <summary>
@@ -233,8 +380,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string ProductBuild
         {
-            get { return productBuild; }
-            set { productBuild = value; }
+            get { return this.productBuild; }
+            set { this.productBuild = value; }
         }
 
         /// <summary>
@@ -242,8 +389,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string Os
         {
-            get { return os; }
-            set { os = value; }
+            get { return this.os; }
+            set { this.os = value; }
         }
 
         /// <summary>
@@ -251,8 +398,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string OsBuild
         {
-            get { return osBuild; }
-            set { osBuild = value; }
+            get { return this.osBuild; }
+            set { this.osBuild = value; }
         }
 
         /// <summary>
@@ -260,8 +407,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public string Platform
         {
-            get { return platform; }
-            set { platform = value; }
+            get { return this.platform; }
+            set { this.platform = value; }
         }
 
         /// <summary>
@@ -273,8 +420,8 @@ namespace Futureware.MantisConnect
         /// </value>
         public string FixedInVersion
         {
-            get { return fixedInVersion; }
-            set { fixedInVersion = value; }
+            get { return this.fixedInVersion; }
+            set { this.fixedInVersion = value; }
         }
 
         /// <summary>
@@ -285,8 +432,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public int SponsorshipTotal
         {
-            get { return sponsorshipTotal; }
-            set { sponsorshipTotal = value; }
+            get { return this.sponsorshipTotal; }
+            set { this.sponsorshipTotal = value; }
         }
 
         /// <summary>
@@ -298,8 +445,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public ObjectRef Reproducibility
         {
-            get { return reproducibility; }
-            set { reproducibility = value; }
+            get { return this.reproducibility; }
+            set { this.reproducibility = value; }
         }
 
         /// <summary>
@@ -311,8 +458,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public ObjectRef Resolution
         {
-            get { return resolution; }
-            set { resolution = value; }
+            get { return this.resolution; }
+            set { this.resolution = value; }
         }
 
         /// <summary>
@@ -324,8 +471,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public ObjectRef Eta
         {
-            get { return eta; }
-            set { eta = value; }
+            get { return this.eta; }
+            set { this.eta = value; }
         }
 
         /// <summary>
@@ -337,8 +484,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public ObjectRef Status
         {
-            get { return status; }
-            set { status = value; }
+            get { return this.status; }
+            set { this.status = value; }
         }
 
         /// <summary>
@@ -350,8 +497,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public ObjectRef Priority
         {
-            get { return priority; }
-            set { priority = value; }
+            get { return this.priority; }
+            set { this.priority = value; }
         }
 
         /// <summary>
@@ -363,8 +510,8 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public ObjectRef Severity
         {
-            get { return severity; }
-            set { severity = value; }
+            get { return this.severity; }
+            set { this.severity = value; }
         }
 
         /// <summary>
@@ -372,8 +519,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public ObjectRef Projection
         {
-            get { return projection; }
-            set { projection = value; }
+            get { return this.projection; }
+            set { this.projection = value; }
         }
 
         /// <summary>
@@ -381,8 +528,8 @@ namespace Futureware.MantisConnect
         /// </summary>
         public ObjectRef ViewState
         {
-            get { return viewState; }
-            set { viewState = value; }
+            get { return this.viewState; }
+            set { this.viewState = value; }
         }
 
 		/// <summary>
@@ -390,8 +537,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public DateTime DateSubmitted
 		{
-			get { return dateSubmitted; }
-			set { dateSubmitted = value; }
+			get { return this.dateSubmitted; }
+			set { this.dateSubmitted = value; }
 		}
 
 		/// <summary>
@@ -399,38 +546,35 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public DateTime LastUpdated
 		{
-			get { return lastUpdated; }
-			set { lastUpdated = value; }
+			get { return this.lastUpdated; }
+			set { this.lastUpdated = value; }
 		}
 
         /// <summary>
         /// Gets or sets the notes.
         /// </summary>
-        /// <value></value>
 		public IssueNote[] Notes
 		{
-			get { return notes; }
-			set { notes = value; }
+			get { return this.notes; }
+			set { this.notes = value; }
 		}
 
         /// <summary>
         /// Gets or sets the relationships.
         /// </summary>
-        /// <value></value>
 		public IssueRelationship[] Relationships
 		{
-			get { return relationships; }
-			set { relationships = value; }
+			get { return this.relationships; }
+			set { this.relationships = value; }
 		}
 
         /// <summary>
         /// Gets or sets the attachments.
         /// </summary>
-        /// <value></value>
 		public Attachment[] Attachments
 		{
-			get { return attachments; }
-			set { attachments = value; }
+			get { return this.attachments; }
+			set { this.attachments = value; }
 		}
 		
 		/// <summary>
@@ -441,28 +585,28 @@ namespace Futureware.MantisConnect
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Id = '{0}'\n", id);
-            sb.AppendFormat("Category = '{0}'\n", category == null ? "null" : category.ToString());
-            sb.AppendFormat("Summary = '{0}'\n", summary);
-            sb.AppendFormat("Description = '{0}'\n", description);
+            sb.AppendFormat("Id = '{0}'\n", this.id);
+            sb.AppendFormat("Category = '{0}'\n", this.category == null ? "null" : this.category.ToString());
+            sb.AppendFormat("Summary = '{0}'\n", this.summary);
+            sb.AppendFormat("Description = '{0}'\n", this.description);
             sb.AppendFormat("Product Version = '{0}'\n", this.ProductVersion);
             sb.AppendFormat("Product Build = '{0}'\n", this.ProductBuild);
             sb.AppendFormat("Steps to Reproduce = '{0}'\n", this.stepsToReproduce);
             sb.AppendFormat("Additional Info = '{0}'\n", this.AdditionalInformation);
 
-            sb.AppendFormat("Project = {0}\n", project == null ? "null" : project.ToString());
-            sb.AppendFormat("Reported By = {0}\n", ReportedBy == null ? "null" : ReportedBy.ToString());
-            sb.AppendFormat("Assigned To = {0}\n", AssignedTo == null ? "null" : AssignedTo.ToString());
-            sb.AppendFormat("Reproducibility = {0}\n", reproducibility == null ? "null" : reproducibility.ToString());
-            sb.AppendFormat("Status = {0}\n", status == null ? "null" : status.ToString());
-            sb.AppendFormat("Priority = {0}\n", priority == null ? "null" : priority.ToString());
-            sb.AppendFormat("Severity = {0}\n", severity == null ? "null" : severity.ToString());
-            sb.AppendFormat("Resolution = {0}\n", resolution == null ? "null" : resolution.ToString());
-            sb.AppendFormat("Projection = {0}\n", projection == null ? "null" : projection.ToString());
-            sb.AppendFormat("Eta = {0}\n", eta == null ? "null" : eta.ToString());
-            sb.AppendFormat("View State = {0}\n", viewState == null ? "null" : viewState.ToString());
+            sb.AppendFormat("Project = {0}\n", this.project == null ? "null" : this.project.ToString());
+            sb.AppendFormat("Reported By = {0}\n", this.ReportedBy == null ? "null" : this.ReportedBy.ToString());
+            sb.AppendFormat("Assigned To = {0}\n", this.AssignedTo == null ? "null" : this.AssignedTo.ToString());
+            sb.AppendFormat("Reproducibility = {0}\n", this.reproducibility == null ? "null" : this.reproducibility.ToString());
+            sb.AppendFormat("Status = {0}\n", this.status == null ? "null" : this.status.ToString());
+            sb.AppendFormat("Priority = {0}\n", this.priority == null ? "null" : this.priority.ToString());
+            sb.AppendFormat("Severity = {0}\n", this.severity == null ? "null" : this.severity.ToString());
+            sb.AppendFormat("Resolution = {0}\n", this.resolution == null ? "null" : this.resolution.ToString());
+            sb.AppendFormat("Projection = {0}\n", this.projection == null ? "null" : this.projection.ToString());
+            sb.AppendFormat("Eta = {0}\n", this.eta == null ? "null" : this.eta.ToString());
+            sb.AppendFormat("View State = {0}\n", this.viewState == null ? "null" : this.viewState.ToString());
 
-            sb.AppendFormat("Sponsorship Total = '{0}'\n", sponsorshipTotal);
+            sb.AppendFormat("Sponsorship Total = '{0}'\n", this.sponsorshipTotal);
             sb.AppendFormat("Fixed in Version = '{0}'\n", this.FixedInVersion);
             sb.AppendFormat("OS = '{0}'\n", this.Os);
             sb.AppendFormat("OS Build = '{0}'\n", this.OsBuild);
@@ -473,37 +617,5 @@ namespace Futureware.MantisConnect
 
 			return sb.ToString();
         }
-
-        #region Private Members
-        private int id;
-        private ObjectRef project = new ObjectRef();
-        private int sponsorshipTotal;
-        private ObjectRef reproducibility = new ObjectRef();
-        private ObjectRef status = new ObjectRef();
-        private ObjectRef priority = new ObjectRef();
-        private ObjectRef severity = new ObjectRef();
-        private ObjectRef resolution = new ObjectRef();
-        private ObjectRef projection = new ObjectRef();
-        private ObjectRef eta = new ObjectRef();
-        private ObjectRef viewState = new ObjectRef();
-        private ObjectRef category = new ObjectRef();
-        private string summary = string.Empty;
-        private string description = string.Empty;
-        private string stepsToReproduce = string.Empty;
-        private string additionalInformation = string.Empty;
-        private User assignedTo = new User();
-        private User reportedBy = new User();
-        private string productVersion = string.Empty;
-        private string productBuild = string.Empty;
-        private string fixedInVersion = string.Empty;
-        private string os = string.Empty;
-        private string osBuild = string.Empty;
-        private string platform = string.Empty;
-		private DateTime dateSubmitted = DateTime.Now;
-		private DateTime lastUpdated = DateTime.Now;
-		private IssueNote[] notes = new IssueNote[0];
-		private IssueRelationship[] relationships = new IssueRelationship[0];
-		private Attachment[] attachments = new Attachment[0];
-        #endregion
     }
 }

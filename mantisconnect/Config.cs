@@ -16,7 +16,7 @@
 namespace Futureware.MantisConnect
 {
     using System;
-    using System.Collections;
+    using System.Collections.Generic;
 
     /// <summary>
 	/// Provides access to Mantis configuration.
@@ -34,10 +34,20 @@ namespace Futureware.MantisConnect
     public sealed class Config
     {
         /// <summary>
+        /// The session to use in getting configs.
+        /// </summary>
+        private readonly Session session;
+
+        /// <summary>
+        /// Hashtable of cached configuration options.
+        /// </summary>
+        private IDictionary<string, string> configs = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="session">Session to be used to retrieve the configs.</param>
-        public Config( Session session )
+        public Config(Session session)
         {
             this.session = session;
         }
@@ -48,7 +58,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public Session Session
         {
-            get { return session; }
+            get { return this.session; }
         }
 
         /// <summary>
@@ -56,12 +66,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum AccessLevelEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "access_levels", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("access_levels"); }
         }
 
         /// <summary>
@@ -69,12 +74,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum PriorityEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "priority", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("priority"); }
         }
 
         /// <summary>
@@ -82,12 +82,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum SeverityEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "severity", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("severity"); }
         }
 
         /// <summary>
@@ -95,12 +90,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum ReproducibilityEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "reproducibility", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("reproducibility"); }
         }
 
         /// <summary>
@@ -108,12 +98,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum ViewStateEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "view_state", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("view_state"); }
         }
 
         /// <summary>
@@ -121,12 +106,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum EtaEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "eta", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("eta"); }
         }
 
         /// <summary>
@@ -134,12 +114,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum ProjectionEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "projection", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("projection"); }
         }
 
         /// <summary>
@@ -147,12 +122,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum ResolutionEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "resolution", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("resolution"); }
         }
 
         /// <summary>
@@ -160,12 +130,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public MantisEnum StatusEnum
         {
-            get
-            {
-                MantisEnum enumeration;
-                Get( "status", out enumeration );
-                return enumeration;
-            }
+            get { return this.Get("status"); }
         }
 
         /// <summary>
@@ -175,16 +140,12 @@ namespace Futureware.MantisConnect
         /// <param name="str">The output parameter to store the config variable in.  This
         /// is a parameter rather than a return value to allow overloading of this
         /// method for different types.</param>
-        public void Get( string config, out string str )
+        public void Get(string config, out string str)
         {
-            if ( configs.ContainsKey( config ) )
+            if (!this.configs.TryGetValue(config, out str))
             {
-                str = configs[config] as string;
-            }
-            else
-            {
-                session.Request.ConfigGet( config, out str );
-                configs[config] = str;
+                session.Request.ConfigGet(config, out str);
+                this.configs[config] = str;
             }
         }
 
@@ -196,23 +157,29 @@ namespace Futureware.MantisConnect
         /// </remarks>
         /// <param name="enumerationName">Enumeration name (eg: status, access_levels, ...etc)</param>
         /// <param name="enumeration">An output parameter to contain the created <see cref="MantisEnum"/> instance.</param>
-        public void Get( string enumerationName, out MantisEnum enumeration )
+        public void Get(string enumerationName, out MantisEnum enumeration)
         {
             string str;
 
-            string configOption = string.Format( "{0}_enum_string", enumerationName );
-            Get( configOption, out str );
+            string configOption = string.Format("{0}_enum_string", enumerationName);
+            this.Get(configOption, out str);
 
-            enumeration = new MantisEnum( str );
+            enumeration = new MantisEnum(str);
         }
 
-        #region Private
-        private readonly Session session;
-
         /// <summary>
-        /// Hashtable of cached configuration options.
+        /// Get the enumeration with the specified name.
         /// </summary>
-        private Hashtable configs = new Hashtable();
-        #endregion
+        /// <remarks>
+        /// See also the properties for the enumerations.
+        /// </remarks>
+        /// <param name="enumerationName">Enumeration name (eg: status, access_levels, ...etc)</param>
+        /// <returns>MantisEnum</returns>
+        public MantisEnum Get(string enumerationName)
+        {
+            MantisEnum enumeration;
+            this.Get(enumerationName, out enumeration);
+            return enumeration;
+        }
     }
 }

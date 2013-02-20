@@ -26,12 +26,27 @@ namespace Futureware.MantisConnect
         /// <summary>
         /// Constructs a session given a url, username and password.
         /// </summary>
-        /// <param name="url">URL of MantisConnect webservice (eg: http://www.example.com/mantis/mantisconnect/mantisconnect.php)</param>
+        /// <param name="url">URL of MantisConnect webservice (eg: http://www.example.com/mantis/)</param>
         /// <param name="username">User name to connect as.</param>
         /// <param name="password">Password for the specified user.</param>
         /// <param name="networkCredential"></param>
-        public Session( string url, string username, string password, NetworkCredential networkCredential )
+        public Session(string url, string username, string password, NetworkCredential networkCredential)
         {
+            if (string.IsNullOrEmpty(url))
+            {
+                throw new ArgumentNullException("url");
+            }
+
+            if (url.IndexOf("mantisconnect.php", StringComparison.OrdinalIgnoreCase) == -1)
+            {
+                if (!url.EndsWith("/"))
+                {
+                    url += "/";
+                }
+
+                url += "api/soap/mantisconnect.php";
+            }
+
             this.username = username;
             this.password = password;
             this.url = url;

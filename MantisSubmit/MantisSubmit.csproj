@@ -127,7 +127,9 @@
     <Compile Include="SubmitIssue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <EmbeddedResource Include="SubmitIssue.resx">
       <DependentUpon>SubmitIssue.cs</DependentUpon>
       <SubType>Designer</SubType>

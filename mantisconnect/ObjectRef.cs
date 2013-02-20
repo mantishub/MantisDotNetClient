@@ -125,7 +125,7 @@ namespace Futureware.MantisConnect
         /// <returns>String displaying internal state.</returns>
         public override string ToString()
         {
-            return string.Format( "ObjectRef( {0}, '{1}' )", Id, Name );
+            return string.Format( "{0}:{1}", this.Id, this.Name);
         }
 
         #region Private

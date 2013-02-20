@@ -17,7 +17,6 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Reflection;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Text;
@@ -637,47 +636,6 @@ namespace Futureware.MantisConnect
             if ( config.IndexOfAny( invalidChars ) != -1 )
                 throw new ArgumentOutOfRangeException( "configOption" );
         }
-
-        /// <summary>
-		/// 
-		/// </summary>
-		/// <param name="type"></param>
-		/// <param name="rows"></param>
-		/// <param name="tableName"></param>
-		/// <returns></returns>
-		public static DataTable ArrayToDataTable( Type type, object[] rows, string tableName )
-		{
-			DataTable table = new DataTable( tableName );
-
-			PropertyInfo[] properties = type.GetProperties( BindingFlags.Instance | BindingFlags.Public );
-			for ( int i = 0; i < properties.Length; ++i )
-				table.Columns.Add( properties[i].Name, properties[i].PropertyType );
-
-			foreach( object row in rows )
-			{
-				if ( row.GetType() != type )
-					throw new ArgumentException( "row type not matching expected table type" );
-
-				DataRow dataRow = table.NewRow();
-
-				for ( int i = 0; i < properties.Length; ++i )
-				{
-					object val = properties[i].GetValue( row, null );
-					if ( val == null )
-						val = DBNull.Value;
-					else if ( val is ICollection )
-						val = (val as ICollection).Count;
-					else
-						val = val.ToString();
-
-					dataRow[table.Columns[i]] = val;
-				}
-
-				table.Rows.Add( dataRow );
-			}
-
-			return table;
-		}
 
         /// <summary>
         /// Session to retrieve the user name / password of the current session

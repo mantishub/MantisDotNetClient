@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------
-// <copyright file="MimeTypes.cs" company="Microsoft Corporation">
-//     Copyright (C) 2004-2013 All Rights Reserved
+// <copyright file="MimeTypes.cs" company="Victor Boctor">
+//     Copyright (C) All Rights Reserved
 // </copyright>
 // <summary>
 // MantisConnect is copyrighted to Victor Boctor

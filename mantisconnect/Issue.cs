@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------
-// <copyright file="Issue.cs" company="Microsoft Corporation">
-//     Copyright (C) 2004-2011 All Rights Reserved
+// <copyright file="Issue.cs" company="Victor Boctor">
+//     Copyright (C) All Rights Reserved
 // </copyright>
 // <summary>
 // MantisConnect is copyrighted to Victor Boctor
@@ -12,9 +12,6 @@
 // purchase of a MantisConnect commercial license.
 // </summary>
 //-----------------------------------------------------------------------
-
-#region Copyright © 2004-2005 Victor Boctor
-#endregion
 
 using System;
 using System.Text;

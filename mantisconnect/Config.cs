@@ -1,21 +1,24 @@
-#region Copyright © 2004 Victor Boctor
-//
+//-----------------------------------------------------------------------
+// <copyright file="Config.cs" company="Victor Boctor">
+//     Copyright (C) All Rights Reserved
+// </copyright>
+// <summary>
 // MantisConnect is copyrighted to Victor Boctor
 //
 // This program is distributed under the terms and conditions of the GPL
 // See LICENSE file for details.
 //
 // For commercial applications to link with or modify MantisConnect, they require the
-// purchase of a MantisConnect commerical license.
-//
-#endregion
-
-using System;
-using System.Collections;
+// purchase of a MantisConnect commercial license.
+// </summary>
+//-----------------------------------------------------------------------
 
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+    using System.Collections;
+
+    /// <summary>
 	/// Provides access to Mantis configuration.
 	/// </summary>
 	/// <remarks>

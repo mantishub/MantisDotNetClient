@@ -1,14 +1,17 @@
-#region Copyright © 2004 Victor Boctor
-//
+//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Victor Boctor">
+//     Copyright (C) All Rights Reserved
+// </copyright>
+// <summary>
 // MantisConnect is copyrighted to Victor Boctor
 //
 // This program is distributed under the terms and conditions of the GPL
 // See LICENSE file for details.
 //
 // For commercial applications to link with or modify MantisConnect, they require the
-// purchase of a MantisConnect commerical license.
-//
-#endregion
+// purchase of a MantisConnect commercial license.
+// </summary>
+//-----------------------------------------------------------------------
 
 using System;
 using System.Reflection;
@@ -24,7 +27,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Futureware.Biz")]
 [assembly: AssemblyProduct("MantisConnect")]
-[assembly: AssemblyCopyright("Copyright 2004 Victor Boctor - Futureware")]
+[assembly: AssemblyCopyright("Copyright 2004-2013 Victor Boctor - Futureware")]
 [assembly: AssemblyTrademark("MantisConnect")]
 [assembly: AssemblyCulture("")]
 
@@ -39,8 +42,8 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0.6.0")]
-[assembly: AssemblyFileVersion("1.0.6.0")]
+[assembly: AssemblyVersion("1.0.0.6")]
+[assembly: AssemblyFileVersion("1.0.0.6")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 

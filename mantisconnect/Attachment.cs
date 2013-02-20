@@ -73,7 +73,7 @@ namespace Futureware.MantisConnect
 		/// </remarks>
 		public string FileName
 		{
-			get { return FileName; }
+			get { return this.fileName; }
 		}
 
 		/// <summary>

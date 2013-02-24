@@ -13,18 +13,48 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-using System.Collections;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+    using System.Collections;
+
+    /// <summary>
 	/// A class that manages information relating to an issue note.
 	/// </summary>
     [Serializable]
     public sealed class IssueNote
 	{
-		/// <summary>
+        /// <summary>
+        /// The issue note id.
+        /// </summary>
+        private int id;
+
+        /// <summary>
+        /// The author of the issue note.
+        /// </summary>
+        private User author;
+
+        /// <summary>
+        /// The issue note text.
+        /// </summary>
+        private string text;
+
+        /// <summary>
+        /// The view state of the issue note (e.g. private vs. public).
+        /// </summary>
+        private ObjectRef viewState;
+
+        /// <summary>
+        /// The date the issue note was submitted.
+        /// </summary>
+        private DateTime dateSubmitted;
+
+        /// <summary>
+        /// The time stamp at which the issue note was last modified.
+        /// </summary>
+        private DateTime lastModified;
+        
+        /// <summary>
 		/// Default Constructor
 		/// </summary>
 		public IssueNote()
@@ -36,12 +66,12 @@ namespace Futureware.MantisConnect
 		/// type in the webservice proxy.
 		/// </summary>
 		/// <param name="issueNoteData">The type defined by the webservice proxy for issue notes.</param>
-		internal IssueNote( MantisConnectWebservice.IssueNoteData issueNoteData )
+		internal IssueNote(MantisConnectWebservice.IssueNoteData issueNoteData)
 		{
-			this.Id = Convert.ToInt32( issueNoteData.id );
-			this.Author = new User( issueNoteData.reporter );
-			this.Text = StringUtils.WebserviceMultilineToNative( issueNoteData.text );
-			this.ViewState = new ObjectRef( issueNoteData.view_state );
+			this.Id = Convert.ToInt32(issueNoteData.id);
+			this.Author = new User(issueNoteData.reporter);
+			this.Text = StringUtils.WebserviceMultilineToNative(issueNoteData.text);
+			this.ViewState = new ObjectRef(issueNoteData.view_state);
 			this.DateSubmitted = issueNoteData.date_submitted;
 			this.LastModified = issueNoteData.last_modified;
 		}
@@ -56,7 +86,7 @@ namespace Futureware.MantisConnect
 
 			note.id = Id.ToString();
 			note.reporter = Author != null ? Author.ToWebservice() : null;
-			note.text = StringUtils.NativeMultilineToWebservice( Text );
+			note.text = StringUtils.NativeMultilineToWebservice(Text);
 			note.view_state = ViewState != null ? ViewState.ToWebservice() : null;
 			note.date_submitted = DateSubmitted;
 			note.last_modified = LastModified;
@@ -70,15 +100,19 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		/// <param name="issueNotesData">An array of issue notes in webservice proxy format.</param>
 		/// <returns>An array of <see cref="IssueNote"/>.</returns>
-		internal static IssueNote[] ConvertArray( MantisConnectWebservice.IssueNoteData[] issueNotesData )
+		internal static IssueNote[] ConvertArray(MantisConnectWebservice.IssueNoteData[] issueNotesData)
 		{
-			if ( issueNotesData == null )
-				return new IssueNote[0];
+            if (issueNotesData == null)
+            {
+                return new IssueNote[0];
+            }
 
 			IssueNote[] notes = new IssueNote[issueNotesData.Length];
 
-			for ( int i = 0; i < issueNotesData.Length; ++i )
-				notes[i] = new IssueNote( issueNotesData[i] );
+            for (int i = 0; i < issueNotesData.Length; ++i)
+            {
+                notes[i] = new IssueNote(issueNotesData[i]);
+            }
 
 			return notes;
 		}
@@ -89,22 +123,27 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="notes">An array of issue notes.</param>
         /// <returns>An array of issue notes in webservice proxy data type.</returns>
-        internal static MantisConnectWebservice.IssueNoteData[] ConvertArrayToWebservice( IssueNote[] notes )
+        internal static MantisConnectWebservice.IssueNoteData[] ConvertArrayToWebservice(IssueNote[] notes)
         {
-            if ( notes == null )
+            if (notes == null)
+            {
                 return null;
+            }
 
-            MantisConnectWebservice.IssueNoteData[] notesForWebservice = new MantisConnectWebservice.IssueNoteData[ notes.Length ];
+            MantisConnectWebservice.IssueNoteData[] notesForWebservice = new MantisConnectWebservice.IssueNoteData[notes.Length];
 
             int i = 0;
-            foreach( IssueNote note in notes )
+
+            foreach (IssueNote note in notes)
+            {
                 notesForWebservice[i++] = note.ToWebservice();
+            }
 
             return notesForWebservice;
         }
 
 		/// <summary>
-		/// An issue note id, must be greater than or equal to 1.
+		/// Gets or sets the issue note id, must be greater than or equal to 1.
 		/// </summary>
 		public int Id
 		{
@@ -113,7 +152,7 @@ namespace Futureware.MantisConnect
 		}
 
 		/// <summary>
-		/// The user who submitted the issue note.
+		/// Gets or sets the user who submitted the issue note.
 		/// </summary>
 		public User Author
 		{
@@ -122,7 +161,7 @@ namespace Futureware.MantisConnect
 		}
 
 		/// <summary>
-		/// The text of the issue note.
+		/// Gets or sets the text of the issue note.
 		/// </summary>
 		public string Text
 		{
@@ -131,7 +170,7 @@ namespace Futureware.MantisConnect
 		}
 
 		/// <summary>
-		/// The view state of the issue note.  This can be private or public.
+		/// Gets or sets the view state of the issue note.  This can be private or public.
 		/// </summary>
 		public ObjectRef ViewState
 		{
@@ -140,7 +179,7 @@ namespace Futureware.MantisConnect
 		}
 
 		/// <summary>
-		/// The timestamp on which the issue note was submitted.
+		/// Gets or sets the timestamp on which the issue note was submitted.
 		/// </summary>
 		public DateTime DateSubmitted
 		{
@@ -149,21 +188,12 @@ namespace Futureware.MantisConnect
 		}
 
 		/// <summary>
-		/// The timestamp on which the issue note was last modified.
+		/// Gets or sets the timestamp on which the issue note was last modified.
 		/// </summary>
 		public DateTime LastModified
 		{
 			get { return lastModified; }
 			set { lastModified = value; }
 		}
-
-		#region Private Members
-		private int id;
-		private User author;
-		private string text;
-		private ObjectRef viewState;
-		private DateTime dateSubmitted;
-		private DateTime lastModified;
-		#endregion
 	}
 }

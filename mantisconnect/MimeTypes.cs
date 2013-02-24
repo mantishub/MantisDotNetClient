@@ -17,16 +17,25 @@ namespace Futureware.MantisConnect
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// A utility class that maps file extensions to mime types.
     /// </summary>
-    public sealed class MimeTypes
+    public static class MimeTypes
     {
+        /// <summary>
+        /// The dictionary for mime types.
+        /// </summary>
         private static IDictionary<string, string> mimeTypes;
+
+        /// <summary>
+        /// The default mime type to use when the extension is not mapped.
+        /// </summary>
         private const string DefaultMimeType = "application/octet-stream";
 
+        /// <summary>
+        /// Static constructor for <see cref="MimeTypes"/>.
+        /// </summary>
         static MimeTypes()
         {
             mimeTypes = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -586,6 +595,7 @@ namespace Futureware.MantisConnect
         /// Gets a file extension and returns the corresponding mime type.
         /// </summary>
         /// <param name="fileExtension">File extension including the dot.</param>
+        /// <returns>The mime type, won't be null.</returns>
         public static string GetMimeType(string fileExtension)
         {
             if (string.IsNullOrEmpty(fileExtension))

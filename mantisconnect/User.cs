@@ -13,16 +13,36 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+
+    /// <summary>
 	/// A class that includes information relating to a Mantis user account.
 	/// </summary>
     [Serializable]
     public sealed class User
 	{
+        /// <summary>
+        /// The user id.
+        /// </summary>
+        private int id;
+
+        /// <summary>
+        /// The user name.
+        /// </summary>
+        private string name;
+
+        /// <summary>
+        /// The user real name.
+        /// </summary>
+        private string realName;
+
+        /// <summary>
+        /// The user email address.
+        /// </summary>
+        private string email;
+ 
         /// <summary>
         /// Initializes a new instance of the <see cref="User"/> class.
         /// </summary>
@@ -34,9 +54,9 @@ namespace Futureware.MantisConnect
         /// Initializes a new instance of the <see cref="User"/> class.
         /// </summary>
         /// <param name="accountData">Account data.</param>
-		internal User( MantisConnectWebservice.AccountData accountData )
+		internal User(MantisConnectWebservice.AccountData accountData)
 		{
-			this.Id = Convert.ToInt32( accountData.id );
+			this.Id = Convert.ToInt32(accountData.id);
 			this.Name = accountData.name;
 			this.RealName = accountData.real_name;
 			this.Email = accountData.email;
@@ -74,8 +94,8 @@ namespace Futureware.MantisConnect
         /// <value>Greater than or equal to 1.</value>
 		public int Id
 		{
-			get { return id; }
-			set { id = value; }
+			get { return this.id; }
+			set { this.id = value; }
 		}
 
         /// <summary>
@@ -84,18 +104,18 @@ namespace Futureware.MantisConnect
         /// <value>Must not be empty or null.</value>
 		public string Name
 		{
-			get { return name; }
-			set { name = value; }
+			get { return this.name; }
+			set { this.name = value; }
 		}
 
         /// <summary>
-        /// Gets or sets the name of the real.
+        /// Gets or sets the real name of the user.
         /// </summary>
         /// <value>Can be empty or null.</value>
 		public string RealName
 		{
-			get { return realName; }
-			set { realName = value; }
+			get { return this.realName; }
+			set { this.realName = value; }
 		}
 
         /// <summary>
@@ -104,15 +124,8 @@ namespace Futureware.MantisConnect
         /// <value>Can be empty or null.</value>
 		public string Email
 		{
-			get { return email; }
-			set { email = value; }
+			get { return this.email; }
+			set { this.email = value; }
 		}
-
-		#region Private Members
-		private int id;
-		private string name;
-		private string realName;
-		private string email;
-		#endregion
 	}
 }

@@ -147,8 +147,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public int Id
 		{
-			get { return id; }
-			set { id = value; }
+			get { return this.id; }
+			set { this.id = value; }
 		}
 
 		/// <summary>
@@ -156,8 +156,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public User Author
 		{
-			get { return author; }
-			set { author = value; }
+			get { return this.author; }
+			set { this.author = value; }
 		}
 
 		/// <summary>
@@ -165,8 +165,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public string Text
 		{
-			get { return text; }
-			set { text = value; }
+			get { return this.text; }
+			set { this.text = value; }
 		}
 
 		/// <summary>
@@ -174,8 +174,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public ObjectRef ViewState
 		{
-			get { return viewState; }
-			set { viewState = value; }
+			get { return this.viewState; }
+			set { this.viewState = value; }
 		}
 
 		/// <summary>
@@ -183,8 +183,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public DateTime DateSubmitted
 		{
-			get { return dateSubmitted; }
-			set { dateSubmitted = value; }
+			get { return this.dateSubmitted; }
+			set { this.dateSubmitted = value; }
 		}
 
 		/// <summary>
@@ -192,8 +192,8 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		public DateTime LastModified
 		{
-			get { return lastModified; }
-			set { lastModified = value; }
+			get { return this.lastModified; }
+			set { this.lastModified = value; }
 		}
 	}
 }

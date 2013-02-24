@@ -13,24 +13,34 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+
+    /// <summary>
 	/// A type that stores information relating to a relationship between two issues.
 	/// </summary>
     [Serializable]
     public sealed class IssueRelationship
 	{
         /// <summary>
+        /// The relationship type.
+        /// </summary>
+        private ObjectRef type;
+
+        /// <summary>
+        /// The issue id.
+        /// </summary>
+        private int issueId;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="IssueRelationship"/> class.
         /// </summary>
         /// <param name="relationshipData">Relationship data in webservice proxy type.</param>
-		internal IssueRelationship( MantisConnectWebservice.RelationshipData relationshipData )
+		internal IssueRelationship(MantisConnectWebservice.RelationshipData relationshipData)
 		{
-			this.Type = new ObjectRef( relationshipData.type );
-			this.IssueId = Convert.ToInt32( relationshipData.target_id );
+			this.Type = new ObjectRef(relationshipData.type);
+			this.IssueId = Convert.ToInt32(relationshipData.target_id);
 		}
 
         /// <summary>
@@ -38,15 +48,19 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="relationshipsData">Relationships data.</param>
         /// <returns>An array of relationships in this type.</returns>
-		internal static IssueRelationship[] ConvertArray( MantisConnectWebservice.RelationshipData[] relationshipsData )
+		internal static IssueRelationship[] ConvertArray(MantisConnectWebservice.RelationshipData[] relationshipsData)
 		{
-			if ( relationshipsData == null )
-				return null;
+            if (relationshipsData == null)
+            {
+                return null;
+            }
 
 			IssueRelationship[] relationships = new IssueRelationship[relationshipsData.Length];
 
-			for ( int i = 0; i < relationshipsData.Length; ++i )
-				relationships[i] = new IssueRelationship( relationshipsData[i] );
+            for (int i = 0; i < relationshipsData.Length; ++i)
+            {
+                relationships[i] = new IssueRelationship(relationshipsData[i]);
+            }
 
 			return relationships;
 		}
@@ -54,11 +68,10 @@ namespace Futureware.MantisConnect
         /// <summary>
         /// Gets or sets the relationship type.
         /// </summary>
-        /// <value></value>
 		public ObjectRef Type
 		{
-			get { return type; }
-			set { type = value; }
+			get { return this.type; }
+			set { this.type = value; }
 		}
 
         /// <summary>
@@ -69,13 +82,8 @@ namespace Futureware.MantisConnect
         /// <value>Greater than or equal to 1.</value>
 		public int IssueId
 		{
-			get { return issueId; }
-			set { issueId = value; }
+			get { return this.issueId; }
+			set { this.issueId = value; }
 		}
-
-		#region Private Members
-		private ObjectRef type;
-		private int issueId;
-		#endregion
 	}
 }

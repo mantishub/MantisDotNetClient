@@ -13,20 +13,15 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-using System.Collections;
-using System.Data;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
-using System.Text;
-using System.Text.RegularExpressions;
-
 namespace Futureware.MantisConnect
 {
+    using System;
+    using System.Data;
+    using System.Diagnostics;
+    using System.Globalization;
+    using System.IO;
+    using System.ServiceModel;
+
     /// <summary>
     /// A wrapper around <see cref="MantisConnectWebservice"/> to provide a more friendly
     /// interface for the rest of the C# code.
@@ -41,6 +36,17 @@ namespace Futureware.MantisConnect
     public sealed class Request
     {
         /// <summary>
+        /// Session to retrieve the user name / password of the current session
+        /// from.
+        /// </summary>
+        private readonly Session session;
+
+        /// <summary>
+        /// Webservice auto-generated proxy.
+        /// </summary>
+        private MantisConnectWebservice.MantisConnectPortTypeClient mc;
+
+        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="session">The session to use for all communication with the webservice.
@@ -53,7 +59,7 @@ namespace Futureware.MantisConnect
 
             BasicHttpBinding binding;
 
-            if (session.NetworkCredential != null)
+            if (this.session.NetworkCredential != null)
             {
                 binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportCredentialOnly);
                 binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
@@ -63,13 +69,13 @@ namespace Futureware.MantisConnect
                 binding = new BasicHttpBinding();
             }
 
-            var endpoint = new EndpointAddress(session.Url);
-            mc = new MantisConnectWebservice.MantisConnectPortTypeClient(binding, endpoint);
+            var endpoint = new EndpointAddress(this.session.Url);
+            this.mc = new MantisConnectWebservice.MantisConnectPortTypeClient(binding, endpoint);
 
-            if (session.NetworkCredential != null)
+            if (this.session.NetworkCredential != null)
             {
-                mc.ClientCredentials.UserName.UserName = session.NetworkCredential.UserName;
-                mc.ClientCredentials.UserName.Password = session.NetworkCredential.Password;
+                this.mc.ClientCredentials.UserName.UserName = this.session.NetworkCredential.UserName;
+                this.mc.ClientCredentials.UserName.Password = this.session.NetworkCredential.Password;
             }
         }
 
@@ -81,20 +87,14 @@ namespace Futureware.MantisConnect
         /// TODO: Consider a generic and easy way to time operations.
         /// </remarks>
         /// <returns>The id of the added issue</returns>
-        public int IssueAdd( Issue issue )
+        public int IssueAdd(Issue issue)
         {
-            ValidateIssue( issue );
+            ValidateIssue(issue);
 
-            DateTime before = DateTime.Now;
-            try
-            {
-                return Convert.ToInt32( mc.mc_issue_add( session.Username, session.Password, issue.ToWebservice() ) );
-            }
-            finally
-            {
-                TimeSpan timeSpan = new TimeSpan( DateTime.Now.Ticks - before.Ticks );
-                Debug.WriteLine( string.Format( CultureInfo.CurrentCulture, "{0}: AddIssue()", timeSpan.ToString() ) );
-            }
+            return Convert.ToInt32(this.mc.mc_issue_add(
+                this.session.Username,
+                this.session.Password,
+                issue.ToWebservice()));
         }
 
         /// <summary>
@@ -102,16 +102,20 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="issue">The issue to be updated.</param>
         /// <returns>true: updated successfully; otherwise false</returns>
-        public bool IssueUpdate (Issue issue)
+        public bool IssueUpdate(Issue issue)
         {
-            ValidateIssue( issue );
-
-            DateTime before = DateTime.Now;
+            ValidateIssue(issue);
 
             if (issue.Id < 1)
+            {
                 throw new Exception("Can not update issue. Issue ID does not exist");
+            }
 
-            return mc.mc_issue_update(session.Username, session.Password, issue.Id.ToString(), issue.ToWebservice());
+            return this.mc.mc_issue_update(
+                this.session.Username,
+                this.session.Password,
+                issue.Id.ToString(),
+                issue.ToWebservice());
         }
 
         /// <summary>
@@ -122,7 +126,12 @@ namespace Futureware.MantisConnect
         /// <param name="issueFixed">true: check-in fixed the issue, false: check-in is a partial fix.</param>
         public void IssueCheckin(int issueId, string comment, bool issueFixed)
         {
-            mc.mc_issue_checkin(session.Username, session.Password, issueId.ToString(), comment, issueFixed);
+            this.mc.mc_issue_checkin(
+                this.session.Username,
+                this.session.Password,
+                issueId.ToString(),
+                comment,
+                issueFixed);
         }
 
         /// <summary>
@@ -130,11 +139,14 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="issueId">Id of issue to delete</param>
         /// <exception cref="ArgumentOutOfRangeException">The issue id is invalid.</exception>
-        public void IssueDelete( int issueId )
+        public void IssueDelete(int issueId)
         {
-			ValidateIssueId( issueId );
+			ValidateIssueId(issueId);
 
-			mc.mc_issue_delete( session.Username, session.Password, issueId.ToString() );
+            this.mc.mc_issue_delete(
+                this.session.Username,
+                this.session.Password,
+                issueId.ToString());
         }
 
         /// <summary>
@@ -144,14 +156,16 @@ namespace Futureware.MantisConnect
         /// <returns>The issue details, this does not include related information in other
         /// tables, like issue notes, ...etc.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The issue id is 0 or negative.</exception>
-		public Issue IssueGet( int issueId )
+		public Issue IssueGet(int issueId)
         {
-			ValidateIssueId( issueId );
+			ValidateIssueId(issueId);
 
-			MantisConnectWebservice.IssueData issueData;
-            issueData = mc.mc_issue_get( session.Username, session.Password, issueId.ToString() );
+			MantisConnectWebservice.IssueData issueData = this.mc.mc_issue_get(
+                this.session.Username,
+                this.session.Password,
+                issueId.ToString());
 
-			return ( issueData == null ) ? null : new Issue( issueData );
+			return issueData == null ? null : new Issue(issueData);
         }
 
         /// <summary>
@@ -160,7 +174,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="pageNumber">The page number (1-based)</param>
         /// <param name="issuesPerPage">The number of issues per page.</param>
-        /// <returns></returns>
+        /// <returns>The array of issues.</returns>
         public Issue[] IssueGetAll(int pageNumber, int issuesPerPage)
         {
             return this.ProjectGetIssues(Project.AllProjects, pageNumber, issuesPerPage);
@@ -172,11 +186,14 @@ namespace Futureware.MantisConnect
         /// <param name="issueId">Id of issue to check for.</param>
         /// <returns>true: exists, false: does not exist</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The issue id is 0 or negative.</exception>
-		public bool IssueExists( int issueId )
+		public bool IssueExists(int issueId)
         {
-			ValidateIssueId( issueId );
+			ValidateIssueId(issueId);
 			
-			return Convert.ToBoolean( mc.mc_issue_exists( session.Username, session.Password, issueId.ToString() ) );
+			return Convert.ToBoolean(this.mc.mc_issue_exists(
+                this.session.Username,
+                this.session.Password,
+                issueId.ToString()));
         }
 
         /// <summary>
@@ -194,15 +211,24 @@ namespace Futureware.MantisConnect
         /// <returns>0: not found, otherwise issue id</returns>
         /// <exception cref="ArgumentNullException">Summary field is null.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Summary field is empty or too long.</exception>
-        public int IssueGetIdFromSummary( string summary )
+        public int IssueGetIdFromSummary(string summary)
         {
-			if ( summary == null )
-				throw new ArgumentNullException( "summary" );
+            if (string.IsNullOrEmpty(summary))
+            {
+                throw new ArgumentNullException("summary");
+            }
 
-			if ( ( summary.Trim().Length == 0 ) || ( summary.Length > 128 ) )
-				throw new ArgumentOutOfRangeException( "summary" );
+            summary = summary.Trim();
 
-            return Convert.ToInt32( mc.mc_issue_get_id_from_summary( session.Username, session.Password, summary ) );
+            if (string.IsNullOrEmpty(summary) || summary.Length > 128)
+            {
+                throw new ArgumentOutOfRangeException("summary");
+            }
+
+            return Convert.ToInt32(this.mc.mc_issue_get_id_from_summary(
+                this.session.Username,
+                this.session.Password,
+                summary));
         }
 
         /// <summary>
@@ -215,11 +241,14 @@ namespace Futureware.MantisConnect
         /// <param name="projectId">-1: default, 0: all projects, otherwise: project id</param>
         /// <returns>0: no issues accessible to logged in user, otherwise Id of the last reported issue.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The project id is invalid.</exception>
-		public int IssueGetLastId( int projectId )
+		public int IssueGetLastId(int projectId)
         {
-			ValidateProjectId( projectId );
+			ValidateProjectId(projectId);
 
-			return Convert.ToInt32( mc.mc_issue_get_biggest_id( session.Username, session.Password, projectId.ToString() ) );
+			return Convert.ToInt32(this.mc.mc_issue_get_biggest_id(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString()));
         }
 
         /// <summary>
@@ -231,7 +260,9 @@ namespace Futureware.MantisConnect
         /// <returns>An array of projects.</returns>
         public Project[] UserGetAccessibleProjects()
         {
-            return Project.ConvertArray( mc.mc_projects_get_user_accessible( session.Username, session.Password ) );
+            return Project.ConvertArray(this.mc.mc_projects_get_user_accessible(
+                this.session.Username,
+                this.session.Password));
         }
 
         /// <summary>
@@ -240,11 +271,14 @@ namespace Futureware.MantisConnect
         /// <param name="projectId">0: all projects, otherwise project id</param>
         /// <returns>An array of filters.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The project id is invalid.</exception>
-		public Filter[] UserGetFilters( int projectId )
+		public Filter[] UserGetFilters(int projectId)
         {
-			ValidateProjectId( projectId );
+			ValidateProjectId(projectId);
 
-			return Filter.ConvertArray( mc.mc_filter_get( session.Username, session.Password, projectId.ToString() ) );
+			return Filter.ConvertArray(this.mc.mc_filter_get(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString()));
         }
 
         /// <summary>
@@ -255,9 +289,15 @@ namespace Futureware.MantisConnect
         /// <param name="pageNumber">Page number to get the issues for.</param>
         /// <param name="issuesPerPage">Number of issues per page.</param>
         /// <returns>An array of issues.</returns>
-        public Issue[] GetIssues( int projectId, int filterId, int pageNumber, int issuesPerPage )
+        public Issue[] GetIssues(int projectId, int filterId, int pageNumber, int issuesPerPage)
         {
-            return Issue.ConvertArray( mc.mc_filter_get_issues( session.Username, session.Password, projectId.ToString(), filterId.ToString(), pageNumber.ToString(), issuesPerPage.ToString() ) );
+            return Issue.ConvertArray(this.mc.mc_filter_get_issues(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString(),
+                filterId.ToString(),
+                pageNumber.ToString(),
+                issuesPerPage.ToString()));
         }
 
         /// <summary>
@@ -266,7 +306,10 @@ namespace Futureware.MantisConnect
         /// <param name="project">The project data, the project id is not required.</param>
         public void ProjectAdd(Project project)
         {
-            mc.mc_project_add(session.Username, session.Password, project.ToWebservice());
+            this.mc.mc_project_add(
+                this.session.Username,
+                this.session.Password,
+                project.ToWebservice());
         }
 
         /// <summary>
@@ -278,7 +321,10 @@ namespace Futureware.MantisConnect
         {
             ValidateProjectId(projectId);
 
-            mc.mc_project_delete(session.Username, session.Password, projectId.ToString());
+            this.mc.mc_project_delete(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString());
         }
 
         /// <summary>
@@ -305,7 +351,11 @@ namespace Futureware.MantisConnect
                 throw new ArgumentNullException("version.Description");
             }
 
-            version.Id = Convert.ToInt32(mc.mc_project_version_add(session.Username, session.Password, version.ToWebservice()));
+            version.Id = Convert.ToInt32(this.mc.mc_project_version_add(
+                this.session.Username,
+                this.session.Password,
+                version.ToWebservice()));
+
             return version.Id;
         }
 
@@ -329,7 +379,11 @@ namespace Futureware.MantisConnect
                 throw new ArgumentNullException("version.Description");
             }
 
-            mc.mc_project_version_update(session.Username, session.Password, version.Id.ToString(), version.ToWebservice());
+            this.mc.mc_project_version_update(
+                this.session.Username,
+                this.session.Password,
+                version.Id.ToString(),
+                version.ToWebservice());
         }
 
         /// <summary>
@@ -341,7 +395,10 @@ namespace Futureware.MantisConnect
         {
             ValidateProjectVersionId(projectVersionId);
 
-            mc.mc_project_version_delete(session.Username, session.Password, projectVersionId.ToString());
+            this.mc.mc_project_version_delete(
+                this.session.Username,
+                this.session.Password,
+                projectVersionId.ToString());
         }
 
         /// <summary>
@@ -353,12 +410,14 @@ namespace Futureware.MantisConnect
 		/// <param name="projectId">project id (greater than 0)</param>
         /// <returns>An array of categories.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The project id is invalid.</exception>
-		public string[] ProjectGetCategories( int projectId )
+		public string[] ProjectGetCategories(int projectId)
         {
-			ValidateProjectId( projectId );
+			ValidateProjectId(projectId);
 
-			string[] categories = mc.mc_project_get_categories( session.Username, session.Password, projectId.ToString() );
-            return categories;
+			return this.mc.mc_project_get_categories(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString());
         }
 
         /// <summary>
@@ -367,11 +426,14 @@ namespace Futureware.MantisConnect
         /// <param name="projectId">project id (greater than 0)</param>
         /// <returns>An array of project versions.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The project id is invalid.</exception>
-		public ProjectVersion[] ProjectGetVersions( int projectId )
+		public ProjectVersion[] ProjectGetVersions(int projectId)
         {
-			ValidateProjectId( projectId );
+			ValidateProjectId(projectId);
 
-			return ProjectVersion.ConvertArray( mc.mc_project_get_versions( session.Username, session.Password, projectId.ToString() ) );
+			return ProjectVersion.ConvertArray(this.mc.mc_project_get_versions(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString()));
         }
 
         /// <summary>
@@ -380,11 +442,14 @@ namespace Futureware.MantisConnect
         /// <param name="projectId">project id (greater than 0)</param>
         /// <returns>An array of released project versions.</returns>
         /// <exception cref="ArgumentOutOfRangeException">The project id is invalid.</exception>
-        public ProjectVersion[] ProjectGetVersionsReleased( int projectId )
+        public ProjectVersion[] ProjectGetVersionsReleased(int projectId)
         {
-            ValidateProjectId( projectId );
+            ValidateProjectId(projectId);
 
-            return ProjectVersion.ConvertArray( mc.mc_project_get_released_versions( session.Username, session.Password, projectId.ToString() ) );
+            return ProjectVersion.ConvertArray(this.mc.mc_project_get_released_versions(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString()));
         }
 
         /// <summary>
@@ -393,11 +458,14 @@ namespace Futureware.MantisConnect
         /// <param name="projectId">project id (greater than 0)</param>
         /// <returns>An array of released project versions.</returns>
         /// <exception cref="ArgumentOutOfRangeException">The project id is invalid.</exception>
-        public ProjectVersion[] ProjectGetVersionsUnreleased( int projectId )
+        public ProjectVersion[] ProjectGetVersionsUnreleased(int projectId)
         {
-            ValidateProjectId( projectId );
+            ValidateProjectId(projectId);
 
-            return ProjectVersion.ConvertArray( mc.mc_project_get_unreleased_versions( session.Username, session.Password, projectId.ToString() ) );
+            return ProjectVersion.ConvertArray(this.mc.mc_project_get_unreleased_versions(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString()));
         }
 
         /// <summary>
@@ -407,7 +475,7 @@ namespace Futureware.MantisConnect
         /// <param name="projectId">The project id or <see cref="Project.AllProjects"/> or <see cref="Project.DefaultProject"/>.</param>
         /// <param name="pageNumber">The page number (1-based)</param>
         /// <param name="issuesPerPage">The number of issues per page.</param>
-        /// <returns></returns>
+        /// <returns>The array of issues.</returns>
         public Issue[] ProjectGetIssues(int projectId, int pageNumber, int issuesPerPage)
         {
             ValidateProjectId(projectId);
@@ -422,7 +490,12 @@ namespace Futureware.MantisConnect
                 throw new ArgumentOutOfRangeException("issuesPerPage");
             }
 
-            return Issue.ConvertArray(mc.mc_project_get_issues(session.Username, session.Password, projectId.ToString(), pageNumber.ToString(), issuesPerPage.ToString()));
+            return Issue.ConvertArray(this.mc.mc_project_get_issues(
+                this.session.Username,
+                this.session.Password,
+                projectId.ToString(),
+                pageNumber.ToString(),
+                issuesPerPage.ToString()));
         }
 
         /// <summary>
@@ -438,11 +511,14 @@ namespace Futureware.MantisConnect
         /// <param name="str">An output parameter to hold the value of the configuration option</param>
         /// <exception cref="ArgumentNullException">config parameter is null.</exception>
         /// <exception cref="ArgumentOutOfRangeException">config parameter is empty or blank.</exception>
-        public void ConfigGet( string config, out string str )
+        public void ConfigGet(string config, out string str)
         {
-            ValidateConfigName( config );
+            ValidateConfigName(config);
 
-            str = mc.mc_config_get_string( session.Username, session.Password, config );
+            str = this.mc.mc_config_get_string(
+                this.session.Username,
+                this.session.Password,
+                config);
         }
 
 		/// <summary>
@@ -456,12 +532,16 @@ namespace Futureware.MantisConnect
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException">Note is null</exception>
 		/// <exception cref="ArgumentOutOfRangeException">The issue id is 0 or negative.  Or note is empty or blank.</exception>
-		public int IssueNoteAdd( int issueId, IssueNote note )
+		public int IssueNoteAdd(int issueId, IssueNote note)
 		{
-			ValidateIssueId( issueId );
-            ValidateIssueNote( note );
+			ValidateIssueId(issueId);
+            ValidateIssueNote(note);
 
-			return Convert.ToInt32( mc.mc_issue_note_add( session.Username, session.Password, issueId.ToString( CultureInfo.InvariantCulture ), note.ToWebservice() ) );
+			return Convert.ToInt32(this.mc.mc_issue_note_add(
+                this.session.Username,
+                this.session.Password,
+                issueId.ToString(CultureInfo.InvariantCulture),
+                note.ToWebservice()));
 		}
 
 		/// <summary>
@@ -469,11 +549,14 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		/// <param name="issueNoteId">Id of issue note to delete</param>
 		/// <exception cref="ArgumentOutOfRangeException">The issue note id is 0 or negative.</exception>
-		public void IssueNoteDelete( int issueNoteId )
+		public void IssueNoteDelete(int issueNoteId)
 		{
-			ValidateIssueNoteId( issueNoteId );
+			ValidateIssueNoteId(issueNoteId);
 
-			mc.mc_issue_note_delete( session.Username, session.Password, issueNoteId.ToString() );
+			mc.mc_issue_note_delete(
+                this.session.Username,
+                this.session.Password,
+                issueNoteId.ToString());
 		}
 
 		/// <summary>
@@ -486,7 +569,13 @@ namespace Futureware.MantisConnect
 		/// <returns>The attachment id.</returns>
 		public int IssueAttachmentAdd(int issueId, string fileName, string fileType, System.Byte[] base64Content)
 		{
-			return Convert.ToInt32( mc.mc_issue_attachment_add(session.Username, session.Password, issueId.ToString(), fileName, fileType, base64Content));
+			return Convert.ToInt32(this.mc.mc_issue_attachment_add(
+                this.session.Username,
+                this.session.Password,
+                issueId.ToString(),
+                fileName,
+                fileType,
+                base64Content));
 		}
 
         /// <summary>
@@ -506,16 +595,23 @@ namespace Futureware.MantisConnect
                 throw new ArgumentNullException("filePath");
             }
 
-            return this.IssueAttachmentAdd(issueId, fileName ?? Path.GetFileName(filePath), MimeTypes.GetMimeType(Path.GetExtension(filePath)), File.ReadAllBytes(filePath));
+            return this.IssueAttachmentAdd(
+                issueId,
+                fileName ?? Path.GetFileName(filePath),
+                MimeTypes.GetMimeType(Path.GetExtension(filePath)),
+                File.ReadAllBytes(filePath));
         }
 
 		/// <summary>
 		/// Deletes an attachment given it's id.
 		/// </summary>
 		/// <param name="issueAttachmentId">The attachment id.</param>
-		public void IssueAttachmentDelete( int issueAttachmentId )
+		public void IssueAttachmentDelete(int issueAttachmentId)
 		{
-			mc.mc_issue_attachment_delete( session.Username, session.Password, issueAttachmentId.ToString() );
+			this.mc.mc_issue_attachment_delete(
+                this.session.Username,
+                this.session.Password,
+                issueAttachmentId.ToString());
 		}
 
 		/// <summary>
@@ -523,22 +619,25 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		/// <param name="issueAttachmentId">The attachment id.  This is returned when attachment is added or when attachments list is returned with the issue details.</param>
 		/// <returns>The attachment contents base 64 encoded.</returns>
-		public System.Byte[] IssueAttachmentGet( int issueAttachmentId )
+		public System.Byte[] IssueAttachmentGet(int issueAttachmentId)
 		{
-			return mc.mc_issue_attachment_get( session.Username, session.Password, issueAttachmentId.ToString() );
+			return this.mc.mc_issue_attachment_get(
+                this.session.Username,
+                this.session.Password,
+                issueAttachmentId.ToString());
 		}
-
-		#region Private
 
 		/// <summary>
 		/// Validates a project id and raises an exception if it is not valid.
 		/// </summary>
 		/// <param name="projectId">Project Id</param>
 		/// <exception cref="ArgumentOutOfRangeException">The project id is smaller than -1.</exception>
-		private static void ValidateProjectId( int projectId )
+		private static void ValidateProjectId(int projectId)
 		{
-			if ( projectId < -1 )
-				throw new ArgumentOutOfRangeException( "projectId" );
+            if (projectId < -1)
+            {
+                throw new ArgumentOutOfRangeException("projectId");
+            }
 		}
 
 		/// <summary>
@@ -546,10 +645,12 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		/// <param name="issueId">Issue Id</param>
 		/// <exception cref="ArgumentOutOfRangeException">The issue id is 0 or negative.</exception>
-		private static void ValidateIssueId( int issueId )
+		private static void ValidateIssueId(int issueId)
 		{
-			if ( issueId < 1 )
-				throw new ArgumentOutOfRangeException( "issueId" );
+            if (issueId < 1)
+            {
+                throw new ArgumentOutOfRangeException("issueId");
+            }
 		}
 
         /// <summary>
@@ -566,31 +667,45 @@ namespace Futureware.MantisConnect
         }
 
         /// <summary>
-        /// 
+        /// Validate the issue.
         /// </summary>
-        /// <param name="issue"></param>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <param name="issue">The issue, can't be null.</param>
+        /// <exception cref="ArgumentNullException">The issue is null.</exception>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
-        private static void ValidateIssue( Issue issue )
+        private static void ValidateIssue(Issue issue)
         {
-            if ( issue == null )
-                throw new ArgumentNullException( "issue" );
+            if (issue == null)
+            {
+                throw new ArgumentNullException("issue");
+            }
 
-            if ( issue.Summary == null )
-                throw new ArgumentNullException( "issue.Summary" );
+            if (issue.Summary == null)
+            {
+                throw new ArgumentNullException("issue.Summary");
+            }
 
-            if ( issue.Summary.Trim().Length == 0 )
-                throw new ArgumentOutOfRangeException( "issue.Summary" );
+            if (issue.Summary.Trim().Length == 0)
+            {
+                throw new ArgumentOutOfRangeException("issue.Summary");
+            }
 
-            if ( issue.Description == null )
-                throw new ArgumentNullException( "issue.Description" );
+            if (issue.Description == null)
+            {
+                throw new ArgumentNullException("issue.Description");
+            }
 
-            if ( issue.Description.Trim().Length == 0 )
-                throw new ArgumentOutOfRangeException( "issue.Description" );
+            if (issue.Description.Trim().Length == 0)
+            {
+                throw new ArgumentOutOfRangeException("issue.Description");
+            }
 
-            if ( issue.Notes != null )
-                foreach( IssueNote note in issue.Notes )
-                    ValidateIssueNote( note );
+            if (issue.Notes != null)
+            {
+                foreach (IssueNote note in issue.Notes)
+                {
+                    ValidateIssueNote(note);
+                }
+            }
         }
 
 		/// <summary>
@@ -598,28 +713,36 @@ namespace Futureware.MantisConnect
 		/// </summary>
 		/// <param name="issueNoteId">Issue Note Id</param>
 		/// <exception cref="ArgumentOutOfRangeException">The issue note id is 0 or negative.</exception>
-		private static void ValidateIssueNoteId( int issueNoteId )
+		private static void ValidateIssueNoteId(int issueNoteId)
 		{
-			if ( issueNoteId < 1 )
-				throw new ArgumentOutOfRangeException( "issueNoteId" );
+            if (issueNoteId < 1)
+            {
+                throw new ArgumentOutOfRangeException("issueNoteId");
+            }
 		}
 
         /// <summary>
         /// Validates an issue note and raises an exception if it is not valid.
         /// </summary>
         /// <param name="note">The note to be validated</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        private static void ValidateIssueNote( IssueNote note )
+        /// <exception cref="ArgumentNullException">The issue note is null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">The note is invalid.</exception>
+        private static void ValidateIssueNote(IssueNote note)
         {
-            if ( note == null )
-                throw new ArgumentNullException( "note" );
+            if (note == null)
+            {
+                throw new ArgumentNullException("note");
+            }
 
-            if ( note.Text == null )
-                throw new ArgumentNullException( "note.Text" );
+            if (note.Text == null)
+            {
+                throw new ArgumentNullException("note.Text");
+            }
 
-            if ( note.Text.Trim().Length == 0 )
-                throw new ArgumentOutOfRangeException( "note" );
+            if (note.Text.Trim().Length == 0)
+            {
+                throw new ArgumentOutOfRangeException("note");
+            }
         }
 
         /// <summary>
@@ -627,29 +750,23 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="config">configuration option</param>
         /// <exception cref="ArgumentOutOfRangeException">The configuration option is invalid.</exception>
-        private static void ValidateConfigName( string config )
+        private static void ValidateConfigName(string config)
         {
-            if ( config == null )
-                throw new ArgumentNullException( "configOption" );
-            
-            if ( config.Trim().Length == 0 )
-                throw new ArgumentOutOfRangeException( "configOption" );
+            if (config == null)
+            {
+                throw new ArgumentNullException("configOption");
+            }
+
+            if (config.Trim().Length == 0)
+            {
+                throw new ArgumentOutOfRangeException("configOption");
+            }
 
             char[] invalidChars = new char[] { ' ' };
-            if ( config.IndexOfAny( invalidChars ) != -1 )
-                throw new ArgumentOutOfRangeException( "configOption" );
+            if (config.IndexOfAny(invalidChars) != -1)
+            {
+                throw new ArgumentOutOfRangeException("configOption");
+            }
         }
-
-        /// <summary>
-        /// Session to retrieve the user name / password of the current session
-        /// from.
-        /// </summary>
-        private readonly Session session;
-
-        /// <summary>
-        /// Webservice auto-generated proxy.
-        /// </summary>
-        private MantisConnectWebservice.MantisConnectPortTypeClient mc;
-        #endregion
     }
 }

@@ -13,11 +13,11 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+
+    /// <summary>
 	/// A class that is used on entites to reference other entities.
 	/// </summary>
 	/// <remarks>
@@ -28,10 +28,20 @@ namespace Futureware.MantisConnect
     public sealed class ObjectRef
 	{
         /// <summary>
+        /// The object ref id.
+        /// </summary>
+        private int id;
+
+        /// <summary>
+        /// The object ref name.
+        /// </summary>
+        private string name = string.Empty;
+
+        /// <summary>
         /// Default Constructor
         /// </summary>
         public ObjectRef()
-            : this( 0, string.Empty )
+            : this(0, string.Empty)
         {
         }
 
@@ -40,7 +50,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="id">Id of the entity referenced</param>
         /// <param name="name">Name of the entity referenced.</param>
-		public ObjectRef( int id, string name )
+		public ObjectRef(int id, string name)
 		{
             this.Id = id;
             this.Name = name;
@@ -50,11 +60,11 @@ namespace Futureware.MantisConnect
         /// Constructor from webservice object ref object.
         /// </summary>
         /// <param name="objRefFromWs">Object reference from webservice</param>
-        public ObjectRef( MantisConnectWebservice.ObjectRef objRefFromWs )
+        public ObjectRef(MantisConnectWebservice.ObjectRef objRefFromWs)
         {
-            if ( objRefFromWs != null )
+            if (objRefFromWs != null)
             {
-                this.Id = Convert.ToInt32( objRefFromWs.id );
+                this.Id = Convert.ToInt32(objRefFromWs.id);
                 this.Name = objRefFromWs.name;
             }
             else
@@ -68,8 +78,8 @@ namespace Futureware.MantisConnect
         /// Constructor specifying id.
         /// </summary>
         /// <param name="id">Id of the entity referenced</param>
-        public ObjectRef( int id )
-            : this( id, string.Empty )
+        public ObjectRef(int id)
+            : this(id, string.Empty)
         {
         }
 
@@ -77,8 +87,8 @@ namespace Futureware.MantisConnect
         /// Constructor specifying name.
         /// </summary>
         /// <param name="name">Name of the entity referenced.</param>
-        public ObjectRef( string name )
-            : this( 0, name )
+        public ObjectRef(string name)
+            : this(0, name)
         {
         }
 
@@ -101,25 +111,25 @@ namespace Futureware.MantisConnect
         /// <value>true: references something, false: doesn't reference anything.</value>
         public bool Empty
         {
-            get { return ( id == 0 ) && ( Name.Trim().Length == 0 ); }
+            get { return (this.id == 0) && string.IsNullOrEmpty(this.name); }
         }
 
         /// <summary>
-        /// Id of the referenced entity or 0 if unknown
+        /// Gets or sets the id of the referenced entity or 0 if unknown.
         /// </summary>
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         /// <summary>
-        /// Name of the referenced entity or 0 if unknown
+        /// Gets or sets the name of the referenced entity or empty string if unknown.
         /// </summary>
         public string Name
         {
-            get { return name; }
-            set { name = value == null ? string.Empty : value; }
+            get { return this.name; }
+            set { this.name = value != null ? value.Trim() : string.Empty; }
         }
 
         /// <summary>
@@ -128,12 +138,7 @@ namespace Futureware.MantisConnect
         /// <returns>String displaying internal state.</returns>
         public override string ToString()
         {
-            return string.Format( "{0}:{1}", this.Id, this.Name);
+            return string.Format("{0}:{1}", this.Id, this.Name);
         }
-
-        #region Private
-        private int id;
-        private string name = string.Empty;
-        #endregion
 	}
 }

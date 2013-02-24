@@ -13,10 +13,10 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
+    using System;
+
     /// <summary>
     /// A class that includes a set of string utility methods.
     /// </summary>

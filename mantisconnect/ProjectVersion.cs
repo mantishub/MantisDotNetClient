@@ -13,16 +13,46 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+
+    /// <summary>
 	/// A class that includes information relating to project versions.
 	/// </summary>
     [Serializable]
     public sealed class ProjectVersion
 	{
+        /// <summary>
+        /// The proejct version id.
+        /// </summary>
+        private int id;
+
+        /// <summary>
+        /// The project version name.
+        /// </summary>
+        private string name;
+
+        /// <summary>
+        /// The project id.
+        /// </summary>
+        private int projectId;
+
+        /// <summary>
+        /// The date the version was created / released.
+        /// </summary>
+        private DateTime dateOrder;
+
+        /// <summary>
+        /// The project version description.
+        /// </summary>
+        private string description;
+
+        /// <summary>
+        /// A flag indicating whether the project version is released or not.
+        /// </summary>
+        private bool isReleased;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectVersion"/> class.
         /// </summary>
@@ -34,11 +64,11 @@ namespace Futureware.MantisConnect
         /// Initializes a new instance of the <see cref="ProjectVersion"/> class.
         /// </summary>
         /// <param name="projectVersionData">Project version data.</param>
-		internal ProjectVersion( MantisConnectWebservice.ProjectVersionData projectVersionData )
+		internal ProjectVersion(MantisConnectWebservice.ProjectVersionData projectVersionData)
 		{
-			this.Id = Convert.ToInt32( projectVersionData.id );
+			this.Id = Convert.ToInt32(projectVersionData.id);
 			this.Name = projectVersionData.name;
-			this.ProjectId = Convert.ToInt32( projectVersionData.project_id );
+			this.ProjectId = Convert.ToInt32(projectVersionData.project_id);
 			this.DateOrder = projectVersionData.date_order;
 			this.Description = projectVersionData.description;
 			this.IsReleased = projectVersionData.released;
@@ -69,15 +99,19 @@ namespace Futureware.MantisConnect
         /// </summary>
         /// <param name="projectVersionDataArray">Project version data array.</param>
         /// <returns>An array of project versions in this type.</returns>
-		internal static ProjectVersion[] ConvertArray( MantisConnectWebservice.ProjectVersionData[] projectVersionDataArray )
+		internal static ProjectVersion[] ConvertArray(MantisConnectWebservice.ProjectVersionData[] projectVersionDataArray)
 		{
-			if ( projectVersionDataArray == null )
-				return null;
+            if (projectVersionDataArray == null)
+            {
+                return null;
+            }
 
 			ProjectVersion[] projectVersions = new ProjectVersion[projectVersionDataArray.Length];
 
-			for ( int i = 0; i < projectVersionDataArray.Length; ++i )
-				projectVersions[i] = new ProjectVersion( projectVersionDataArray[i] );
+            for (int i = 0; i < projectVersionDataArray.Length; ++i)
+            {
+                projectVersions[i] = new ProjectVersion(projectVersionDataArray[i]);
+            }
 
 			return projectVersions;
 		}
@@ -85,21 +119,19 @@ namespace Futureware.MantisConnect
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
-        /// <value></value>
 		public int Id
 		{
-			get { return id; }
-			set { id = value; }
+			get { return this.id; }
+			set { this.id = value; }
 		}
 
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        /// <value></value>
 		public string Name
 		{
-			get { return name; }
-			set { name = value; }
+			get { return this.name; }
+			set { this.name = value; }
 		}
 
         /// <summary>
@@ -108,28 +140,26 @@ namespace Futureware.MantisConnect
         /// <value>Greater than or equal to 1.</value>
 		public int ProjectId
 		{
-			get { return projectId; }
-			set { projectId = value; }
+			get { return this.projectId; }
+			set { this.projectId = value; }
 		}
 
         /// <summary>
         /// Gets or sets the date order.
         /// </summary>
-        /// <value></value>
 		public DateTime DateOrder
 		{
-			get { return dateOrder; }
-			set { dateOrder = value; }
+			get { return this.dateOrder; }
+			set { this.dateOrder = value; }
 		}
 
         /// <summary>
         /// Gets or sets the project version description.  This version appears in the changelog.
         /// </summary>
-        /// <value></value>
 		public string Description
 		{
-			get { return description; }
-			set { description = value; }
+			get { return this.description; }
+			set { this.description = value; }
 		}
 
         /// <summary>
@@ -140,17 +170,8 @@ namespace Futureware.MantisConnect
         /// </value>
 		public bool IsReleased
 		{
-			get { return isReleased; }
-			set { isReleased = value; }
+			get { return this.isReleased; }
+			set { this.isReleased = value; }
 		}
-
-		#region Private Members
-		private int id;
-		private string name;
-		private int projectId;
-		private DateTime dateOrder;
-		private string description;
-		private bool isReleased;
-		#endregion
 	}
 }

@@ -13,16 +13,56 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-
 namespace Futureware.MantisConnect
 {
-	/// <summary>
+    using System;
+
+    /// <summary>
 	/// A class that captures information relating to a project.
 	/// </summary>
     [Serializable]
     public sealed class Project
 	{
+        /// <summary>
+        /// The project id.
+        /// </summary>
+        private int id;
+
+        /// <summary>
+        /// The project name.
+        /// </summary>
+        private string name;
+
+        /// <summary>
+        /// The project development status.
+        /// </summary>
+        private ObjectRef status;
+
+        /// <summary>
+        /// A flag indicating whether the project is enabled or not.
+        /// </summary>
+        private bool enabled;
+
+        /// <summary>
+        /// The project view state (e.g. private vs. public).
+        /// </summary>
+        private ObjectRef viewState;
+
+        /// <summary>
+        /// The minimum access level to access the project.
+        /// </summary>
+        private ObjectRef accessMin;
+
+        /// <summary>
+        /// The upload file path.
+        /// </summary>
+        private string filePath;
+
+        /// <summary>
+        /// The project description.
+        /// </summary>
+        private string description;
+
         /// <summary>
         /// The Id to be used when calling APIs to indicate the default project for the logged
         /// in user.
@@ -45,14 +85,14 @@ namespace Futureware.MantisConnect
 		/// Constructor to create a project from the web service project data.
 		/// </summary>
 		/// <param name="projectData">An instance returned by the webservice.</param>
-		internal Project( MantisConnectWebservice.ProjectData projectData )
+		internal Project(MantisConnectWebservice.ProjectData projectData)
 		{
-			this.Id = Convert.ToInt32( projectData.id );
+			this.Id = Convert.ToInt32(projectData.id);
 			this.Name = projectData.name;
-			this.Status = new ObjectRef( projectData.status );
+			this.Status = new ObjectRef(projectData.status);
 			this.Enabled = projectData.enabled;
-			this.ViewState = new ObjectRef( projectData.view_state );
-			this.AccessMin = new ObjectRef( projectData.access_min );
+			this.ViewState = new ObjectRef(projectData.view_state);
+			this.AccessMin = new ObjectRef(projectData.access_min);
 			this.FilePath = projectData.file_path;
 			this.Description = projectData.description;
 		}
@@ -88,13 +128,17 @@ namespace Futureware.MantisConnect
         /// <returns>An array of projects in this class type.</returns>
 		internal static Project[] ConvertArray( MantisConnectWebservice.ProjectData[] projectData )
 		{
-			if ( projectData == null )
-				return null;
+            if (projectData == null)
+            {
+                return null;
+            }
 
 			Project[] projects = new Project[projectData.Length];
 
-			for ( int i = 0; i < projectData.Length; ++i )
-				projects[i] = new Project( projectData[i] );
+            for (int i = 0; i < projectData.Length; ++i)
+            {
+                projects[i] = new Project(projectData[i]);
+            }
 
 			return projects;
 		}
@@ -105,8 +149,8 @@ namespace Futureware.MantisConnect
         /// <value>Greater than or equal to 1.</value>
 		public int Id
 		{
-			get { return id; }
-			set { id = value; }
+			get { return this.id; }
+			set { this.id = value; }
 		}
 
         /// <summary>
@@ -115,8 +159,8 @@ namespace Futureware.MantisConnect
         /// <value>Must not be empty or null.</value>
         public string Name
 		{
-			get { return name; }
-			set { name = value; }
+			get { return this.name; }
+			set { this.name = value; }
 		}
 
         /// <summary>
@@ -125,8 +169,8 @@ namespace Futureware.MantisConnect
         /// <value>For example, in development, released, etc.</value>
         public ObjectRef Status
 		{
-			get { return status; }
-			set { status = value; }
+			get { return this.status; }
+			set { this.status = value; }
 		}
 
         /// <summary>
@@ -137,8 +181,8 @@ namespace Futureware.MantisConnect
         /// </value>
 		public bool Enabled
 		{
-			get { return enabled; }
-			set { enabled = value; }
+			get { return this.enabled; }
+			set { this.enabled = value; }
 		}
 
         /// <summary>
@@ -147,8 +191,8 @@ namespace Futureware.MantisConnect
         /// <value>Private / Public.</value>
         public ObjectRef ViewState
 		{
-			get { return viewState; }
-			set { viewState = value; }
+			get { return this.viewState; }
+			set { this.viewState = value; }
 		}
 
         /// <summary>
@@ -157,8 +201,8 @@ namespace Futureware.MantisConnect
         /// <value>TODO: include more details.</value>
         public ObjectRef AccessMin
 		{
-			get { return accessMin; }
-			set { accessMin = value; }
+			get { return this.accessMin; }
+			set { this.accessMin = value; }
 		}
 
         /// <summary>
@@ -170,8 +214,8 @@ namespace Futureware.MantisConnect
         /// </value>
 		public string FilePath
 		{
-			get { return filePath; }
-			set { filePath = value; }
+			get { return this.filePath; }
+			set { this.filePath = value; }
 		}
 
         /// <summary>
@@ -180,19 +224,8 @@ namespace Futureware.MantisConnect
         /// <value>Can be empty or null.</value>
 		public string Description
 		{
-			get { return description; }
-			set { description = value; }
+			get { return this.description; }
+			set { this.description = value; }
 		}
-
-		#region Private Members
-		private int id;
-		private string name;
-		private ObjectRef status;
-		private bool enabled;
-		private ObjectRef viewState;
-		private ObjectRef accessMin;
-		private string filePath;
-		private string description;
-		#endregion
 	}
 }

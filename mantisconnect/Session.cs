@@ -13,23 +13,53 @@
 // </summary>
 //-----------------------------------------------------------------------
 
-using System;
-using System.Net;
-
 namespace Futureware.MantisConnect
 {
+    using System;
+    using System.Net;
+
     /// <summary>
     /// Represents a connection session between the webservice client and server.
     /// </summary>
     public sealed class Session
     {
         /// <summary>
+        /// The config instance.
+        /// </summary>
+        private readonly Config config;
+
+        /// <summary>
+        /// The request instance.
+        /// </summary>
+        private readonly Request request;
+
+        /// <summary>
+        /// The MantisBT url.
+        /// </summary>
+        private readonly string url;
+
+        /// <summary>
+        /// The user name.
+        /// </summary>
+        private readonly string username;
+
+        /// <summary>
+        /// The password.
+        /// </summary>
+        private readonly string password;
+
+        /// <summary>
+        /// The network credential (e.g. basic http auth).
+        /// </summary>
+        private readonly NetworkCredential networkCredential;
+
+        /// <summary>
         /// Constructs a session given a url, username and password.
         /// </summary>
         /// <param name="url">URL of MantisConnect webservice (eg: http://www.example.com/mantis/)</param>
         /// <param name="username">User name to connect as.</param>
         /// <param name="password">Password for the specified user.</param>
-        /// <param name="networkCredential"></param>
+        /// <param name="networkCredential">The network credentials to use (e.g. basic http password).</param>
         public Session(string url, string username, string password, NetworkCredential networkCredential)
         {
             if (string.IsNullOrEmpty(url))
@@ -52,8 +82,8 @@ namespace Futureware.MantisConnect
             this.url = url;
             this.networkCredential = networkCredential;
 
-            config = new Config( this );
-            request = new Request( this );
+            this.config = new Config(this);
+            this.request = new Request(this);
         }
 
         /// <summary>
@@ -67,30 +97,30 @@ namespace Futureware.MantisConnect
         }
 
         /// <summary>
-        /// User name specified on construction of the session.
+        /// Gets the user name specified on construction of the session.
         /// </summary>
         public string Username
         {
-            get { return username; }
+            get { return this.username; }
         }
 
         /// <summary>
-        /// User password specified on construction of the session.
+        /// Gets the user password specified on construction of the session.
         /// </summary>
         public string Password
         {
-            get { return password; }
+            get { return this.password; }
         }
 
         /// <summary>
-        /// MantisConnect webservice URL
+        /// Gets the MantisConnect webservice URL
         /// </summary>
         /// <remarks>
         /// eg: http://www.example.com/mantis/mantisconnect/mantisconnect.php
         /// </remarks>
         public string Url
         {
-            get { return url; }
+            get { return this.url; }
         }
 
         /// <summary>
@@ -102,7 +132,7 @@ namespace Futureware.MantisConnect
         /// </remarks>
         public NetworkCredential NetworkCredential
         {
-            get { return networkCredential; }
+            get { return this.networkCredential; }
         }
 
         /// <summary>
@@ -111,10 +141,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public Config Config
         {
-            get
-            {
-                return config;
-            }
+            get { return this.config; }
         }
 
         /// <summary>
@@ -123,19 +150,7 @@ namespace Futureware.MantisConnect
         /// </summary>
         public Request Request
         {
-            get
-            {
-                return request;
-            }
+            get { return this.request; }
         }
-
-        #region Private
-        private readonly Config config;
-        private readonly Request request;
-        private readonly string url;
-        private readonly string username;
-        private readonly string password;
-        private readonly NetworkCredential networkCredential;
-        #endregion
     }
 }

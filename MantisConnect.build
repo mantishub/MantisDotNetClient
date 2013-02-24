@@ -21,7 +21,7 @@
 			<copy file="mantissubmit\mantissubmit.exe.config.sample" tofile="mantissubmit\mantissubmit.exe.config" overwrite="false" />
 		</if>
 
-		<solution configuration="${flavour}" solutionfile="everything.sln" />
+		<solution configuration="${flavour}" solutionfile="MantisConnect.sln" />
 	</target>
 
 	<target name="debug">

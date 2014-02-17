@@ -69,6 +69,12 @@ namespace Futureware.MantisConnect
                 binding = new BasicHttpBinding();
             }
 
+            if (this.session.Url.StartsWith("https", StringComparison.OrdinalIgnoreCase))
+            {
+                binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                binding.Security.Message.AlgorithmSuite = System.ServiceModel.Security.SecurityAlgorithmSuite.Default;
+            }
+
             var endpoint = new EndpointAddress(this.session.Url);
             this.mc = new MantisConnectWebservice.MantisConnectPortTypeClient(binding, endpoint);
 

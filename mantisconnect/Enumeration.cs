@@ -18,6 +18,7 @@ namespace Futureware.MantisConnect
     using System;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.Text;
 
     /// <summary>
 	/// A class to handle enumerations that are defined in Mantis.
@@ -188,6 +189,27 @@ namespace Futureware.MantisConnect
             }
 
             return codes;
+        }
+
+        /// <summary>
+        /// Converts the enum to a string in MantisBT format.
+        /// </summary>
+        /// <returns>The enum in string format.</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (int code in this.GetCodes())
+            {
+                if (sb.Length > 0)
+                {
+                    sb.Append(',');
+                }
+
+                sb.AppendFormat("{0}:{1}", code, this[code]);
+            }
+
+            return sb.ToString();
         }
     }
 }

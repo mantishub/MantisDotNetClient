@@ -22,6 +22,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 using Futureware.MantisConnect;
 
@@ -43,7 +44,6 @@ namespace Futureware.MantisSubmit
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox summaryTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.ComboBox projectComboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.StatusBar statusBar;
@@ -60,6 +60,7 @@ namespace Futureware.MantisSubmit
         private TextBox attachmentTextBox;
         private Label label10;
         private Button browseButton;
+        private TreeView treeView1;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -106,7 +107,6 @@ namespace Futureware.MantisSubmit
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.projectComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.statusBar = new System.Windows.Forms.StatusBar();
@@ -123,6 +123,7 @@ namespace Futureware.MantisSubmit
             this.attachmentTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.browseButton = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,7 +155,7 @@ namespace Futureware.MantisSubmit
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(32, 176);
+            this.label2.Location = new System.Drawing.Point(328, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 21);
             this.label2.TabIndex = 3;
@@ -164,7 +165,7 @@ namespace Futureware.MantisSubmit
             // priorityComboBox
             // 
             this.priorityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.priorityComboBox.Location = new System.Drawing.Point(160, 176);
+            this.priorityComboBox.Location = new System.Drawing.Point(456, 163);
             this.priorityComboBox.Name = "priorityComboBox";
             this.priorityComboBox.Size = new System.Drawing.Size(176, 21);
             this.priorityComboBox.TabIndex = 4;
@@ -172,14 +173,14 @@ namespace Futureware.MantisSubmit
             // severityComboBox
             // 
             this.severityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.severityComboBox.Location = new System.Drawing.Point(160, 208);
+            this.severityComboBox.Location = new System.Drawing.Point(456, 195);
             this.severityComboBox.Name = "severityComboBox";
             this.severityComboBox.Size = new System.Drawing.Size(176, 21);
             this.severityComboBox.TabIndex = 5;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(32, 208);
+            this.label3.Location = new System.Drawing.Point(328, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 21);
             this.label3.TabIndex = 5;
@@ -189,14 +190,14 @@ namespace Futureware.MantisSubmit
             // reproducibilityComboBox
             // 
             this.reproducibilityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reproducibilityComboBox.Location = new System.Drawing.Point(160, 240);
+            this.reproducibilityComboBox.Location = new System.Drawing.Point(456, 227);
             this.reproducibilityComboBox.Name = "reproducibilityComboBox";
             this.reproducibilityComboBox.Size = new System.Drawing.Size(176, 21);
             this.reproducibilityComboBox.TabIndex = 6;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(32, 240);
+            this.label4.Location = new System.Drawing.Point(328, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 21);
             this.label4.TabIndex = 7;
@@ -219,15 +220,6 @@ namespace Futureware.MantisSubmit
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(472, 176);
             this.descriptionTextBox.TabIndex = 8;
-            // 
-            // projectComboBox
-            // 
-            this.projectComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.projectComboBox.Location = new System.Drawing.Point(160, 80);
-            this.projectComboBox.Name = "projectComboBox";
-            this.projectComboBox.Size = new System.Drawing.Size(176, 21);
-            this.projectComboBox.TabIndex = 1;
-            this.projectComboBox.SelectedIndexChanged += new System.EventHandler(this.projectComboBox_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -266,14 +258,14 @@ namespace Futureware.MantisSubmit
             // versionComboBox
             // 
             this.versionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.versionComboBox.Location = new System.Drawing.Point(160, 112);
+            this.versionComboBox.Location = new System.Drawing.Point(456, 99);
             this.versionComboBox.Name = "versionComboBox";
             this.versionComboBox.Size = new System.Drawing.Size(176, 21);
             this.versionComboBox.TabIndex = 2;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(32, 112);
+            this.label8.Location = new System.Drawing.Point(328, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 21);
             this.label8.TabIndex = 16;
@@ -283,14 +275,14 @@ namespace Futureware.MantisSubmit
             // categoryComboBox
             // 
             this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.categoryComboBox.Location = new System.Drawing.Point(160, 144);
+            this.categoryComboBox.Location = new System.Drawing.Point(456, 131);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(176, 21);
             this.categoryComboBox.TabIndex = 3;
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(32, 144);
+            this.label9.Location = new System.Drawing.Point(328, 131);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 21);
             this.label9.TabIndex = 18;
@@ -361,10 +353,18 @@ namespace Futureware.MantisSubmit
             this.browseButton.UseVisualStyleBackColor = true;
             this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(35, 104);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(155, 144);
+            this.treeView1.TabIndex = 26;
+            // 
             // SubmitIssueForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(664, 676);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.attachmentTextBox);
             this.Controls.Add(this.label10);
@@ -378,7 +378,6 @@ namespace Futureware.MantisSubmit
             this.Controls.Add(this.label8);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.projectComboBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.descriptionTextBox);
@@ -425,12 +424,27 @@ namespace Futureware.MantisSubmit
                 session.Connect();
 
                 populating = true;
-                projectComboBox.DataSource = session.Request.UserGetAccessibleProjects();
-                projectComboBox.DisplayMember = "Name";
-                projectComboBox.ValueMember = "Id";
+                int i = 0;
+                foreach (Project project in session.Request.UserGetAccessibleProjects())
+                {
+                    TreeNode Node = new TreeNode(project.Name);
+                    Node.Tag = project.Id;
+                    treeView1.Nodes.Add(Node);
+                    if (project.Subprojects.Count > 0)
+                    {
+                        TreeNode customerNode = new TreeNode(project.Name);
+                        customerNode.Tag = project.Id;
+                        walkNode(project.Subprojects, ref customerNode);
+                        treeView1.Nodes[i].Nodes.Add(customerNode);
+                     }
+                    if (i == 1)
+                        treeView1.SelectedNode=Node;
+                    i++;
+                }
+
+                this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
                 populating = false;
 
-                projectComboBox.SelectedIndex = 0;
                 PopulateProjectDependentFields();
 
                 priorityComboBox.DataSource = session.Config.PriorityEnum.GetLabels();
@@ -441,6 +455,24 @@ namespace Futureware.MantisSubmit
             {
                 MessageBox.Show( ex.Message, "Webservice Error", MessageBoxButtons.OK, MessageBoxIcon.Stop );
             }
+        }
+
+        public void walkNode(List<Project> projects, ref TreeNode Tn)
+        {
+
+          for (int i = 0; i < projects.Count; i++)
+            {
+                TreeNode Node = new TreeNode(projects[i].Name);
+                Node.Tag = projects[i].Id;
+                Tn.Nodes.Add (Node);
+                if (projects[i].Subprojects.Count > 0)
+                    walkNode(projects[i].Subprojects, ref Tn);
+
+            }
+
+                
+
+
         }
 
         /// <summary>
@@ -473,7 +505,7 @@ namespace Futureware.MantisSubmit
                 // Create the issue in memory
                 Issue issue = new Issue();
 
-                issue.Project = new ObjectRef( projectComboBox.Text );
+                issue.Project = new ObjectRef(treeView1.SelectedNode.Index);
                 issue.Priority = new ObjectRef( priorityComboBox.Text );
                 issue.Severity = new ObjectRef( severityComboBox.Text );
                 issue.Reproducibility = new ObjectRef( reproducibilityComboBox.Text );
@@ -517,18 +549,14 @@ namespace Futureware.MantisSubmit
             descriptionTextBox.Clear();
         }
 
-        /// <summary>
-        /// Event handler for selection change for the current project.
-        /// </summary>
-        /// <param name="sender">not used</param>
-        /// <param name="e">not used</param>
-        private void projectComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        // Handle the After_Select event.
+        private void TreeView1_AfterSelect(Object sender, TreeViewEventArgs e)
         {
-            if ( populating )
-                return;
-
+            TreeView TV = (TreeView)sender;
+            treeView1.SelectedNode = TV.SelectedNode;
             PopulateProjectDependentFields();
         }
+
 
         /// <summary>
         /// Populates the list of categories and versions based on the currently
@@ -538,7 +566,7 @@ namespace Futureware.MantisSubmit
         {
             try
             {
-                int projectId = (int)projectComboBox.SelectedValue;
+                int projectId = (int)treeView1.SelectedNode.Tag;
 
                 this.lblCustomField1.Text = "Custom Field 1";
                 this.lblCustomField2.Text = "Custom Field 2";
@@ -553,7 +581,7 @@ namespace Futureware.MantisSubmit
 					categoryComboBox.DataSource = session.Request.ProjectGetCategories( projectId );
 					categoryComboBox.DisplayMember = "Name";
 					versionComboBox.DataSource = session.Request.ProjectGetVersions( projectId );
-					versionComboBox.DisplayMember = "Name";
+                    versionComboBox.DisplayMember = "Name";
 				}
             }
             catch( Exception ex )

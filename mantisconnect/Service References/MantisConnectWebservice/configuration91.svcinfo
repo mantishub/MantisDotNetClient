@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3W65yPxUo3+OfnK3MVmO+dvepI0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="GW+oSqWdxQ75cDO7TOlLmyxp5OE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="MantisConnectBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="MantisConnectPort" contract="MantisConnectWebservice.MantisConnectPortType" bindingType="basicHttpBinding" address="http://www.mantisbt.org/demo/api/soap/mantisconnect.php" bindingConfiguration="MantisConnectBinding">
+    <endpoint name="MantisConnectPort" contract="MantisConnectWebservice.MantisConnectPortType" bindingType="basicHttpBinding" address="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php" bindingConfiguration="MantisConnectBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://www.mantisbt.org/demo/api/soap/mantisconnect.php</serializedValue>
+          <serializedValue>http://bugtraq.tsprojects.org/api/soap/mantisconnect.php</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

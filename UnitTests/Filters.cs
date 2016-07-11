@@ -45,7 +45,7 @@ namespace Futureware.MantisConnect.UnitTests
             try
             {
                 Project[] projects = Session.Request.UserGetAccessibleProjects();
-
+               
                 foreach (Project project in projects)
                 {
                     Filter[] filters = Session.Request.UserGetFilters(project.Id);
@@ -53,6 +53,16 @@ namespace Futureware.MantisConnect.UnitTests
                     foreach (Filter filter in filters)
                     {
                         Session.Request.GetIssues(project.Id, filter.Id, 1, 10);
+                    }
+
+                    foreach (Project SubProject in project.Subprojects)
+                    {
+                        filters = Session.Request.UserGetFilters(SubProject.Id);
+
+                        foreach (Filter filter in filters)
+                        {
+                            Session.Request.GetIssues(SubProject.Id, filter.Id, 1, 10);
+                        }
                     }
                 }
             }

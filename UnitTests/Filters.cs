@@ -27,14 +27,14 @@ namespace Futureware.MantisConnect.UnitTests
     /// </summary>
     [TestFixture]
     public sealed class Filters : BaseTestFixture
-	{
-        [TestFixtureSetUp]
+    {
+        [SetUp]
         public void TestFixtureSetup()
         {
             Connect();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void TestFixtureTearDown()
         {
         }
@@ -45,7 +45,7 @@ namespace Futureware.MantisConnect.UnitTests
             try
             {
                 Project[] projects = Session.Request.UserGetAccessibleProjects();
-               
+
                 foreach (Project project in projects)
                 {
                     Filter[] filters = Session.Request.UserGetFilters(project.Id);

@@ -21,155 +21,153 @@ using NUnit.Framework;
 
 namespace Futureware.MantisConnect.UnitTests
 {
-	/// <summary>
-	/// Summary description for Class1.
-	/// </summary>
-	[TestFixture]
-	public sealed class SubmitIssueTestCases : BaseTestFixture
-	{
-		[TestFixtureSetUp]
-		public void TestFixtureSetup()
-		{
-			Connect();
-		}
+    /// <summary>
+    /// Summary description for Class1.
+    /// </summary>
+    [TestFixture]
+    public sealed class SubmitIssueTestCases : BaseTestFixture
+    {
+        [SetUp]
+        public void TestFixtureSetup()
+        {
+            Connect();
+        }
 
-		[TestFixtureTearDown]
-		public void TestFixtureTearDown()
-		{
-		}
+        [TearDown]
+        public void TestFixtureTearDown()
+        {
+        }
 
-		[Test]
-		public void SubmitIssue()
-		{
-			int projectId = FirstProjectId;
+        [Test]
+        public void SubmitIssue()
+        {
+            int projectId = FirstProjectId;
 
-			Issue issue = new Issue();
-			issue.Project = new ObjectRef( projectId );
-			issue.Summary = GetRandomSummary();
-			issue.Description = GetRandomDescription();
-			issue.Category = new ObjectRef( GetFirstCategory( projectId ) );
+            Issue issue = new Issue();
+            issue.Project = new ObjectRef(projectId);
+            issue.Summary = GetRandomSummary();
+            issue.Description = GetRandomDescription();
+            issue.Category = new ObjectRef(GetFirstCategory(projectId));
 
-			SubmitAndDelete( issue );
-		}
+            SubmitAndDelete(issue);
+        }
 
-		[Test]
-		[ExpectedException( typeof( SoapException ) )]
-		public void SubmitIssueNoProjectId()
-		{
-			int projectId = FirstProjectId;
+        [Test]
+        public void SubmitIssueNoProjectId()
+        {
+            int projectId = FirstProjectId;
 
-			Issue issue = new Issue();
-			issue.Summary = GetRandomSummary();
-			issue.Description = GetRandomDescription();
-			issue.Category = new ObjectRef( GetFirstCategory( projectId ) );
+            Issue issue = new Issue();
+            issue.Summary = GetRandomSummary();
+            issue.Description = GetRandomDescription();
+            issue.Category = new ObjectRef(GetFirstCategory(projectId));
+            var ex = Assert.Throws<SoapException>(() =>
+           SubmitAndDelete(issue));
+        }
 
-			SubmitAndDelete( issue );
-		}
+        public void SubmitIssueNoSummary()
+        {
+            int projectId = FirstProjectId;
 
-		[ExpectedException( typeof( SoapException ) )]
-		public void SubmitIssueNoSummary()
-		{
-			int projectId = FirstProjectId;
+            Issue issue = new Issue();
+            issue.Project = new ObjectRef(projectId);
+            issue.Description = GetRandomDescription();
+            issue.Category = new ObjectRef(GetFirstCategory(projectId));
+            var ex = Assert.Throws<SoapException>(() =>
+          SubmitAndDelete(issue));
+        }
 
-			Issue issue = new Issue();
-			issue.Project = new ObjectRef( projectId );
-			issue.Description = GetRandomDescription();
-			issue.Category = new ObjectRef( GetFirstCategory( projectId ) );
+        [Test]
+        public void SubmitIssueNoDescription()
+        {
+            int projectId = FirstProjectId;
 
-			SubmitAndDelete( issue );
-		}
+            Issue issue = new Issue();
+            issue.Project = new ObjectRef(projectId);
+            issue.Summary = GetRandomSummary();
+            issue.Category = new ObjectRef(GetFirstCategory(projectId));
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void SubmitIssueNoDescription()
-		{
-			int projectId = FirstProjectId;
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+        SubmitAndDelete(issue));
+        }
 
-			Issue issue = new Issue();
-			issue.Project = new ObjectRef( projectId );
-			issue.Summary = GetRandomSummary();
-			issue.Category = new ObjectRef( GetFirstCategory( projectId ) );
+        [Test]
+        public void SubmitIssueNoCategory()
+        {
+            int projectId = FirstProjectId;
 
-			SubmitAndDelete( issue );
-		}
+            string cfg;
+            Session.Request.ConfigGet("mc_error_when_category_not_found", out cfg);
 
-		[Test]
-		public void SubmitIssueNoCategory()
-		{
-			int projectId = FirstProjectId;
+            bool errorWhenCategoryNotFound = cfg == "1";
 
-			string cfg;
-			Session.Request.ConfigGet( "mc_error_when_category_not_found", out cfg );
+            try
+            {
+                Issue issue = new Issue();
+                issue.Project = new ObjectRef(projectId);
+                issue.Summary = GetRandomSummary();
+                issue.Description = GetRandomDescription();
 
-			bool errorWhenCategoryNotFound = cfg == "1";
+                SubmitAndDelete(issue);
+            }
+            catch (SoapException)
+            {
+                if (!errorWhenCategoryNotFound)
+                    throw;
 
-			try
-			{
-				Issue issue = new Issue();
-				issue.Project = new ObjectRef( projectId );
-				issue.Summary = GetRandomSummary();
-				issue.Description = GetRandomDescription();
+                return;
+            }
 
-				SubmitAndDelete( issue );
-			}
-			catch( SoapException )
-			{
-				if ( !errorWhenCategoryNotFound )
-					throw;
+            if (errorWhenCategoryNotFound)
+                Assert.Fail("No category specified, no default category, and no exception raised.");
+        }
 
-				return;
-			}
+        [Test]
+        public void SubmitIssueAndCheckIt()
+        {
+            const string StepsToRepro = "steps";
+            const string AdditionalInfo = "additional";
+            int projectId = FirstProjectId;
 
-			if ( errorWhenCategoryNotFound )
-				Assert.Fail( "No category specified, no default category, and no exception raised." );
-		}
+            Issue issue = new Issue();
+            issue.Project = new ObjectRef(projectId);
+            issue.Summary = GetRandomSummary();
+            issue.Description = GetRandomDescription();
+            issue.Category = new ObjectRef(GetFirstCategory(projectId));
+            issue.StepsToReproduce = StepsToRepro;
+            issue.AdditionalInformation = AdditionalInfo;
 
-		[Test]
-		public void SubmitIssueAndCheckIt()
-		{
-			const string StepsToRepro = "steps";
-			const string AdditionalInfo = "additional";
-			int projectId = FirstProjectId;
+            int issueId = Session.Request.IssueAdd(issue);
 
-			Issue issue = new Issue();
-			issue.Project = new ObjectRef( projectId );
-			issue.Summary = GetRandomSummary();
-			issue.Description = GetRandomDescription();
-			issue.Category = new ObjectRef( GetFirstCategory( projectId ) );
-			issue.StepsToReproduce = StepsToRepro;
-			issue.AdditionalInformation = AdditionalInfo;
+            try
+            {
+                Issue issueRet = Session.Request.IssueGet(issueId);
 
-			int issueId = Session.Request.IssueAdd( issue );
-
-			try
-			{
-				Issue issueRet = Session.Request.IssueGet( issueId );
-
-				Assert.AreEqual( issueId, issueRet.Id );
-				Assert.AreEqual( issue.Project.Id, issueRet.Project.Id );
-				Assert.AreEqual( issue.Summary, issueRet.Summary );
-				Assert.AreEqual( issue.Description, issueRet.Description );
-				Assert.AreEqual( issue.Category.Name, issueRet.Category.Name );
-				Assert.AreEqual( Session.Username, issueRet.ReportedBy.Name );
-				Assert.IsTrue( issueRet.Severity.Id != 0 );
-				Assert.IsTrue( issueRet.Priority.Id != 0 );
-				Assert.IsTrue( issueRet.Reproducibility.Id != 0 );
-				Assert.IsTrue( issueRet.Projection.Id != 0 );
-				Assert.IsTrue( issueRet.Eta.Id != 0 );
-				Assert.AreEqual(StepsToRepro, issueRet.StepsToReproduce);
-				Assert.AreEqual(AdditionalInfo, issueRet.AdditionalInformation);
-				Assert.IsTrue(issueRet.Platform.Length == 0);
-				Assert.IsTrue( issueRet.Os.Length == 0 );
-				Assert.IsTrue( issueRet.OsBuild.Length == 0 );
-				Assert.IsTrue( issueRet.FixedInVersion.Length == 0 );
-				Assert.AreEqual( 0, issueRet.SponsorshipTotal );
-				Assert.AreEqual( 0, issueRet.Attachments.Length );
-			}
-			finally
-			{
-				Session.Request.IssueDelete( issueId );
-			}
-		}
+                Assert.AreEqual(issueId, issueRet.Id);
+                Assert.AreEqual(issue.Project.Id, issueRet.Project.Id);
+                Assert.AreEqual(issue.Summary, issueRet.Summary);
+                Assert.AreEqual(issue.Description, issueRet.Description);
+                Assert.AreEqual(issue.Category.Name, issueRet.Category.Name);
+                Assert.AreEqual(Session.Username, issueRet.ReportedBy.Name);
+                Assert.IsTrue(issueRet.Severity.Id != 0);
+                Assert.IsTrue(issueRet.Priority.Id != 0);
+                Assert.IsTrue(issueRet.Reproducibility.Id != 0);
+                Assert.IsTrue(issueRet.Projection.Id != 0);
+                Assert.IsTrue(issueRet.Eta.Id != 0);
+                Assert.AreEqual(StepsToRepro, issueRet.StepsToReproduce);
+                Assert.AreEqual(AdditionalInfo, issueRet.AdditionalInformation);
+                Assert.IsTrue(issueRet.Platform.Length == 0);
+                Assert.IsTrue(issueRet.Os.Length == 0);
+                Assert.IsTrue(issueRet.OsBuild.Length == 0);
+                Assert.IsTrue(issueRet.FixedInVersion.Length == 0);
+                Assert.AreEqual(0, issueRet.SponsorshipTotal);
+                Assert.AreEqual(0, issueRet.Attachments.Length);
+            }
+            finally
+            {
+                Session.Request.IssueDelete(issueId);
+            }
+        }
 
         [Test]
         public void SubmitIssueWithNotesAndCheckIt()
@@ -186,44 +184,44 @@ namespace Futureware.MantisConnect.UnitTests
             note2.Text = note2Text;
 
             Issue issue = new Issue();
-            issue.Project = new ObjectRef( projectId );
+            issue.Project = new ObjectRef(projectId);
             issue.Summary = GetRandomSummary();
             issue.Description = GetRandomDescription();
-            issue.Category = new ObjectRef( GetFirstCategory( projectId ) );
+            issue.Category = new ObjectRef(GetFirstCategory(projectId));
             issue.Notes = new IssueNote[] { note1, note2 };
 
-            int issueId = Session.Request.IssueAdd( issue );
+            int issueId = Session.Request.IssueAdd(issue);
 
             try
             {
-                Issue issueRet = Session.Request.IssueGet( issueId );
+                Issue issueRet = Session.Request.IssueGet(issueId);
 
-                Assert.IsNotNull( issueRet );
-                Assert.IsNotNull( issueRet.Notes );
-                Assert.AreEqual( 2, issueRet.Notes.Length );
-                Assert.AreEqual( note1Text, issueRet.Notes[0].Text );
-                Assert.AreEqual( note2Text, issueRet.Notes[1].Text );
+                Assert.IsNotNull(issueRet);
+                Assert.IsNotNull(issueRet.Notes);
+                Assert.AreEqual(2, issueRet.Notes.Length);
+                Assert.AreEqual(note1Text, issueRet.Notes[0].Text);
+                Assert.AreEqual(note2Text, issueRet.Notes[1].Text);
             }
             finally
             {
-                Session.Request.IssueDelete( issueId );
+                Session.Request.IssueDelete(issueId);
             }
         }
 
-        private void SubmitAndDelete( Issue issue )
-		{
-			int issueId = Session.Request.IssueAdd( issue );
-			if ( issueId > 0 )
-			{
-				Assert.IsTrue( Session.Request.IssueExists( issueId ) );
-				Assert.AreEqual( issueId, Session.Request.IssueGetLastId( issue.Project.Id ) );
-				Assert.AreEqual( issueId, Session.Request.IssueGetIdFromSummary( issue.Summary ) );
+        private void SubmitAndDelete(Issue issue)
+        {
+            int issueId = Session.Request.IssueAdd(issue);
+            if (issueId > 0)
+            {
+                Assert.IsTrue(Session.Request.IssueExists(issueId));
+                Assert.AreEqual(issueId, Session.Request.IssueGetLastId(issue.Project.Id));
+                Assert.AreEqual(issueId, Session.Request.IssueGetIdFromSummary(issue.Summary));
 
-				Session.Request.IssueDelete( issueId );
+                Session.Request.IssueDelete(issueId);
 
-				Assert.IsFalse( Session.Request.IssueExists( issueId ) );
-				Assert.AreEqual( 0, Session.Request.IssueGetIdFromSummary( issue.Summary ) );
-			}
-		}
-	}
+                Assert.IsFalse(Session.Request.IssueExists(issueId));
+                Assert.AreEqual(0, Session.Request.IssueGetIdFromSummary(issue.Summary));
+            }
+        }
+    }
 }

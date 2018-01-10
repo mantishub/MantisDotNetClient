@@ -18,10 +18,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="mantisconnect1.wsdl" MetadataType="Wsdl" ID="517aeed2-e828-4e79-a797-2d1240bc34ef" SourceId="1" SourceUrl="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php?wsdl" />
+    <MetadataFile FileName="mantisconnect.wsdl" MetadataType="Wsdl" ID="d14ef5cf-7864-4ce8-a8eb-15a3fb0df83b" SourceId="1" SourceUrl="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

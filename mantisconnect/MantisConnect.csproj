@@ -31,7 +31,7 @@
     </UpgradeBackupLocation>
     <SignAssembly>true</SignAssembly>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -256,7 +256,7 @@
     <None Include="Service References\MantisConnectWebservice\Futureware.MantisConnect.MantisConnectWebservice.UserData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MantisConnectWebservice\mantisconnect1.wsdl" />
+    <None Include="Service References\MantisConnectWebservice\mantisconnect.wsdl" />
     <None Include="Service References\MantisConnectWebservice\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

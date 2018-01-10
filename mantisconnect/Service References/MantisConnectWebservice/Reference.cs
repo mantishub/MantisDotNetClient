@@ -15,1350 +15,1532 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://futureware.biz/mantisconnect", ConfigurationName="MantisConnectWebservice.MantisConnectPortType")]
     public interface MantisConnectPortType {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_version();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_version", ReplyAction="*")]
         System.IAsyncResult Beginmc_version(System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string Endmc_version(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.UserData mc_login(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_login", ReplyAction="*")]
         System.IAsyncResult Beginmc_login(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.UserData Endmc_login(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_status(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_status", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_status(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_status(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_priorities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_priorities", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_priorities(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_priorities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_priorities", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_priorities(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_priorities(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_severities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_severities", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_severities(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_severities", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_severities", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_severities(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_severities(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_reproducibilitie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_reproducibiliti" +
+            "es", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_reproducibilities(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_reproducibilitie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_reproducibiliti" +
+            "es", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_reproducibilities(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_reproducibilities(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_projections", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_projections", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_projections(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_projections", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_projections", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_projections(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_projections(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_etas(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_etas", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_etas(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_etas(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_resolutions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_resolutions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_resolutions(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_resolutions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_resolutions", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_resolutions(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_resolutions(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_access_levels", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_access_levels", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_access_levels(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_access_levels", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_access_levels", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_access_levels(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_access_levels(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_status", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_project_status(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_status", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_status", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_project_status(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_project_status(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_view_sta" +
-            "tes", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_view_st" +
+            "ates", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_project_view_states(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_view_sta" +
-            "tes", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_project_view_st" +
+            "ates", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_project_view_states(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_project_view_states(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_view_states", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_view_states", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_view_states(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_view_states", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_view_states", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_view_states(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_view_states(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_custom_field_typ" +
-            "es", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_custom_field_ty" +
+            "pes", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] mc_enum_custom_field_types(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_custom_field_typ" +
-            "es", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_custom_field_ty" +
+            "pes", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_custom_field_types(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ObjectRef[] Endmc_enum_custom_field_types(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_enum_get(string username, string password, string enumeration);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_enum_get", ReplyAction="*")]
         System.IAsyncResult Beginmc_enum_get(string username, string password, string enumeration, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string Endmc_enum_get(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_exists(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_exists", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_exists(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_exists(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData mc_issue_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData Endmc_issue_get(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issues_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_issues_get(string username, string password, string[] issue_ids);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issues_get", ReplyAction="*")]
+        System.IAsyncResult Beginmc_issues_get(string username, string password, string[] issue_ids, System.AsyncCallback callback, object asyncState);
+        
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_issues_get(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issues_get_header", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] mc_issues_get_header(string username, string password, string[] issue_ids);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issues_get_header", ReplyAction="*")]
+        System.IAsyncResult Beginmc_issues_get_header(string username, string password, string[] issue_ids, System.AsyncCallback callback, object asyncState);
+        
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Endmc_issues_get_header(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_history", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.HistoryData[] mc_issue_get_history(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_history", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_history", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_get_history(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.HistoryData[] Endmc_issue_get_history(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_biggest_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_biggest_id" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_get_biggest_id(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_biggest_id", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_biggest_id" +
+            "", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_get_biggest_id(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_issue_get_biggest_id(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_id_from_sum" +
-            "mary", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_id_from_su" +
+            "mmary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_get_id_from_summary(string username, string password, string summary);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_id_from_sum" +
-            "mary", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_get_id_from_su" +
+            "mmary", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_get_id_from_summary(string username, string password, string summary, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_issue_get_id_from_summary(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.IssueData issue);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_add", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.IssueData issue, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_issue_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issueId, Futureware.MantisConnect.MantisConnectWebservice.IssueData issue);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_update", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issueId, Futureware.MantisConnect.MantisConnectWebservice.IssueData issue, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_update(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_set_tags(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, Futureware.MantisConnect.MantisConnectWebservice.TagData[] tags);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_set_tags", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_set_tags(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, Futureware.MantisConnect.MantisConnectWebservice.TagData[] tags, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_set_tags(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_delete", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_note_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData note);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_add", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_note_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData note, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_issue_note_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_note_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_note_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_delete", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_note_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_note_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_note_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_note_update(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData note);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_note_update", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_note_update(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.IssueNoteData note, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_note_update(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_a" +
+            "dd", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_relationship_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, Futureware.MantisConnect.MantisConnectWebservice.RelationshipData relationship);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_a" +
+            "dd", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_relationship_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, Futureware.MantisConnect.MantisConnectWebservice.RelationshipData relationship, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_issue_relationship_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_d" +
+            "elete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_relationship_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string relationship_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_relationship_d" +
+            "elete", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_relationship_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string relationship_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_relationship_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_add" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_issue_attachment_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string name, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_add" +
+            "", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_attachment_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string name, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_issue_attachment_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_dele" +
-            "te", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_del" +
+            "ete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_attachment_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_dele" +
-            "te", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_del" +
+            "ete", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_attachment_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_attachment_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_get" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         byte[] mc_issue_attachment_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_attachment_get" +
+            "", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_attachment_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_attachment_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         byte[] Endmc_issue_attachment_get(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.ProjectData project);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.ProjectData project, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_project_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, Futureware.MantisConnect.MantisConnectWebservice.ProjectData project);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_update", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, Futureware.MantisConnect.MantisConnectWebservice.ProjectData project, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_project_update(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_id_from_n" +
-            "ame", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_id_from_" +
+            "name", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_get_id_from_name(string username, string password, string project_name);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_id_from_n" +
-            "ame", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_id_from_" +
+            "name", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_id_from_name(string username, string password, string project_name, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_get_id_from_name(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues_fo" +
-            "r_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues_f" +
+            "or_user", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_project_get_issues_for_user(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string filter_type, Futureware.MantisConnect.MantisConnectWebservice.AccountData target_user, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues_fo" +
-            "r_user", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues_f" +
+            "or_user", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_issues_for_user(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string filter_type, Futureware.MantisConnect.MantisConnectWebservice.AccountData target_user, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_project_get_issues_for_user(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_project_get_issues(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issues", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_issues(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_project_get_issues(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issue_hea" +
-            "ders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issue_he" +
+            "aders", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] mc_project_get_issue_headers(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issue_hea" +
-            "ders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_issue_he" +
+            "aders", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_issue_headers(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Endmc_project_get_issue_headers(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_users", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_users", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.AccountData[] mc_project_get_users(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string access);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_users", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_users", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_users(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string access, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.AccountData[] Endmc_project_get_users(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_projects_get_user_acc" +
-            "essible", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_projects_get_user_ac" +
+            "cessible", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectData[] mc_projects_get_user_accessible(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_projects_get_user_acc" +
-            "essible", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_projects_get_user_ac" +
+            "cessible", ReplyAction="*")]
         System.IAsyncResult Beginmc_projects_get_user_accessible(string username, string password, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectData[] Endmc_projects_get_user_accessible(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_categorie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_categori" +
+            "es", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] mc_project_get_categories(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_categorie" +
-            "s", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_categori" +
+            "es", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_categories(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] Endmc_project_get_categories(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add_category", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add_category" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_add_category(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add_category", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_add_category" +
+            "", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_add_category(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_add_category(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete_catego" +
-            "ry", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete_categ" +
+            "ory", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_delete_category(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete_catego" +
-            "ry", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_delete_categ" +
+            "ory", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_delete_category(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_delete_category(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_rename_catego" +
-            "ry_by_name", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_rename_categ" +
+            "ory_by_name", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_rename_category_by_name(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name, string p_category_name_new, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string p_assigned_to);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_rename_catego" +
-            "ry_by_name", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_rename_categ" +
+            "ory_by_name", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_rename_category_by_name(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string p_category_name, string p_category_name_new, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string p_assigned_to, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_rename_category_by_name(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_versions" +
+            "", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[] mc_project_get_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_versions" +
+            "", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[] Endmc_project_get_versions(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_version_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData version);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_add", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_version_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData version, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_version_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_updat" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_upda" +
+            "te", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_version_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id, Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData version);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_updat" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_upda" +
+            "te", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_version_update(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id, Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData version, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_project_version_update(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_delet" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_dele" +
+            "te", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_version_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_delet" +
-            "e", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_version_dele" +
+            "te", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_version_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string version_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_project_version_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_released_" +
-            "versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_released" +
+            "_versions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[] mc_project_get_released_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_released_" +
-            "versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_released" +
+            "_versions", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_released_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[] Endmc_project_get_released_versions(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_unrelease" +
-            "d_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_unreleas" +
+            "ed_versions", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[] mc_project_get_unreleased_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_unrelease" +
-            "d_versions", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_unreleas" +
+            "ed_versions", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_unreleased_versions(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectVersionData[] Endmc_project_get_unreleased_versions(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_attachmen" +
-            "ts", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_attachme" +
+            "nts", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData[] mc_project_get_attachments(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_attachmen" +
-            "ts", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_attachme" +
+            "nts", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_attachments(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProjectAttachmentData[] Endmc_project_get_attachments(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_custom_fi" +
-            "elds", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_custom_f" +
+            "ields", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData[] mc_project_get_custom_fields(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_custom_fi" +
-            "elds", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_custom_f" +
+            "ields", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_custom_fields(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.CustomFieldDefinitionData[] Endmc_project_get_custom_fields(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_ge" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_g" +
+            "et", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         byte[] mc_project_attachment_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_ge" +
-            "t", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_g" +
+            "et", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_attachment_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")]
         byte[] Endmc_project_attachment_get(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_a" +
+            "dd", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_project_attachment_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string name, string title, string description, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_ad" +
-            "d", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_a" +
+            "dd", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_attachment_add(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string name, string title, string description, string file_type, [System.Xml.Serialization.SoapElementAttribute(DataType="base64Binary")] byte[] content, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_project_attachment_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_d" +
+            "elete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_project_attachment_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_de" +
-            "lete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_attachment_d" +
+            "elete", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_attachment_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_attachment_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_project_attachment_delete(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_all_subpr" +
-            "ojects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_all_subp" +
+            "rojects", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] mc_project_get_all_subprojects(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_all_subpr" +
-            "ojects", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_project_get_all_subp" +
+            "rojects", ReplyAction="*")]
         System.IAsyncResult Beginmc_project_get_all_subprojects(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string[] Endmc_project_get_all_subprojects(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.FilterData[] mc_filter_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get", ReplyAction="*")]
         System.IAsyncResult Beginmc_filter_get(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.FilterData[] Endmc_filter_get(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issues", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_filter_get_issues(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issues", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issues", ReplyAction="*")]
         System.IAsyncResult Beginmc_filter_get_issues(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_filter_get_issues(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issue_head" +
-            "ers", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issue_hea" +
+            "ders", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] mc_filter_get_issue_headers(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issue_head" +
-            "ers", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_get_issue_hea" +
+            "ders", ReplyAction="*")]
         System.IAsyncResult Beginmc_filter_get_issue_headers(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string filter_id, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Endmc_filter_get_issue_headers(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_config_get_string", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_search_issue_" +
+            "headers", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] mc_filter_search_issue_headers(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_search_issue_" +
+            "headers", ReplyAction="*")]
+        System.IAsyncResult Beginmc_filter_search_issue_headers(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
+        
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Endmc_filter_search_issue_headers(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_search_issues" +
+            "", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_filter_search_issues(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_search_issues" +
+            "", ReplyAction="*")]
+        System.IAsyncResult Beginmc_filter_search_issues(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
+        
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_filter_search_issues(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_search_issue_" +
+            "ids", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string[] mc_filter_search_issue_ids(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_filter_search_issue_" +
+            "ids", ReplyAction="*")]
+        System.IAsyncResult Beginmc_filter_search_issue_ids(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
+        
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        string[] Endmc_filter_search_issue_ids(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_config_get_string", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_config_get_string(string username, string password, string config_var);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_config_get_string", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_config_get_string", ReplyAction="*")]
         System.IAsyncResult Beginmc_config_get_string(string username, string password, string config_var, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string Endmc_config_get_string(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_issue_checkin(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string comment, bool @fixed);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_issue_checkin", ReplyAction="*")]
         System.IAsyncResult Beginmc_issue_checkin(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string issue_id, string comment, bool @fixed, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool Endmc_issue_checkin(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_pref_get_pref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_pref_get_pref", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string mc_user_pref_get_pref(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string pref_name);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_pref_get_pref", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_pref_get_pref", ReplyAction="*")]
         System.IAsyncResult Beginmc_user_pref_get_pref(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string project_id, string pref_name, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         string Endmc_user_pref_get_pref(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_profiles_get_all" +
-            "", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_profiles_get_al" +
+            "l", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProfileDataSearchResult mc_user_profiles_get_all(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_profiles_get_all" +
-            "", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_user_profiles_get_al" +
+            "l", ReplyAction="*")]
         System.IAsyncResult Beginmc_user_profiles_get_all(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.ProfileDataSearchResult Endmc_user_profiles_get_all(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.TagDataSearchResult mc_tag_get_all(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_get_all", ReplyAction="*")]
         System.IAsyncResult Beginmc_tag_get_all(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string page_number, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string per_page, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Futureware.MantisConnect.MantisConnectWebservice.TagDataSearchResult Endmc_tag_get_all(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string mc_tag_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.TagData tag);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_add", ReplyAction="*")]
         System.IAsyncResult Beginmc_tag_add(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.TagData tag, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         [return: System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
         string Endmc_tag_add(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProfileData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterCustomField))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilterData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldDefinitionData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ProjectAttachmentData))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HistoryData))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IssueHeaderData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CustomFieldValueForIssueData))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AttachmentData))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         bool mc_tag_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string tag_id);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="https://bugtraq.tsprojects.org/api/soap/mantisconnect.php/mc_tag_delete", ReplyAction="*")]
         System.IAsyncResult Beginmc_tag_delete(string username, string password, [System.Xml.Serialization.SoapElementAttribute(DataType="integer")] string tag_id, System.AsyncCallback callback, object asyncState);
         
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -1366,7 +1548,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1424,7 +1606,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1495,7 +1677,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1540,7 +1722,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1665,7 +1847,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1762,7 +1944,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1807,7 +1989,537 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
+    public partial class FilterCustomField : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ObjectRef fieldField;
+        
+        private string[] valueField;
+        
+        /// <remarks/>
+        public ObjectRef field {
+            get {
+                return this.fieldField;
+            }
+            set {
+                this.fieldField = value;
+                this.RaisePropertyChanged("field");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
+    public partial class ObjectRef : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
+    public partial class FilterSearchData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string[] project_idField;
+        
+        private string searchField;
+        
+        private string[] categoryField;
+        
+        private string[] severity_idField;
+        
+        private string[] status_idField;
+        
+        private string[] priority_idField;
+        
+        private string[] reporter_idField;
+        
+        private string[] handler_idField;
+        
+        private string[] note_user_idField;
+        
+        private string[] resolution_idField;
+        
+        private string[] product_versionField;
+        
+        private string[] user_monitor_idField;
+        
+        private string[] hide_status_idField;
+        
+        private string sortField;
+        
+        private string sort_directionField;
+        
+        private bool stickyField;
+        
+        private bool stickyFieldSpecified;
+        
+        private string[] view_state_idField;
+        
+        private string[] fixed_in_versionField;
+        
+        private string[] target_versionField;
+        
+        private string[] platformField;
+        
+        private string[] osField;
+        
+        private string[] os_buildField;
+        
+        private string start_dayField;
+        
+        private string start_monthField;
+        
+        private string start_yearField;
+        
+        private string end_dayField;
+        
+        private string end_monthField;
+        
+        private string end_yearField;
+        
+        private string[] tag_stringField;
+        
+        private string[] tag_selectField;
+        
+        private FilterCustomField[] custom_fieldsField;
+        
+        /// <remarks/>
+        public string[] project_id {
+            get {
+                return this.project_idField;
+            }
+            set {
+                this.project_idField = value;
+                this.RaisePropertyChanged("project_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string search {
+            get {
+                return this.searchField;
+            }
+            set {
+                this.searchField = value;
+                this.RaisePropertyChanged("search");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+                this.RaisePropertyChanged("category");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] severity_id {
+            get {
+                return this.severity_idField;
+            }
+            set {
+                this.severity_idField = value;
+                this.RaisePropertyChanged("severity_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] status_id {
+            get {
+                return this.status_idField;
+            }
+            set {
+                this.status_idField = value;
+                this.RaisePropertyChanged("status_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] priority_id {
+            get {
+                return this.priority_idField;
+            }
+            set {
+                this.priority_idField = value;
+                this.RaisePropertyChanged("priority_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] reporter_id {
+            get {
+                return this.reporter_idField;
+            }
+            set {
+                this.reporter_idField = value;
+                this.RaisePropertyChanged("reporter_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] handler_id {
+            get {
+                return this.handler_idField;
+            }
+            set {
+                this.handler_idField = value;
+                this.RaisePropertyChanged("handler_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] note_user_id {
+            get {
+                return this.note_user_idField;
+            }
+            set {
+                this.note_user_idField = value;
+                this.RaisePropertyChanged("note_user_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] resolution_id {
+            get {
+                return this.resolution_idField;
+            }
+            set {
+                this.resolution_idField = value;
+                this.RaisePropertyChanged("resolution_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] product_version {
+            get {
+                return this.product_versionField;
+            }
+            set {
+                this.product_versionField = value;
+                this.RaisePropertyChanged("product_version");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] user_monitor_id {
+            get {
+                return this.user_monitor_idField;
+            }
+            set {
+                this.user_monitor_idField = value;
+                this.RaisePropertyChanged("user_monitor_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] hide_status_id {
+            get {
+                return this.hide_status_idField;
+            }
+            set {
+                this.hide_status_idField = value;
+                this.RaisePropertyChanged("hide_status_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string sort {
+            get {
+                return this.sortField;
+            }
+            set {
+                this.sortField = value;
+                this.RaisePropertyChanged("sort");
+            }
+        }
+        
+        /// <remarks/>
+        public string sort_direction {
+            get {
+                return this.sort_directionField;
+            }
+            set {
+                this.sort_directionField = value;
+                this.RaisePropertyChanged("sort_direction");
+            }
+        }
+        
+        /// <remarks/>
+        public bool sticky {
+            get {
+                return this.stickyField;
+            }
+            set {
+                this.stickyField = value;
+                this.RaisePropertyChanged("sticky");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapIgnoreAttribute()]
+        public bool stickySpecified {
+            get {
+                return this.stickyFieldSpecified;
+            }
+            set {
+                this.stickyFieldSpecified = value;
+                this.RaisePropertyChanged("stickySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] view_state_id {
+            get {
+                return this.view_state_idField;
+            }
+            set {
+                this.view_state_idField = value;
+                this.RaisePropertyChanged("view_state_id");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] fixed_in_version {
+            get {
+                return this.fixed_in_versionField;
+            }
+            set {
+                this.fixed_in_versionField = value;
+                this.RaisePropertyChanged("fixed_in_version");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] target_version {
+            get {
+                return this.target_versionField;
+            }
+            set {
+                this.target_versionField = value;
+                this.RaisePropertyChanged("target_version");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] platform {
+            get {
+                return this.platformField;
+            }
+            set {
+                this.platformField = value;
+                this.RaisePropertyChanged("platform");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] os {
+            get {
+                return this.osField;
+            }
+            set {
+                this.osField = value;
+                this.RaisePropertyChanged("os");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] os_build {
+            get {
+                return this.os_buildField;
+            }
+            set {
+                this.os_buildField = value;
+                this.RaisePropertyChanged("os_build");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string start_day {
+            get {
+                return this.start_dayField;
+            }
+            set {
+                this.start_dayField = value;
+                this.RaisePropertyChanged("start_day");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string start_month {
+            get {
+                return this.start_monthField;
+            }
+            set {
+                this.start_monthField = value;
+                this.RaisePropertyChanged("start_month");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string start_year {
+            get {
+                return this.start_yearField;
+            }
+            set {
+                this.start_yearField = value;
+                this.RaisePropertyChanged("start_year");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string end_day {
+            get {
+                return this.end_dayField;
+            }
+            set {
+                this.end_dayField = value;
+                this.RaisePropertyChanged("end_day");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string end_month {
+            get {
+                return this.end_monthField;
+            }
+            set {
+                this.end_monthField = value;
+                this.RaisePropertyChanged("end_month");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string end_year {
+            get {
+                return this.end_yearField;
+            }
+            set {
+                this.end_yearField = value;
+                this.RaisePropertyChanged("end_year");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] tag_string {
+            get {
+                return this.tag_stringField;
+            }
+            set {
+                this.tag_stringField = value;
+                this.RaisePropertyChanged("tag_string");
+            }
+        }
+        
+        /// <remarks/>
+        public string[] tag_select {
+            get {
+                return this.tag_selectField;
+            }
+            set {
+                this.tag_selectField = value;
+                this.RaisePropertyChanged("tag_select");
+            }
+        }
+        
+        /// <remarks/>
+        public FilterCustomField[] custom_fields {
+            get {
+                return this.custom_fieldsField;
+            }
+            set {
+                this.custom_fieldsField = value;
+                this.RaisePropertyChanged("custom_fields");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1932,7 +2644,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2315,52 +3027,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
-    public partial class ObjectRef : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string idField;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2513,7 +3180,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2666,7 +3333,296 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
+    public partial class ProjectData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string nameField;
+        
+        private ObjectRef statusField;
+        
+        private bool enabledField;
+        
+        private bool enabledFieldSpecified;
+        
+        private ObjectRef view_stateField;
+        
+        private ObjectRef access_minField;
+        
+        private string file_pathField;
+        
+        private string descriptionField;
+        
+        private ProjectData[] subprojectsField;
+        
+        private bool inherit_globalField;
+        
+        private bool inherit_globalFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        public ObjectRef status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        public bool enabled {
+            get {
+                return this.enabledField;
+            }
+            set {
+                this.enabledField = value;
+                this.RaisePropertyChanged("enabled");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapIgnoreAttribute()]
+        public bool enabledSpecified {
+            get {
+                return this.enabledFieldSpecified;
+            }
+            set {
+                this.enabledFieldSpecified = value;
+                this.RaisePropertyChanged("enabledSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        public ObjectRef view_state {
+            get {
+                return this.view_stateField;
+            }
+            set {
+                this.view_stateField = value;
+                this.RaisePropertyChanged("view_state");
+            }
+        }
+        
+        /// <remarks/>
+        public ObjectRef access_min {
+            get {
+                return this.access_minField;
+            }
+            set {
+                this.access_minField = value;
+                this.RaisePropertyChanged("access_min");
+            }
+        }
+        
+        /// <remarks/>
+        public string file_path {
+            get {
+                return this.file_pathField;
+            }
+            set {
+                this.file_pathField = value;
+                this.RaisePropertyChanged("file_path");
+            }
+        }
+        
+        /// <remarks/>
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        public ProjectData[] subprojects {
+            get {
+                return this.subprojectsField;
+            }
+            set {
+                this.subprojectsField = value;
+                this.RaisePropertyChanged("subprojects");
+            }
+        }
+        
+        /// <remarks/>
+        public bool inherit_global {
+            get {
+                return this.inherit_globalField;
+            }
+            set {
+                this.inherit_globalField = value;
+                this.RaisePropertyChanged("inherit_global");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapIgnoreAttribute()]
+        public bool inherit_globalSpecified {
+            get {
+                return this.inherit_globalFieldSpecified;
+            }
+            set {
+                this.inherit_globalFieldSpecified = value;
+                this.RaisePropertyChanged("inherit_globalSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
+    public partial class HistoryData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string dateField;
+        
+        private string useridField;
+        
+        private string usernameField;
+        
+        private string fieldField;
+        
+        private string typeField;
+        
+        private string old_valueField;
+        
+        private string new_valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+                this.RaisePropertyChanged("date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string userid {
+            get {
+                return this.useridField;
+            }
+            set {
+                this.useridField = value;
+                this.RaisePropertyChanged("userid");
+            }
+        }
+        
+        /// <remarks/>
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+                this.RaisePropertyChanged("username");
+            }
+        }
+        
+        /// <remarks/>
+        public string field {
+            get {
+                return this.fieldField;
+            }
+            set {
+                this.fieldField = value;
+                this.RaisePropertyChanged("field");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("type");
+            }
+        }
+        
+        /// <remarks/>
+        public string old_value {
+            get {
+                return this.old_valueField;
+            }
+            set {
+                this.old_valueField = value;
+                this.RaisePropertyChanged("old_value");
+            }
+        }
+        
+        /// <remarks/>
+        public string new_value {
+            get {
+                return this.new_valueField;
+            }
+            set {
+                this.new_valueField = value;
+                this.RaisePropertyChanged("new_value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2877,296 +3833,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
-    public partial class ProjectData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string idField;
-        
-        private string nameField;
-        
-        private ObjectRef statusField;
-        
-        private bool enabledField;
-        
-        private bool enabledFieldSpecified;
-        
-        private ObjectRef view_stateField;
-        
-        private ObjectRef access_minField;
-        
-        private string file_pathField;
-        
-        private string descriptionField;
-        
-        private ProjectData[] subprojectsField;
-        
-        private bool inherit_globalField;
-        
-        private bool inherit_globalFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-        
-        /// <remarks/>
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        public ObjectRef status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-                this.RaisePropertyChanged("status");
-            }
-        }
-        
-        /// <remarks/>
-        public bool enabled {
-            get {
-                return this.enabledField;
-            }
-            set {
-                this.enabledField = value;
-                this.RaisePropertyChanged("enabled");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapIgnoreAttribute()]
-        public bool enabledSpecified {
-            get {
-                return this.enabledFieldSpecified;
-            }
-            set {
-                this.enabledFieldSpecified = value;
-                this.RaisePropertyChanged("enabledSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        public ObjectRef view_state {
-            get {
-                return this.view_stateField;
-            }
-            set {
-                this.view_stateField = value;
-                this.RaisePropertyChanged("view_state");
-            }
-        }
-        
-        /// <remarks/>
-        public ObjectRef access_min {
-            get {
-                return this.access_minField;
-            }
-            set {
-                this.access_minField = value;
-                this.RaisePropertyChanged("access_min");
-            }
-        }
-        
-        /// <remarks/>
-        public string file_path {
-            get {
-                return this.file_pathField;
-            }
-            set {
-                this.file_pathField = value;
-                this.RaisePropertyChanged("file_path");
-            }
-        }
-        
-        /// <remarks/>
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-                this.RaisePropertyChanged("description");
-            }
-        }
-        
-        /// <remarks/>
-        public ProjectData[] subprojects {
-            get {
-                return this.subprojectsField;
-            }
-            set {
-                this.subprojectsField = value;
-                this.RaisePropertyChanged("subprojects");
-            }
-        }
-        
-        /// <remarks/>
-        public bool inherit_global {
-            get {
-                return this.inherit_globalField;
-            }
-            set {
-                this.inherit_globalField = value;
-                this.RaisePropertyChanged("inherit_global");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapIgnoreAttribute()]
-        public bool inherit_globalSpecified {
-            get {
-                return this.inherit_globalFieldSpecified;
-            }
-            set {
-                this.inherit_globalFieldSpecified = value;
-                this.RaisePropertyChanged("inherit_globalSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://futureware.biz/mantisconnect")]
-    public partial class HistoryData : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string dateField;
-        
-        private string useridField;
-        
-        private string usernameField;
-        
-        private string fieldField;
-        
-        private string typeField;
-        
-        private string old_valueField;
-        
-        private string new_valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
-        public string date {
-            get {
-                return this.dateField;
-            }
-            set {
-                this.dateField = value;
-                this.RaisePropertyChanged("date");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
-        public string userid {
-            get {
-                return this.useridField;
-            }
-            set {
-                this.useridField = value;
-                this.RaisePropertyChanged("userid");
-            }
-        }
-        
-        /// <remarks/>
-        public string username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                this.usernameField = value;
-                this.RaisePropertyChanged("username");
-            }
-        }
-        
-        /// <remarks/>
-        public string field {
-            get {
-                return this.fieldField;
-            }
-            set {
-                this.fieldField = value;
-                this.RaisePropertyChanged("field");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("type");
-            }
-        }
-        
-        /// <remarks/>
-        public string old_value {
-            get {
-                return this.old_valueField;
-            }
-            set {
-                this.old_valueField = value;
-                this.RaisePropertyChanged("old_value");
-            }
-        }
-        
-        /// <remarks/>
-        public string new_value {
-            get {
-                return this.new_valueField;
-            }
-            set {
-                this.new_valueField = value;
-                this.RaisePropertyChanged("new_value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3210,7 +3877,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3376,7 +4043,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3435,7 +4102,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3562,7 +4229,7 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4421,6 +5088,44 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class mc_issues_getCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public mc_issues_getCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Futureware.MantisConnect.MantisConnectWebservice.IssueData[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class mc_issues_get_headerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public mc_issues_get_headerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class mc_issue_get_historyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5238,6 +5943,63 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class mc_filter_search_issue_headersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public mc_filter_search_issue_headersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class mc_filter_search_issuesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public mc_filter_search_issuesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Futureware.MantisConnect.MantisConnectWebservice.IssueData[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class mc_filter_search_issue_idsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public mc_filter_search_issue_idsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class mc_config_get_stringCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5474,6 +6236,18 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
         private EndOperationDelegate onEndmc_issue_getDelegate;
         
         private System.Threading.SendOrPostCallback onmc_issue_getCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginmc_issues_getDelegate;
+        
+        private EndOperationDelegate onEndmc_issues_getDelegate;
+        
+        private System.Threading.SendOrPostCallback onmc_issues_getCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginmc_issues_get_headerDelegate;
+        
+        private EndOperationDelegate onEndmc_issues_get_headerDelegate;
+        
+        private System.Threading.SendOrPostCallback onmc_issues_get_headerCompletedDelegate;
         
         private BeginOperationDelegate onBeginmc_issue_get_historyDelegate;
         
@@ -5733,6 +6507,24 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
         
         private System.Threading.SendOrPostCallback onmc_filter_get_issue_headersCompletedDelegate;
         
+        private BeginOperationDelegate onBeginmc_filter_search_issue_headersDelegate;
+        
+        private EndOperationDelegate onEndmc_filter_search_issue_headersDelegate;
+        
+        private System.Threading.SendOrPostCallback onmc_filter_search_issue_headersCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginmc_filter_search_issuesDelegate;
+        
+        private EndOperationDelegate onEndmc_filter_search_issuesDelegate;
+        
+        private System.Threading.SendOrPostCallback onmc_filter_search_issuesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginmc_filter_search_issue_idsDelegate;
+        
+        private EndOperationDelegate onEndmc_filter_search_issue_idsDelegate;
+        
+        private System.Threading.SendOrPostCallback onmc_filter_search_issue_idsCompletedDelegate;
+        
         private BeginOperationDelegate onBeginmc_config_get_stringDelegate;
         
         private EndOperationDelegate onEndmc_config_get_stringDelegate;
@@ -5828,6 +6620,10 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
         
         public event System.EventHandler<mc_issue_getCompletedEventArgs> mc_issue_getCompleted;
         
+        public event System.EventHandler<mc_issues_getCompletedEventArgs> mc_issues_getCompleted;
+        
+        public event System.EventHandler<mc_issues_get_headerCompletedEventArgs> mc_issues_get_headerCompleted;
+        
         public event System.EventHandler<mc_issue_get_historyCompletedEventArgs> mc_issue_get_historyCompleted;
         
         public event System.EventHandler<mc_issue_get_biggest_idCompletedEventArgs> mc_issue_get_biggest_idCompleted;
@@ -5913,6 +6709,12 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
         public event System.EventHandler<mc_filter_get_issuesCompletedEventArgs> mc_filter_get_issuesCompleted;
         
         public event System.EventHandler<mc_filter_get_issue_headersCompletedEventArgs> mc_filter_get_issue_headersCompleted;
+        
+        public event System.EventHandler<mc_filter_search_issue_headersCompletedEventArgs> mc_filter_search_issue_headersCompleted;
+        
+        public event System.EventHandler<mc_filter_search_issuesCompletedEventArgs> mc_filter_search_issuesCompleted;
+        
+        public event System.EventHandler<mc_filter_search_issue_idsCompletedEventArgs> mc_filter_search_issue_idsCompleted;
         
         public event System.EventHandler<mc_config_get_stringCompletedEventArgs> mc_config_get_stringCompleted;
         
@@ -6812,6 +7614,114 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
                         username,
                         password,
                         issue_id}, this.onEndmc_issue_getDelegate, this.onmc_issue_getCompletedDelegate, userState);
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_issues_get(string username, string password, string[] issue_ids) {
+            return base.Channel.mc_issues_get(username, password, issue_ids);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginmc_issues_get(string username, string password, string[] issue_ids, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginmc_issues_get(username, password, issue_ids, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_issues_get(System.IAsyncResult result) {
+            return base.Channel.Endmc_issues_get(result);
+        }
+        
+        private System.IAsyncResult OnBeginmc_issues_get(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            string[] issue_ids = ((string[])(inValues[2]));
+            return this.Beginmc_issues_get(username, password, issue_ids, callback, asyncState);
+        }
+        
+        private object[] OnEndmc_issues_get(System.IAsyncResult result) {
+            Futureware.MantisConnect.MantisConnectWebservice.IssueData[] retVal = this.Endmc_issues_get(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void Onmc_issues_getCompleted(object state) {
+            if ((this.mc_issues_getCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.mc_issues_getCompleted(this, new mc_issues_getCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void mc_issues_getAsync(string username, string password, string[] issue_ids) {
+            this.mc_issues_getAsync(username, password, issue_ids, null);
+        }
+        
+        public void mc_issues_getAsync(string username, string password, string[] issue_ids, object userState) {
+            if ((this.onBeginmc_issues_getDelegate == null)) {
+                this.onBeginmc_issues_getDelegate = new BeginOperationDelegate(this.OnBeginmc_issues_get);
+            }
+            if ((this.onEndmc_issues_getDelegate == null)) {
+                this.onEndmc_issues_getDelegate = new EndOperationDelegate(this.OnEndmc_issues_get);
+            }
+            if ((this.onmc_issues_getCompletedDelegate == null)) {
+                this.onmc_issues_getCompletedDelegate = new System.Threading.SendOrPostCallback(this.Onmc_issues_getCompleted);
+            }
+            base.InvokeAsync(this.onBeginmc_issues_getDelegate, new object[] {
+                        username,
+                        password,
+                        issue_ids}, this.onEndmc_issues_getDelegate, this.onmc_issues_getCompletedDelegate, userState);
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] mc_issues_get_header(string username, string password, string[] issue_ids) {
+            return base.Channel.mc_issues_get_header(username, password, issue_ids);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginmc_issues_get_header(string username, string password, string[] issue_ids, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginmc_issues_get_header(username, password, issue_ids, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Endmc_issues_get_header(System.IAsyncResult result) {
+            return base.Channel.Endmc_issues_get_header(result);
+        }
+        
+        private System.IAsyncResult OnBeginmc_issues_get_header(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            string[] issue_ids = ((string[])(inValues[2]));
+            return this.Beginmc_issues_get_header(username, password, issue_ids, callback, asyncState);
+        }
+        
+        private object[] OnEndmc_issues_get_header(System.IAsyncResult result) {
+            Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] retVal = this.Endmc_issues_get_header(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void Onmc_issues_get_headerCompleted(object state) {
+            if ((this.mc_issues_get_headerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.mc_issues_get_headerCompleted(this, new mc_issues_get_headerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void mc_issues_get_headerAsync(string username, string password, string[] issue_ids) {
+            this.mc_issues_get_headerAsync(username, password, issue_ids, null);
+        }
+        
+        public void mc_issues_get_headerAsync(string username, string password, string[] issue_ids, object userState) {
+            if ((this.onBeginmc_issues_get_headerDelegate == null)) {
+                this.onBeginmc_issues_get_headerDelegate = new BeginOperationDelegate(this.OnBeginmc_issues_get_header);
+            }
+            if ((this.onEndmc_issues_get_headerDelegate == null)) {
+                this.onEndmc_issues_get_headerDelegate = new EndOperationDelegate(this.OnEndmc_issues_get_header);
+            }
+            if ((this.onmc_issues_get_headerCompletedDelegate == null)) {
+                this.onmc_issues_get_headerCompletedDelegate = new System.Threading.SendOrPostCallback(this.Onmc_issues_get_headerCompleted);
+            }
+            base.InvokeAsync(this.onBeginmc_issues_get_headerDelegate, new object[] {
+                        username,
+                        password,
+                        issue_ids}, this.onEndmc_issues_get_headerDelegate, this.onmc_issues_get_headerCompletedDelegate, userState);
         }
         
         public Futureware.MantisConnect.MantisConnectWebservice.HistoryData[] mc_issue_get_history(string username, string password, string issue_id) {
@@ -9202,6 +10112,180 @@ namespace Futureware.MantisConnect.MantisConnectWebservice {
                         filter_id,
                         page_number,
                         per_page}, this.onEndmc_filter_get_issue_headersDelegate, this.onmc_filter_get_issue_headersCompletedDelegate, userState);
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] mc_filter_search_issue_headers(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page) {
+            return base.Channel.mc_filter_search_issue_headers(username, password, filter, page_number, per_page);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginmc_filter_search_issue_headers(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginmc_filter_search_issue_headers(username, password, filter, page_number, per_page, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] Endmc_filter_search_issue_headers(System.IAsyncResult result) {
+            return base.Channel.Endmc_filter_search_issue_headers(result);
+        }
+        
+        private System.IAsyncResult OnBeginmc_filter_search_issue_headers(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter = ((Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData)(inValues[2]));
+            string page_number = ((string)(inValues[3]));
+            string per_page = ((string)(inValues[4]));
+            return this.Beginmc_filter_search_issue_headers(username, password, filter, page_number, per_page, callback, asyncState);
+        }
+        
+        private object[] OnEndmc_filter_search_issue_headers(System.IAsyncResult result) {
+            Futureware.MantisConnect.MantisConnectWebservice.IssueHeaderData[] retVal = this.Endmc_filter_search_issue_headers(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void Onmc_filter_search_issue_headersCompleted(object state) {
+            if ((this.mc_filter_search_issue_headersCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.mc_filter_search_issue_headersCompleted(this, new mc_filter_search_issue_headersCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void mc_filter_search_issue_headersAsync(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page) {
+            this.mc_filter_search_issue_headersAsync(username, password, filter, page_number, per_page, null);
+        }
+        
+        public void mc_filter_search_issue_headersAsync(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page, object userState) {
+            if ((this.onBeginmc_filter_search_issue_headersDelegate == null)) {
+                this.onBeginmc_filter_search_issue_headersDelegate = new BeginOperationDelegate(this.OnBeginmc_filter_search_issue_headers);
+            }
+            if ((this.onEndmc_filter_search_issue_headersDelegate == null)) {
+                this.onEndmc_filter_search_issue_headersDelegate = new EndOperationDelegate(this.OnEndmc_filter_search_issue_headers);
+            }
+            if ((this.onmc_filter_search_issue_headersCompletedDelegate == null)) {
+                this.onmc_filter_search_issue_headersCompletedDelegate = new System.Threading.SendOrPostCallback(this.Onmc_filter_search_issue_headersCompleted);
+            }
+            base.InvokeAsync(this.onBeginmc_filter_search_issue_headersDelegate, new object[] {
+                        username,
+                        password,
+                        filter,
+                        page_number,
+                        per_page}, this.onEndmc_filter_search_issue_headersDelegate, this.onmc_filter_search_issue_headersCompletedDelegate, userState);
+        }
+        
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueData[] mc_filter_search_issues(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page) {
+            return base.Channel.mc_filter_search_issues(username, password, filter, page_number, per_page);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginmc_filter_search_issues(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginmc_filter_search_issues(username, password, filter, page_number, per_page, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Futureware.MantisConnect.MantisConnectWebservice.IssueData[] Endmc_filter_search_issues(System.IAsyncResult result) {
+            return base.Channel.Endmc_filter_search_issues(result);
+        }
+        
+        private System.IAsyncResult OnBeginmc_filter_search_issues(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter = ((Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData)(inValues[2]));
+            string page_number = ((string)(inValues[3]));
+            string per_page = ((string)(inValues[4]));
+            return this.Beginmc_filter_search_issues(username, password, filter, page_number, per_page, callback, asyncState);
+        }
+        
+        private object[] OnEndmc_filter_search_issues(System.IAsyncResult result) {
+            Futureware.MantisConnect.MantisConnectWebservice.IssueData[] retVal = this.Endmc_filter_search_issues(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void Onmc_filter_search_issuesCompleted(object state) {
+            if ((this.mc_filter_search_issuesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.mc_filter_search_issuesCompleted(this, new mc_filter_search_issuesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void mc_filter_search_issuesAsync(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page) {
+            this.mc_filter_search_issuesAsync(username, password, filter, page_number, per_page, null);
+        }
+        
+        public void mc_filter_search_issuesAsync(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page, object userState) {
+            if ((this.onBeginmc_filter_search_issuesDelegate == null)) {
+                this.onBeginmc_filter_search_issuesDelegate = new BeginOperationDelegate(this.OnBeginmc_filter_search_issues);
+            }
+            if ((this.onEndmc_filter_search_issuesDelegate == null)) {
+                this.onEndmc_filter_search_issuesDelegate = new EndOperationDelegate(this.OnEndmc_filter_search_issues);
+            }
+            if ((this.onmc_filter_search_issuesCompletedDelegate == null)) {
+                this.onmc_filter_search_issuesCompletedDelegate = new System.Threading.SendOrPostCallback(this.Onmc_filter_search_issuesCompleted);
+            }
+            base.InvokeAsync(this.onBeginmc_filter_search_issuesDelegate, new object[] {
+                        username,
+                        password,
+                        filter,
+                        page_number,
+                        per_page}, this.onEndmc_filter_search_issuesDelegate, this.onmc_filter_search_issuesCompletedDelegate, userState);
+        }
+        
+        public string[] mc_filter_search_issue_ids(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page) {
+            return base.Channel.mc_filter_search_issue_ids(username, password, filter, page_number, per_page);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginmc_filter_search_issue_ids(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginmc_filter_search_issue_ids(username, password, filter, page_number, per_page, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string[] Endmc_filter_search_issue_ids(System.IAsyncResult result) {
+            return base.Channel.Endmc_filter_search_issue_ids(result);
+        }
+        
+        private System.IAsyncResult OnBeginmc_filter_search_issue_ids(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter = ((Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData)(inValues[2]));
+            string page_number = ((string)(inValues[3]));
+            string per_page = ((string)(inValues[4]));
+            return this.Beginmc_filter_search_issue_ids(username, password, filter, page_number, per_page, callback, asyncState);
+        }
+        
+        private object[] OnEndmc_filter_search_issue_ids(System.IAsyncResult result) {
+            string[] retVal = this.Endmc_filter_search_issue_ids(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void Onmc_filter_search_issue_idsCompleted(object state) {
+            if ((this.mc_filter_search_issue_idsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.mc_filter_search_issue_idsCompleted(this, new mc_filter_search_issue_idsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void mc_filter_search_issue_idsAsync(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page) {
+            this.mc_filter_search_issue_idsAsync(username, password, filter, page_number, per_page, null);
+        }
+        
+        public void mc_filter_search_issue_idsAsync(string username, string password, Futureware.MantisConnect.MantisConnectWebservice.FilterSearchData filter, string page_number, string per_page, object userState) {
+            if ((this.onBeginmc_filter_search_issue_idsDelegate == null)) {
+                this.onBeginmc_filter_search_issue_idsDelegate = new BeginOperationDelegate(this.OnBeginmc_filter_search_issue_ids);
+            }
+            if ((this.onEndmc_filter_search_issue_idsDelegate == null)) {
+                this.onEndmc_filter_search_issue_idsDelegate = new EndOperationDelegate(this.OnEndmc_filter_search_issue_ids);
+            }
+            if ((this.onmc_filter_search_issue_idsCompletedDelegate == null)) {
+                this.onmc_filter_search_issue_idsCompletedDelegate = new System.Threading.SendOrPostCallback(this.Onmc_filter_search_issue_idsCompleted);
+            }
+            base.InvokeAsync(this.onBeginmc_filter_search_issue_idsDelegate, new object[] {
+                        username,
+                        password,
+                        filter,
+                        page_number,
+                        per_page}, this.onEndmc_filter_search_issue_idsDelegate, this.onmc_filter_search_issue_idsCompletedDelegate, userState);
         }
         
         public string mc_config_get_string(string username, string password, string config_var) {

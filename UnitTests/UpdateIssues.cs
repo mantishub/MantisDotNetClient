@@ -27,13 +27,13 @@ namespace Futureware.MantisConnect.UnitTests
     [TestFixture]
     public sealed class UpdateIssuesTestCases : BaseTestFixture
     {
-        [TestFixtureSetUp]
+       [SetUp]
         public void TestFixtureSetup()
         {
             Connect();
         }
 
-        [TestFixtureTearDown]
+          [TearDown]
         public void TestFixtureTearDown()
         {
         }

@@ -27,13 +27,13 @@ namespace Futureware.MantisConnect.UnitTests
     [TestFixture]
     public sealed class AttachmentTestCases : BaseTestFixture
     {
-        [TestFixtureSetUp]
+        [SetUp]
         public void TestFixtureSetup()
         {
             Connect();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void TestFixtureTearDown()
         {
         }
@@ -53,7 +53,7 @@ namespace Futureware.MantisConnect.UnitTests
 
             Issue retrievedIssueBeforeAdd = Session.Request.IssueGet(issueId);
             Assert.AreEqual(0, retrievedIssueBeforeAdd.Attachments.Length);
-            
+
             byte[] attachment = CreateBinaryAttachment(1024);
             byte[] base64 = Base64Encode(attachment);
 

@@ -21,90 +21,89 @@ using NUnit.Framework;
 
 namespace Futureware.MantisConnect.UnitTests
 {
-	/// <summary>
-	/// A test fixture to test the error scenarios for retrieving an issue. 
-	/// The case for retrieving an existing issue is covered in other test
-	/// cases.
-	/// </summary>
-	[TestFixture]
-	public sealed class RetrieveIssuesTestCases : BaseTestFixture
-	{
-		[TestFixtureSetUp]
-		public void TestFixtureSetup()
-		{
-			Connect();
-		}
+    /// <summary>
+    /// A test fixture to test the error scenarios for retrieving an issue.
+    /// The case for retrieving an existing issue is covered in other test
+    /// cases.
+    /// </summary>
+    [TestFixture]
+    public sealed class RetrieveIssuesTestCases : BaseTestFixture
+    {
+        [SetUp]
+        public void TestFixtureSetup()
+        {
+            Connect();
+        }
 
-		[TestFixtureTearDown]
-		public void TestFixtureTearDown()
-		{
-		}
+        [TearDown]
+        public void TestFixtureTearDown()
+        {
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void RetrieveIssueWithIdZero()
-		{
-			Session.Request.IssueGet( 0 );
-		}
+        [Test]
+        public void RetrieveIssueWithIdZero()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+           Session.Request.IssueGet(0));
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void RetrieveIssueWithIdNegative()
-		{
-			Session.Request.IssueGet( -1 );
-		}
+        [Test]
+        public void RetrieveIssueWithIdNegative()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+          Session.Request.IssueGet(-1));
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void IssueExistsWithIdZero()
-		{
-			Session.Request.IssueExists( 0 );
-		}
+        [Test]
+        public void IssueExistsWithIdZero()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+          Session.Request.IssueExists(0));
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void GetIssueIdFromEmptySummary()
-		{
-			Session.Request.IssueGetIdFromSummary( string.Empty );
-		}
+        [Test]
+        public void GetIssueIdFromEmptySummary()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+          Session.Request.IssueGetIdFromSummary(string.Empty));
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void GetIssueIdFromBlankSummary()
-		{
-			Session.Request.IssueGetIdFromSummary( "   " );
-		}
+        [Test]
+        public void GetIssueIdFromBlankSummary()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+          Session.Request.IssueGetIdFromSummary("   "));
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentNullException ) )]
-		public void GetIssueIdFromNullSummary()
-		{
-			Session.Request.IssueGetIdFromSummary( null );
-		}
+        [Test]
+        public void GetIssueIdFromNullSummary()
+        {
+            var ex = Assert.Throws<ArgumentNullException>(() =>
+          Session.Request.IssueGetIdFromSummary(null));
+        }
 
-		[Test]
-		public void GetIssueIdFromNonExistingSummary()
-		{
-			int issueId = Session.Request.IssueGetIdFromSummary( Guid.NewGuid().ToString() );
-			Assert.AreEqual( 0, issueId );
-		}
+        [Test]
+        public void GetIssueIdFromNonExistingSummary()
+        {
+            int issueId = Session.Request.IssueGetIdFromSummary(Guid.NewGuid().ToString());
+            Assert.AreEqual(0, issueId);
+        }
 
-		[Test]
-		[ExpectedException( typeof( ArgumentOutOfRangeException ) )]
-		public void IssueExistsWithIdNegative()
-		{
-			Session.Request.IssueExists( -1 );
-		}
+        [Test]
+        public void IssueExistsWithIdNegative()
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Session.Request.IssueExists(-1));
+        }
 
-		[Test]
-		[ExpectedException( typeof( SoapException ) )]
-		public void RetrieveIssueThatDoesNotExist()
-		{
-			int id = 5000;
-			while ( Session.Request.IssueExists( id ) )
-				id += 1000;
-	
-			Session.Request.IssueGet( id );
-		}
-	}
+        [Test]
+        public void RetrieveIssueThatDoesNotExist()
+        {
+            int id = 5000;
+            while (Session.Request.IssueExists(id))
+                id += 1000;
+            var ex = Assert.Throws<SoapException>(() =>
+           Session.Request.IssueGet(id));
+        }
+    }
 }

@@ -26,20 +26,20 @@ namespace Futureware.MantisConnect.UnitTests
     /// </summary>
     /// <remarks>
     /// The focus of this fixture is to test the special cases for using this method.  However, the method
-    /// is also tested as part of the <see cref="SubmitIssueTestCases"/> fixture in the 
+    /// is also tested as part of the <see cref="SubmitIssueTestCases"/> fixture in the
     /// <see cref="SubmitIssueTestCases.SubmitAndDelete"/> method which is used by almost all of the
     /// fixture test cases.
     /// </remarks>
     [TestFixture]
     public sealed class IssueGetLastId : BaseTestFixture
     {
-        [TestFixtureSetUp]
+        [SetUp]
         public void TestFixtureSetup()
         {
             Connect();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void TestFixtureTearDown()
         {
         }
@@ -47,37 +47,37 @@ namespace Futureware.MantisConnect.UnitTests
         [Test]
         public void IssueGetLastIdForDefaultProject()
         {
-            Session.Request.IssueGetLastId( -1 );
+            Session.Request.IssueGetLastId(-1);
         }
 
         [Test]
         public void IssueGetLastIdForAllProjects()
         {
-            Session.Request.IssueGetLastId( 0 );
+            Session.Request.IssueGetLastId(0);
         }
 
         [Test]
         public void IssueGetLastIdForFirstProject()
         {
             int projectId = FirstProjectId;
-            if ( projectId == 0 )
+            if (projectId == 0)
                 Assert.Ignore();
 
-            Session.Request.IssueGetLastId( projectId );
+            Session.Request.IssueGetLastId(projectId);
         }
 
         [Test]
-        [ExpectedException( typeof( ArgumentOutOfRangeException ) )]
         public void IssueGetLastIdForInvalidProjectId()
         {
-            Session.Request.IssueGetLastId( -50 );
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Session.Request.IssueGetLastId(-50));
         }
 
         [Test]
-        [ExpectedException( typeof( SoapException ) )]
         public void IssueGetLastIdForNonExistingProject()
         {
-            Session.Request.IssueGetLastId( 999999 );
+            var ex = Assert.Throws<SoapException>(() =>
+               Session.Request.IssueGetLastId(999999));
         }
     }
 }

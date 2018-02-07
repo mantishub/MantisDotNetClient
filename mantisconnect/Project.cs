@@ -12,7 +12,7 @@
 // purchase of a MantisConnect commercial license.
 // </summary>
 //-----------------------------------------------------------------------
-
+using System.Collections.Generic;
 namespace Futureware.MantisConnect
 {
     using System;
@@ -64,6 +64,11 @@ namespace Futureware.MantisConnect
         private string description;
 
         /// <summary>
+        /// The subprojects
+        /// </summary>
+        private List<Project> subprojects = new List<Project>();
+
+        /// <summary>
         /// The Id to be used when calling APIs to indicate the default project for the logged
         /// in user.
         /// </summary>
@@ -95,6 +100,11 @@ namespace Futureware.MantisConnect
 			this.AccessMin = new ObjectRef(projectData.access_min);
 			this.FilePath = projectData.file_path;
 			this.Description = projectData.description;
+            for (int i = 0; i < projectData.subprojects.Length; ++i)
+            {
+                this.subprojects.Add( new Project(projectData.subprojects[i]));
+            }
+            
 		}
 
         /// <summary>
@@ -132,9 +142,8 @@ namespace Futureware.MantisConnect
             {
                 return null;
             }
-
+            
 			Project[] projects = new Project[projectData.Length];
-
             for (int i = 0; i < projectData.Length; ++i)
             {
                 projects[i] = new Project(projectData[i]);
@@ -227,5 +236,11 @@ namespace Futureware.MantisConnect
 			get { return this.description; }
 			set { this.description = value; }
 		}
+
+        public List<Project> Subprojects
+        {
+            get { return this.subprojects; }
+            set { this.subprojects = value; }
+        }
 	}
 }

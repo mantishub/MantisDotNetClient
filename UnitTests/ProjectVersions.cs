@@ -22,101 +22,108 @@ using NUnit.Framework;
 namespace Futureware.MantisConnect.UnitTests
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [TestFixture]
     public sealed class ProjectVersions : BaseTestFixture
     {
-        [TestFixtureSetUp]
+        [SetUp]
         public void TestFixtureSetup()
         {
             Connect();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void TestFixtureTearDown()
         {
         }
 
         #region Request.ProjectGetVersions()
+
         [Test]
-        [ExpectedException( typeof( ArgumentOutOfRangeException ) )]
         public void ProjectGetVersionsForInvalidProject()
         {
-            Session.Request.ProjectGetVersions( -50 );
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Session.Request.ProjectGetVersions(-50));
         }
 
         [Test]
-        [ExpectedException( typeof( SoapException ) )]
         public void ProjectGetVersionsForNonExistingProject()
         {
-            Session.Request.ProjectGetVersions( 99999 );
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Session.Request.ProjectGetVersions(99999));
         }
 
         [Test]
         public void ProjectGetVersionsForFirstProject()
         {
             int projectId = FirstProjectId;
-            if ( projectId == 0 )
+            if (projectId == 0)
                 Assert.Ignore();
 
-            Session.Request.ProjectGetVersions( projectId );
+            Session.Request.ProjectGetVersions(projectId);
         }
-        #endregion
+
+        #endregion Request.ProjectGetVersions()
 
         #region Request.ProjectGetReleasedVersions()
+
         [Test]
-        [ExpectedException( typeof( ArgumentOutOfRangeException ) )]
         public void ProjectGetVersionsReleasedForInvalidProject()
         {
-            Session.Request.ProjectGetVersionsReleased( -50 );
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+          Session.Request.ProjectGetVersionsReleased(-50));
         }
 
         [Test]
-        [ExpectedException( typeof( SoapException ) )]
         public void ProjectGetVersionsReleasedForNonExistingProject()
         {
-            Session.Request.ProjectGetVersionsReleased( 99999 );
+            var ex = Assert.Throws<SoapException>(() =>
+            Session.Request.ProjectGetVersionsReleased(99999));
         }
 
         [Test]
         public void ProjectGetVersionsReleasedForFirstProject()
         {
             int projectId = FirstProjectId;
-            if ( projectId == 0 )
+            if (projectId == 0)
                 Assert.Ignore();
 
-            Session.Request.ProjectGetVersionsReleased( projectId );
+            Session.Request.ProjectGetVersionsReleased(projectId);
         }
-        #endregion
+
+        #endregion Request.ProjectGetReleasedVersions()
 
         #region Request.ProjectGetUnreleasedVersions()
+
         [Test]
-        [ExpectedException( typeof( ArgumentOutOfRangeException ) )]
         public void ProjectGetVersionsUnreleasedForInvalidProject()
         {
-            Session.Request.ProjectGetVersionsUnreleased( -50 );
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Session.Request.ProjectGetVersionsUnreleased(-50));
         }
 
         [Test]
-        [ExpectedException( typeof( SoapException ) )]
         public void ProjectGetVersionsUnreleasedForNonExistingProject()
         {
-            Session.Request.ProjectGetVersionsUnreleased( 99999 );
+            var ex = Assert.Throws<SoapException>(() =>
+           Session.Request.ProjectGetVersionsUnreleased(99999));
         }
 
         [Test]
         public void ProjectGetVersionsUnreleasedForFirstProject()
         {
             int projectId = FirstProjectId;
-            if ( projectId == 0 )
+            if (projectId == 0)
                 Assert.Ignore();
 
-            Session.Request.ProjectGetVersionsUnreleased( projectId );
+            Session.Request.ProjectGetVersionsUnreleased(projectId);
         }
-        #endregion
+
+        #endregion Request.ProjectGetUnreleasedVersions()
 
         #region Request.ProjectGetVersions()
+
         [Test]
         public void ProjectVersionAddNotReleased()
         {
@@ -130,34 +137,36 @@ namespace Futureware.MantisConnect.UnitTests
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void ProjectVersionAddWithId()
         {
             ProjectVersion versionToAdd = CreateVersionToAdd();
             versionToAdd.Id = 1000;
-            Session.Request.ProjectVersionAdd(versionToAdd);
+            var ex = Assert.Throws<ArgumentException>(() =>
+            Session.Request.ProjectVersionAdd(versionToAdd));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ProjectVersionAddWithNullName()
         {
             ProjectVersion versionToAdd = CreateVersionToAdd();
             versionToAdd.Name = null;
-            Session.Request.ProjectVersionAdd(versionToAdd);
+            var ex = Assert.Throws<ArgumentException>(() =>
+            Session.Request.ProjectVersionAdd(versionToAdd));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ProjectVersionAddWithNullDescription()
         {
             ProjectVersion versionToAdd = CreateVersionToAdd();
             versionToAdd.Description = null;
-            Session.Request.ProjectVersionAdd(versionToAdd);
+            var ex = Assert.Throws<ArgumentNullException>(() =>
+          Session.Request.ProjectVersionAdd(versionToAdd));
         }
-        #endregion
+
+        #endregion Request.ProjectGetVersions()
 
         #region Private Methods
+
         /// <summary>
         /// Get a project version by id or null if not found.
         /// </summary>
@@ -227,6 +236,7 @@ namespace Futureware.MantisConnect.UnitTests
 
             return version;
         }
-        #endregion
+
+        #endregion Private Methods
     }
 }

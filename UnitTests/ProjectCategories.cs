@@ -22,44 +22,44 @@ using NUnit.Framework;
 namespace Futureware.MantisConnect.UnitTests
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [TestFixture]
     public sealed class ProjectCategories : BaseTestFixture
     {
-        [TestFixtureSetUp]
+        [SetUp]
         public void TestFixtureSetup()
         {
             Connect();
         }
 
-        [TestFixtureTearDown]
+        [TearDown]
         public void TestFixtureTearDown()
         {
         }
 
         [Test]
-        [ExpectedException( typeof( ArgumentOutOfRangeException ) )]
         public void ProjectGetCategoriesForInvalidProject()
         {
-            Session.Request.ProjectGetCategories( -50 );
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
+        Session.Request.ProjectGetCategories(-50));
         }
 
         [Test]
-        [ExpectedException( typeof( SoapException ) )]
         public void ProjectGetCategoriesForNonExistingProject()
         {
-            Session.Request.ProjectGetCategories( 99999 );
+            var ex = Assert.Throws<SoapException>(() =>
+              Session.Request.ProjectGetCategories(99999));
         }
 
         [Test]
         public void ProjectGetCategoriesForFirstProject()
         {
             int projectId = FirstProjectId;
-            if ( projectId == 0 )
+            if (projectId == 0)
                 Assert.Ignore();
 
-            Session.Request.ProjectGetCategories( projectId );
+            Session.Request.ProjectGetCategories(projectId);
         }
     }
 }
